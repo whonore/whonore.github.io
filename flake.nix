@@ -37,9 +37,11 @@
         installPhase = ''
           runHook preInstall
 
-          install -Dm644 -t"$out/src" src/*.{html,css} || true
-          install -Dm644 -t"$out/assets" assets/*.{jpeg,png,pdf,svg} || true
+          install -Dm644 -t"$out/src/" src/*.{html,css} || true
+          install -Dm644 -t"$out/src/photos/" src/photos/*.{html,css} || true
+          install -Dm644 -t"$out/assets/" assets/*.{jpeg,png,pdf,svg} || true
           install -Dm644 -t"$out/assets/generated/" assets/generated/*.{jpeg,png,pdf,svg} || true
+          install -Dm644 -t"$out/assets/photos/" assets/photos/*.{jpeg,png,pdf,svg} || true
 
           runHook postInstall
         '';

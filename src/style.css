@@ -95,12 +95,20 @@ main {
   padding-left: 3rem;
 }
 
-polygon {
+.map {
+  overflow-x: scroll;
+}
+
+.map svg {
+  min-width: 60rem;
+}
+
+.map polygon {
   stroke: green;
   stroke-width: 0.1rem;
   fill: transparent;
 }
 
-polygon.active {
-  fill: var(--darkblue);
+.map polygon.active {
+  fill: var(--teal);
 }

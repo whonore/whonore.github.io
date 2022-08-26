@@ -4,7 +4,17 @@ import math
 import sys
 from io import TextIOBase
 from pathlib import Path
-from typing import Iterable, List, NamedTuple, Sequence, Tuple, TypeVar
+from typing import (
+    Any,
+    Iterable,
+    List,
+    NamedTuple,
+    Optional,
+    Sequence,
+    Tuple,
+    TypeVar,
+    cast,
+)
 
 import shapefile  # type: ignore # pylint: disable=import-error
 
@@ -51,7 +61,14 @@ def partition(xs: Sequence[T], idxs: Iterable[int]) -> List[List[T]]:
     ]
 
 
-class Country(NamedTuple):
+def photo_link(name: str) -> Optional[Path]:
+    src = ROOT / "src/photos"
+    canonical = name.lower().replace(" ", "_")
+    photos = Path(src / canonical).with_suffix(".html").relative_to(ROOT)
+    return photos if photos.exists() else None
+
+
+class Region(NamedTuple):
     name: str
     borders: List[List[Coord]]
 
@@ -67,16 +84,16 @@ class Svg:
         self.height = h
         self.shapes: List[Poly] = []
 
-    def add_country(self, c: Country) -> None:
+    def add_region(self, reg: Region) -> None:
         shapes = [
             Poly(
-                c.name,
+                reg.name,
                 [
                     (lon_to_x(lon, self.width), lat_to_y(lat, self.height))
                     for lon, lat in border
                 ],
             )
-            for border in c.borders
+            for border in reg.borders
         ]
         self.shapes += shapes
 
@@ -85,31 +102,48 @@ class Svg:
             f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.width} {self.height}">\n'
         )
         for shape in self.shapes:
-            pts = " ".join(",".join(map(str, xy)) for xy in shape.points)
-            f.write(
-                f'  <polygon points="{pts}" title="{shape.name}" />\n'
-            )
+            attrs = {
+                "points": " ".join(",".join(map(str, xy)) for xy in shape.points),
+                "title": shape.name,
+            }
+            photos = photo_link(shape.name)
+            if photos is not None:
+                attrs["class"] = "active"
+                f.write(f'  <a xlink:href="{photos.relative_to("src")}">')
+            attrstr = " ".join(f'{attr}="{val}"' for attr, val in attrs.items())
+            f.write(f"  <polygon {attrstr} />\n")
+            if photos is not None:
+                f.write("  </a>")
         f.write("</svg>\n")
 
 
-def parse_countries(shpf: str) -> List[Country]:
+def parse_regions(shpf: str) -> List[Region]:
+    def name(rec: Any) -> str:
+        keys = ("name_en", "NAME_EN")
+        for key in keys:
+            try:
+                return cast(str, rec[key])
+            except IndexError:
+                pass
+        raise ValueError("Cannot find name")
+
     with shapefile.Reader(shpf) as shp:
         return [
-            Country(rec.record["NAME_EN"], partition(rec.shape.points, rec.shape.parts))
+            Region(name(rec.record), partition(rec.shape.points, rec.shape.parts))
             for rec in shp.shapeRecords()
         ]
 
 
-def main(shp: str, w: int, h: int) -> None:
-    cs = parse_countries(shp)
+def main(shps: List[str], w: int, h: int) -> None:
+    regs = [reg for shp in shps for reg in parse_regions(shp)]
     svg = Svg(w, h)
-    for c in cs:
-        svg.add_country(c)
-    with open(f"{ROOT}/assets/generated/map.svg", "w", encoding="utf-8") as f:
+    for reg in regs:
+        svg.add_region(reg)
+    with open(ROOT / "assets/generated/map.svg", "w", encoding="utf-8") as f:
         svg.write(f)
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
-        sys.exit(f"Usage: {sys.argv[0]} shapefile width height")
-    main(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
+        sys.exit(f"Usage: {sys.argv[0]} width height shapefiles...")
+    main(sys.argv[3:], int(sys.argv[1]), int(sys.argv[2]))

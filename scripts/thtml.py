@@ -31,13 +31,13 @@ class LoadFile(Span):
 
 
 class Template:
-    def __init__(self, tmpl_file: str) -> None:
+    def __init__(self, tmpl_file: Path) -> None:
         self.spans: List[Span] = []
         with open(tmpl_file, "r", encoding="utf-8") as f:
             spans = self._parse(f.read())
         for kind, span in spans:
             if kind == "f":
-                self.spans.append(LoadFile(span, Path(tmpl_file).resolve().parent))
+                self.spans.append(LoadFile(span, tmpl_file.resolve().parent))
             elif kind == "":
                 self.spans.append(Text(span))
             else:
@@ -66,13 +66,13 @@ class Template:
             f.write(span.eval())
 
 
-def main(tmpl_file: str) -> None:
+def main(tmpl_file: Path) -> None:
     tmpl = Template(tmpl_file)
-    with open(tmpl_file.replace(".thtml", ".html"), "w", encoding="utf-8") as f:
+    with open(tmpl_file.with_suffix(".html"), "w", encoding="utf-8") as f:
         tmpl.write(f)
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(f"Usage: {sys.argv[0]} THTML")
-    main(sys.argv[1])
+    main(Path(sys.argv[1]))

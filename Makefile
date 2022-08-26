@@ -1,5 +1,5 @@
 MAP := assets/generated/map.svg
-MAPDATA := assets/ne_110m_admin_0_countries.zip
+MAPDATA := $(wildcard assets/ne_*.zip)
 MAPWIDTH := 800
 MAPHEIGHT := 600
 
@@ -12,7 +12,7 @@ all: $(ASSETS) $(HTML)
 
 $(MAP): $(MAPDATA) scripts/buildmap.py
 	mkdir -p $(@D)
-	scripts/buildmap.py $< $(MAPWIDTH) $(MAPHEIGHT)
+	scripts/buildmap.py $(MAPWIDTH) $(MAPHEIGHT) $(filter %.zip,$^)
 
 src/%.html: src/%.thtml $(ASSETS)
 	scripts/thtml.py $<
