@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolf Honore -- Photos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300">
+    <link rel="link" href="../assets/favicon.png" />
+  </head>
+  <body>
+    <div class="console">
+      <nav>
+        <a href="index.html">/home</a>
+        <a href="projects.html">/projects</a>
+        <a href="music.html">/music</a>
+        <a href="#" class="active">/photos</a>
+        <a href="pubs.html">/publications</a>
+      </nav>
+      <main>
+        <figure class="map">
+          <%f ../assets/generated/map.svg %>
+          <figcaption>
+            Click highlighted places on the map to see photos from there.
+            <br>
+            Map data from
+            <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/">
+              Natural Earth Data
+            </a>.
+          </figcaption>
+        </figure>
+      </main>
+    </div>
+  </body>
+</html>
