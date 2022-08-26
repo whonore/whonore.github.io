@@ -43,14 +43,47 @@
             University in 2022.
             Some internships at <a href="https://www.swri.org/">SwRI</a> doing
             things with visualizing map data, an internship at
-            <a href="https://www.sifive.com">SiFive</a> doing formal verification
-            of a little bit of a processor.
+            <a href="https://www.sifive.com">SiFive</a> doing formal
+            verification of a little bit of a processor.
           </dd>
           <dt>What do you like?</dt>
           <dd>
             <a href="projects.html">Programming/electronics projects</a>,
             <a href="music.html">music</a>,
             <a href="photos.html">photography</a>, running, cats.
+          </dd>
+          <dt>Quick, can you prove &radic;2 is irrational?</dt>
+          <dd>
+            <pre class="coq-syntax"><code>
+<span class="kwd">From</span> Coq <span class="kwd">Require Import</span> ssrbool ssreflect Lia QArith.
+
+<span class="kwd">Lemma</span> <span class="ident">Qred_int</span> x <span class="oper">:</span> Qred <span class="oper">(</span>x <span class="oper">#</span> <span class="number">1</span><span class="oper">)</span> <span class="oper">=</span> x <span class="oper">#</span> <span class="number">1</span>.
+<span class="kwd">Proof</span>. <span class="tactic">by</span> <span class="tactic">case:</span> x <span class="tactic">=></span> <span class="tactic">//</span>; <span class="tactic">case</span>. <span class="kwd">Qed</span>.
+
+<span class="kwd">Lemma</span> <span class="ident">Qmult_den</span> p q r <span class="oper">:</span> p <span class="oper">#</span> q <span class="oper">==</span> r <span class="oper"><-></span> p <span class="oper">#</span> <span class="number">1</span> <span class="oper">==</span> <span class="oper">(</span>Z.pos q <span class="oper">#</span> <span class="number">1</span><span class="oper">)</span> <span class="oper">*</span> r.
+<span class="kwd">Proof</span>.
+  <span class="tactic">set</span> den <span class="oper">:=</span> inject_Z <span class="oper">(</span>Z.pos q<span class="oper">)</span>.
+  <span class="tactic">by</span> <span class="tactic">rewrite</span> !Qmake_Qdiv -[_ <span class="oper">==</span> r]<span class="oper">(</span>Qmult_inj_l _ _ den<span class="oper">)</span>
+             ?Qmult_div_r -?Qmake_Qdiv.
+<span class="kwd">Qed</span>.
+
+<span class="kwd">Lemma</span> <span class="ident">even_sqr_even</span> p <span class="oper">:</span> Z.even <span class="oper">(</span>p <span class="oper">*</span> p<span class="oper">)</span> <span class="oper">-></span> Z.even p.
+<span class="kwd">Proof</span>. <span class="tactic">by</span> <span class="tactic">rewrite</span> Z.even_mul; <span class="tactic">case:</span> orP <span class="tactic">=></span> <span class="tactic">//</span>; <span class="tactic">case</span>. <span class="kwd">Qed</span>.
+
+<span class="kwd">Theorem</span> <span class="ident">sqrt2_irrational</span> p q <span class="oper">:</span>
+  Z.gcd p <span class="oper">(</span>Z.pos q<span class="oper">)</span> <span class="oper">=</span> <span class="number">1</span>%Z <span class="oper">-></span> <span class="oper">~</span><span class="oper">((</span>p <span class="oper">#</span> q<span class="oper">)</span><span class="oper">^</span><span class="number">2</span> <span class="oper">==</span> <span class="number">2</span> <span class="oper">#</span> <span class="number">1</span><span class="oper">)</span>.
+<span class="kwd">Proof</span>.
+  <span class="tactic">set</span> q' <span class="oper">:=</span> Z.pos q; <span class="tactic">move=></span> Hred.
+  <span class="tactic">rewrite</span> Qmult_den -Qred_eq_iff ?Qred_int.
+  <span class="tactic">case</span>; <span class="tactic">rewrite</span> ?Pos2Z.inj_mul; <span class="tactic">move=></span> Heq; <span class="tactic">move:</span> Hred.
+  <span class="tactic">have</span> /Z.even_spec[k Hk]: Z.even p <span class="tactic">by</span> <span class="tactic">apply</span> even_sqr_even;
+    <span class="tactic">rewrite</span> Heq Z.even_mul orb_true_r.
+  <span class="tactic">have</span> Heq': <span class="oper">(</span>q' <span class="oper">*</span> q' <span class="oper">=</span> k <span class="oper">*</span> k <span class="oper">*</span> <span class="number">2</span><span class="oper">)</span>%Z <span class="tactic">by</span> <span class="tactic">lia</span>.
+  <span class="tactic">have</span> /Z.even_spec[? Hq]: Z.even q' <span class="tactic">by</span> <span class="tactic">apply</span> even_sqr_even;
+    <span class="tactic">rewrite</span> Heq' Z.even_mul orb_true_r.
+  <span class="tactic">rewrite</span> Hk Hq Z.gcd_mul_mono_l; <span class="tactic">lia</span>.
+<span class="kwd">Qed</span>.
+            </code></pre>
           </dd>
         </dl>
       </main>

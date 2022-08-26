@@ -1,3 +1,4 @@
+/* Global */
 :root {
   --font-base: 'Fira Code', 'Courier New', monospace;
   --max-width: 40rem;
@@ -20,6 +21,7 @@
   --ice: #afffff;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -62,6 +64,7 @@ rt {
   display: none;
 }
 
+/* Console */
 .console {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -69,6 +72,7 @@ rt {
   border: 0.2rem double var(--green);
 }
 
+/* Navigation */
 nav {
   width: 100%;
   border-bottom: 0.1rem solid var(--green);
@@ -86,6 +90,7 @@ nav a.active {
   background-color: var(--darkblue);
 }
 
+/* Body */
 main {
   padding: 0.5rem;
   counter-reset: line;
@@ -95,6 +100,7 @@ main {
   padding-left: 3rem;
 }
 
+/* Map */
 .map {
   overflow-x: scroll;
 }
@@ -111,4 +117,29 @@ main {
 
 .map polygon.active {
   fill: var(--teal);
+}
+
+/* Syntax Highlighting */
+pre.coq-syntax {
+  overflow-x: auto;
+}
+
+code .kwd {
+  color: var(--teal);
+}
+
+code .ident {
+  color: var(--palepink);
+}
+
+code .tactic {
+  color: var(--yellow);
+}
+
+code .oper {
+  color: var(--purple);
+}
+
+code .number {
+  color: var(--pink);
 }
