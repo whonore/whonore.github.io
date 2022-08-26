@@ -1,0 +1,96 @@
+:root {
+  --font-base: 'Fira Code', 'Courier New', monospace;
+  --max-width: 40rem;
+  --black: #000000;
+  --red: #ff0000;
+  --darkred: #870000;
+  --blue: #0087ff;
+  --darkblue: #00005f;
+  --green: #00ff5f;
+  --darkgreen: #005f00;
+  --grey: #ffffff;
+  --darkgrey: #121212;
+  --yellow: #ffff00;
+  --purple: #af87ff;
+  --darkpurple: #5f005f;
+  --pink: #ff87ff;
+  --palepink: #ffd7ff;
+  --darkpink: #d700ff;
+  --teal: #00ffff;
+  --ice: #afffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+::selection {
+  background: var(--darkblue);
+}
+
+body {
+  background-color: var(--black);
+  color: var(--ice);
+  font-family: var(--font-base);
+}
+
+a {
+  color: var(--teal);
+}
+
+a:hover {
+  background-color: var(--darkblue);
+}
+
+a:visited {
+  color: var(--pink);
+}
+
+h1::before {
+  content: "# ";
+}
+
+ruby {}
+
+rt {
+  display: none;
+}
+
+.console {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: 0.2rem double var(--green);
+}
+
+nav {
+  width: 100%;
+  border-bottom: 0.1rem solid var(--green);
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--black);
+  min-width: 1rem;
+  padding: 0 0.2rem 0 0.2rem;
+}
+
+nav a.active {
+  background: var(--darkblue);
+}
+
+main {
+  padding: 0.5rem;
+  counter-reset: line;
+}
+
+.interview dd {
+  padding-left: 3rem;
+}
