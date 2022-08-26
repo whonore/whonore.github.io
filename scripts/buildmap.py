@@ -104,14 +104,13 @@ class Svg:
         for shape in self.shapes:
             attrs = {
                 "points": " ".join(",".join(map(str, xy)) for xy in shape.points),
-                "title": shape.name,
             }
             photos = photo_link(shape.name)
             if photos is not None:
                 attrs["class"] = "active"
                 f.write(f'  <a xlink:href="{photos.relative_to("src")}">')
             attrstr = " ".join(f'{attr}="{val}"' for attr, val in attrs.items())
-            f.write(f"  <polygon {attrstr} />\n")
+            f.write(f"  <polygon {attrstr}><title>{shape.name}</title></polygon>\n")
             if photos is not None:
                 f.write("  </a>")
         f.write("</svg>\n")
