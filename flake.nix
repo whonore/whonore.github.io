@@ -32,16 +32,20 @@
 
         dontConfigure = true;
 
-        buildInputs = [(python-shp system)];
+        buildInputs = [(python-shp system) pkgs.minify];
+
+        postBuild = ''
+          minify --recursive --sync --output minified/ .
+        '';
 
         installPhase = ''
           runHook preInstall
 
-          install -Dm644 -t"$out/src/" src/*.{html,css} || true
-          install -Dm644 -t"$out/src/photos/" src/photos/*.{html,css} || true
-          install -Dm644 -t"$out/assets/" assets/*.{jpeg,png,pdf,svg} || true
-          install -Dm644 -t"$out/assets/generated/" assets/generated/*.{jpeg,png,pdf,svg} || true
-          install -Dm644 -t"$out/assets/photos/" assets/photos/*.{jpeg,png,pdf,svg} || true
+          install -Dm644 -t"$out/src/" minified/src/*.{html,css} || true
+          install -Dm644 -t"$out/src/photos/" minified/src/photos/*.{html,css} || true
+          install -Dm644 -t"$out/assets/" minified/assets/*.{jpeg,png,pdf,svg} || true
+          install -Dm644 -t"$out/assets/generated/" minified/assets/generated/*.{jpeg,png,pdf,svg} || true
+          install -Dm644 -t"$out/assets/photos/" minified/assets/photos/*.{jpeg,png,pdf,svg} || true
 
           runHook postInstall
         '';
