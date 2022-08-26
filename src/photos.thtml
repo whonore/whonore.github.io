@@ -19,13 +19,13 @@
       </nav>
       <main>
         <figure class="map">
-          <%f ../assets/generated/map.svg %>
           <figcaption>
             Click highlighted places on the map to see photos from there.
             <br>
             Map data from
             <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/">Natural Earth Data</a>.
           </figcaption>
+          <%f ../assets/generated/map.svg %>
         </figure>
       </main>
     </div>
