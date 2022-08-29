@@ -43,9 +43,9 @@
 
           install -Dm644 -t"$out/src/" minified/src/*.{html,css} || true
           install -Dm644 -t"$out/src/photos/" minified/src/photos/*.{html,css} || true
-          install -Dm644 -t"$out/assets/" minified/assets/*.{jpeg,png,pdf,svg} || true
-          install -Dm644 -t"$out/assets/generated/" minified/assets/generated/*.{jpeg,png,pdf,svg} || true
-          install -Dm644 -t"$out/assets/photos/" minified/assets/photos/*.{jpeg,png,pdf,svg} || true
+          install -Dm644 -t"$out/assets/" minified/assets/*.{jpeg,png,pdf} || true
+          install -Dm644 -t"$out/assets/generated/" minified/assets/generated/*.{jpeg,png,pdf} || true
+          install -Dm644 -t"$out/assets/photos/" minified/assets/photos/*.{jpeg,png,pdf} || true
 
           runHook postInstall
         '';
