@@ -1,7 +1,8 @@
 /* Global */
 :root {
   --font-base: 'Fira Code', 'Courier New', monospace;
-  --max-width: 40rem;
+  --console-max-width: 40rem;
+  --map-width: 60rem;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -32,14 +33,18 @@
   background: transparent;
 }
 
+/* General */
 ::selection {
   background: var(--darkblue);
+}
+
+* {
+  font-family: var(--font-base);
 }
 
 body {
   background-color: var(--black);
   color: var(--ice);
-  font-family: var(--font-base);
 }
 
 a {
@@ -55,7 +60,7 @@ a:visited {
 }
 
 h1::before {
-  content: "# ";
+  content: '# ';
 }
 
 ruby {}
@@ -66,7 +71,7 @@ rt {
 
 /* Console */
 .console {
-  max-width: var(--max-width);
+  max-width: var(--console-max-width);
   margin: 0 auto;
   margin-top: 2rem;
   border: 0.2rem double var(--green);
@@ -106,7 +111,7 @@ main {
 }
 
 .map svg {
-  min-width: 60rem;
+  min-width: var(--map-width);
 }
 
 .map polygon {
