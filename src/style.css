@@ -64,10 +64,8 @@ h1::before {
   content: '# ';
 }
 
-ruby {}
-
 rt {
-  display: none;
+  font-size: 80%;
 }
 
 
