@@ -1,7 +1,13 @@
 /* Global */
 :root {
   --font-base: 'Fira Code', 'Courier New', monospace;
+  --gutter-width: 1rem;
+  --gutter-height: 2rem;
   --console-max-width: 40rem;
+  --console-border-thickness: 0.2rem;
+  --nav-border-thickness: 0.1rem;
+  --nav-min-width: 1rem;
+  --nav-gutter-width: 0.2rem;
   --map-width: 60rem;
   --map-zoom-width: 120rem;
   --black: #000000;
@@ -48,7 +54,7 @@ body {
   background-color: var(--black);
   color: var(--ice);
   min-height: 100vh;
-  padding: 2rem 1rem;
+  padding: var(--gutter-height) var(--gutter-width);
 }
 
 @media only screen and (max-width: 400px) {
@@ -97,21 +103,21 @@ input[type=checkbox]:checked::before {
 .console {
   max-width: var(--console-max-width);
   margin: 0 auto;
-  border: 0.2rem double var(--green);
+  border: var(--console-border-thickness) double var(--green);
 }
 
 /* Navigation */
 nav {
   width: 100%;
-  border-bottom: 0.1rem solid var(--green);
+  border-bottom: var(--nav-border-thickness) solid var(--green);
 }
 
 nav a {
   display: inline-block;
   text-decoration: none;
   background: var(--black);
-  min-width: 1rem;
-  padding: 0 0.2rem 0 0.2rem;
+  min-width: var(--nav-min-width);
+  padding: 0 var(--nav-gutter-width);
 }
 
 nav a.active {
