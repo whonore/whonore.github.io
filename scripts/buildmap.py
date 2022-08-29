@@ -26,6 +26,7 @@ Lon = float
 Coord = Tuple[Lon, Lat]
 Point = Tuple[float, float]
 
+POINT_DECIMALS = 2
 
 def scale(
     v: float, from_min: float, from_max: float, to_min: float, to_max: float
@@ -44,11 +45,11 @@ def scale(
 
 
 def lon_to_x(lon: float, w: int) -> float:
-    return scale(lon, -180, 180, 0, w)
+    return round(scale(lon, -180, 180, 0, w), POINT_DECIMALS)
 
 
 def lat_to_y(lat: float, h: int) -> float:
-    return scale(-lat, -90, 90, 0, h)
+    return round(scale(-lat, -90, 90, 0, h), POINT_DECIMALS)
 
 
 T = TypeVar("T")
