@@ -41,6 +41,7 @@
 
 * {
   font-family: var(--font-base);
+  scrollbar-color: var(--ice) var(--darkgrey);
 }
 
 body {
