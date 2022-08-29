@@ -18,9 +18,11 @@
         <a href="pubs.html">/publications</a>
       </nav>
       <main>
+        <input id="map-zoom" type="checkbox" name="map-zoom" />
+        <label for="map-zoom">Toggle large/small map.</label>
         <figure class="map">
           <figcaption>
-            Click highlighted places on the map to see photos from there.
+            Click a highlighted location to see photos from there.
             <br>
             Map data from
             <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/">Natural Earth Data</a>.

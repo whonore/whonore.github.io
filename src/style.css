@@ -3,6 +3,7 @@
   --font-base: 'Fira Code', 'Courier New', monospace;
   --console-max-width: 40rem;
   --map-width: 60rem;
+  --map-zoom-width: 120rem;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -69,6 +70,22 @@ rt {
   display: none;
 }
 
+
+input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+input[type=checkbox]::before {
+  content: '[ ]';
+}
+
+input[type=checkbox]:checked::before {
+  content: '[x]';
+}
+
 /* Console */
 .console {
   max-width: var(--console-max-width);
@@ -122,6 +139,14 @@ main {
 
 .map polygon.active {
   fill: var(--teal);
+}
+
+#map-zoom:checked ~ .map svg {
+  min-width: var(--map-zoom-width);
+}
+
+#map-zoom ~ label {
+  cursor: pointer;
 }
 
 /* Syntax Highlighting */

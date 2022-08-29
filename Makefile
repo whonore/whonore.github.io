@@ -1,7 +1,7 @@
 MAP := assets/generated/map.svg
 MAPDATA := $(wildcard assets/ne_*.zip)
-MAPWIDTH := 800
-MAPHEIGHT := 600
+MAPWIDTH := 1600
+MAPHEIGHT := 800
 
 ASSETS := $(MAP)
 HTML := $(patsubst %.thtml,%.html,$(wildcard src/*.thtml))
