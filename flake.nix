@@ -30,6 +30,8 @@
 
         buildInputs = build-pkgs system;
 
+        postPatch = "patchShebangs scripts";
+
         postBuild = ''
           minify --recursive --sync --output minified/ .
         '';
