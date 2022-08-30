@@ -85,9 +85,9 @@ rt {
 
 
 input[type=checkbox] {
-  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
   color: inherit;
 }
