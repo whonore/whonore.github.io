@@ -33,7 +33,10 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixpkgs-unstable
       - name: Build artifact
-        run: nix build --verbose --print-build-logs --cores 0 --max-jobs auto --out-link artifact
+        run: nix build --verbose --print-build-logs --cores 0 --max-jobs auto --out-link artifact-tmp
+      # See: https://github.com/actions/deploy-pages/issues/58
+      - name: Fix permissions
+        run: cp --recursive --dereference --no-preserve=mode,ownership artifact-tmp artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
