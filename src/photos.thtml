@@ -18,8 +18,8 @@
         <a href="pubs.html">/publications</a>
       </nav>
       <main>
-        <input id="map-zoom" type="checkbox" name="map-zoom" />
-        <label for="map-zoom">Toggle large/small map.</label>
+        <input id="map-zoom" type="checkbox" name="map-zoom" /><!-- JOIN
+        --><label for="map-zoom">Toggle large/small map.</label>
         <figure class="map">
           <figcaption>
             Click a highlighted location to see photos from there.
