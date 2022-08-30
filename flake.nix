@@ -41,6 +41,7 @@
         installPhase = ''
           runHook preInstall
 
+          install -Dm644 -t"$out/" minified/*.{html,css} || true
           install -Dm644 -t"$out/src/" minified/src/*.{html,css} || true
           install -Dm644 -t"$out/src/photos/" minified/src/photos/*.{html,css} || true
           install -Dm644 -t"$out/assets/" minified/assets/*.{jpeg,png,pdf} || true
