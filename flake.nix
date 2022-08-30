@@ -13,26 +13,22 @@
     gitignore,
   }: let
     inherit (gitignore.lib) gitignoreSource;
-    python-shp = system: let
+    build-pkgs = system: let
       pkgs = nixpkgs.legacyPackages.${system};
       py-packages = python-packages: with python-packages; [pyshp];
-    in
-      pkgs.python3.withPackages py-packages;
-    env = system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-      pkgs.mkShell {packages = [(python-shp system) pkgs.svgcleaner];};
-    website = system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-      pkgs.stdenv.mkDerivation {
+      python-shp = pkgs.python3.withPackages py-packages;
+    in [python-shp pkgs.minify pkgs.svgcleaner];
+    env = system:
+      nixpkgs.legacyPackages.${system}.mkShell {packages = build-pkgs system;};
+    website = system:
+      nixpkgs.legacyPackages.${system}.stdenv.mkDerivation {
         pname = "website";
         version = "0.0.0";
         src = gitignoreSource ./.;
 
         dontConfigure = true;
 
-        buildInputs = [(python-shp system) pkgs.minify pkgs.svgcleaner];
+        buildInputs = build-pkgs system;
 
         postBuild = ''
           minify --recursive --sync --output minified/ .
