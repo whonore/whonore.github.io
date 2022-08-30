@@ -33,7 +33,12 @@
         postPatch = "patchShebangs scripts";
 
         postBuild = ''
-          minify --recursive --sync --output minified/ .
+          minify --recursive --sync \
+            --html-keep-whitespace \
+            --html-keep-end-tags \
+            --html-keep-document-tags \
+            --html-keep-comments \
+            --output minified/ .
         '';
 
         installPhase = ''
