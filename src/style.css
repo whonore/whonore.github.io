@@ -143,13 +143,13 @@ main {
   min-width: var(--map-width);
 }
 
-.map polygon {
+.map path {
   stroke: green;
   stroke-width: 0.1rem;
   fill: transparent;
 }
 
-.map polygon.active {
+.map path.active {
   fill: var(--teal);
 }
 

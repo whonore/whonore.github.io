@@ -2,7 +2,6 @@
 import itertools
 import math
 import sys
-from io import TextIOBase
 from pathlib import Path
 from typing import (
     Any,
@@ -11,6 +10,7 @@ from typing import (
     NamedTuple,
     Optional,
     Sequence,
+    TextIO,
     Tuple,
     TypeVar,
     cast,
@@ -27,6 +27,7 @@ Coord = Tuple[Lon, Lat]
 Point = Tuple[float, float]
 
 POINT_DECIMALS = 2
+
 
 def scale(
     v: float, from_min: float, from_max: float, to_min: float, to_max: float
@@ -45,11 +46,11 @@ def scale(
 
 
 def lon_to_x(lon: float, w: int) -> float:
-    return round(scale(lon, -180, 180, 0, w), POINT_DECIMALS)
+    return scale(lon, -180, 180, 0, w)
 
 
 def lat_to_y(lat: float, h: int) -> float:
-    return round(scale(-lat, -90, 90, 0, h), POINT_DECIMALS)
+    return scale(-lat, -90, 90, 0, h)
 
 
 T = TypeVar("T")
@@ -98,13 +99,15 @@ class Svg:
         ]
         self.shapes += shapes
 
-    def write(self, f: TextIOBase) -> None:
+    def write(self, f: TextIO) -> None:
         f.write(
             f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.width} {self.height}">\n'
         )
         for shape in self.shapes:
             attrs = {
-                "points": " ".join(",".join(map(str, xy)) for xy in shape.points),
+                "points": " ".join(
+                    ",".join(map(Svg._float_to_str, xy)) for xy in shape.points
+                ),
             }
             photos = photo_link(shape.name)
             if photos is not None:
@@ -115,6 +118,11 @@ class Svg:
             if photos is not None:
                 f.write("  </a>")
         f.write("</svg>\n")
+
+    @staticmethod
+    def _float_to_str(x: float) -> str:
+        x = round(x, POINT_DECIMALS)
+        return str(int(x) if x == int(x) else x)
 
 
 def parse_regions(shpf: str) -> List[Region]:
@@ -134,16 +142,19 @@ def parse_regions(shpf: str) -> List[Region]:
         ]
 
 
-def main(shps: List[str], w: int, h: int) -> None:
+def main(out: str, shps: List[str], w: int, h: int) -> None:
     regs = [reg for shp in shps for reg in parse_regions(shp)]
     svg = Svg(w, h)
     for reg in regs:
         svg.add_region(reg)
-    with open(ROOT / "assets/generated/map.svg", "w", encoding="utf-8") as f:
-        svg.write(f)
+    if out == "-":
+        svg.write(sys.stdout)
+    else:
+        with open(out, "w", encoding="utf-8") as f:
+            svg.write(f)
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
-        sys.exit(f"Usage: {sys.argv[0]} width height shapefiles...")
-    main(sys.argv[3:], int(sys.argv[1]), int(sys.argv[2]))
+        sys.exit(f"Usage: {sys.argv[0]} out width height shapefiles...")
+    main(sys.argv[1], sys.argv[4:], int(sys.argv[2]), int(sys.argv[3]))

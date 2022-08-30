@@ -21,7 +21,7 @@
     env = system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in
-      pkgs.mkShell {packages = [(python-shp system)];};
+      pkgs.mkShell {packages = [(python-shp system) pkgs.svgcleaner];};
     website = system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in
@@ -32,7 +32,7 @@
 
         dontConfigure = true;
 
-        buildInputs = [(python-shp system) pkgs.minify];
+        buildInputs = [(python-shp system) pkgs.minify pkgs.svgcleaner];
 
         postBuild = ''
           minify --recursive --sync --output minified/ .

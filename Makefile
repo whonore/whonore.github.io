@@ -12,7 +12,8 @@ all: $(ASSETS) $(HTML)
 
 $(MAP): $(MAPDATA) scripts/buildmap.py
 	mkdir -p $(@D)
-	scripts/buildmap.py $(MAPWIDTH) $(MAPHEIGHT) $(filter %.zip,$^)
+	scripts/buildmap.py - $(MAPWIDTH) $(MAPHEIGHT) $(filter %.zip,$^) \
+		| svgcleaner --remove-title=no --remove-unresolved-classes=no -c - > $@
 
 src/%.html: src/%.thtml $(ASSETS)
 	scripts/thtml.py $<
