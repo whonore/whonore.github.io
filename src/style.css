@@ -1,6 +1,6 @@
 /* Global */
 :root {
-  --font-base: 'Fira Code', 'Courier New', monospace;
+  --font-base: "Fira Code", "Courier New", monospace;
   --gutter-width: 1rem;
   --gutter-height: 2rem;
   --checkbox-width: 1.8rem;
@@ -78,15 +78,14 @@ a:visited {
 }
 
 h1::before {
-  content: '#\a0';
+  content: "#\a0";
 }
 
 rt {
   font-size: 80%;
 }
 
-
-input[type=checkbox] {
+input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -96,12 +95,12 @@ input[type=checkbox] {
   padding-right: calc(var(--checkbox-width) + var(--checkbox-gutter));
 }
 
-input[type=checkbox]::before {
-  content: '[\a0]';
+input[type="checkbox"]::before {
+  content: "[\a0]";
 }
 
-input[type=checkbox]:checked::before {
-  content: '[x]';
+input[type="checkbox"]:checked::before {
+  content: "[x]";
 }
 
 /* Console */
