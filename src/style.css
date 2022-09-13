@@ -1,3 +1,4 @@
+/* TODO: autoprefixer */
 /* Global */
 :root {
   --font-base: "Fira Code", "Courier New", monospace;
@@ -49,6 +50,10 @@
 }
 
 /* General */
+::-moz-selection {
+  background: var(--darkblue);
+}
+
 ::selection {
   background: var(--darkblue);
 }
@@ -121,6 +126,9 @@ header {
   width: 100%;
   border-bottom: var(--nav-border-thickness) solid var(--green);
   display: grid;
+  -ms-grid-columns: -webkit-max-content auto;
+  -ms-grid-columns: max-content auto;
+  grid-template-columns: -webkit-max-content auto;
   grid-template-columns: max-content auto;
 }
 
@@ -145,7 +153,11 @@ nav a.active {
 }
 
 .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: var(--nav-gutter-height) var(--nav-gutter-width);
   background-color: var(--darkblue);
