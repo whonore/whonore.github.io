@@ -16,7 +16,6 @@
   --name-width: 9ch;
   --type-time: 1.5s;
   --map-width: 60rem;
-  --map-zoom-width: 120rem;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -213,6 +212,12 @@ main {
   min-width: var(--map-width);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .map svg {
+    transition: min-width 0.2s ease-in;
+  }
+}
+
 .map path {
   stroke: green;
   stroke-width: 0.1rem;
@@ -224,7 +229,8 @@ main {
 }
 
 #map-zoom:checked ~ .map svg {
-  min-width: var(--map-zoom-width);
+  /* NOTE: Can't get scale(2) to expand the console vertically */
+  min-width: calc(2 * var(--map-width));
 }
 
 #map-zoom ~ label {

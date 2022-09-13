@@ -22,7 +22,7 @@
       </header>
       <main>
         <input id="map-zoom" type="checkbox" name="map-zoom" /><!-- JOIN
-        --><label for="map-zoom">Toggle large/small map.</label>
+        --><label for="map-zoom">Zoom in/out.</label>
         <figure class="map">
           <figcaption>
             Click a highlighted location to see photos from there.
