@@ -8,8 +8,12 @@
   --console-max-width: 41rem;
   --console-border-thickness: 0.2rem;
   --nav-border-thickness: 0.1rem;
-  --nav-gutter-width: 1rem;
+  --nav-gutter-width: 0.3rem;
   --nav-gutter-height: 0.2rem;
+  --nav-gap: 1rem;
+  --name-steps: 9;
+  --name-width: 9ch;
+  --type-time: 1.5s;
   --map-width: 60rem;
   --map-zoom-width: 120rem;
   --black: #000000;
@@ -113,9 +117,14 @@ input[type="checkbox"]:checked::before {
 }
 
 /* Navigation */
-nav {
+header {
   width: 100%;
   border-bottom: var(--nav-border-thickness) solid var(--green);
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,16 +132,52 @@ nav {
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  gap: 0 var(--nav-gutter-width);
+  gap: 0 var(--nav-gap);
 }
 
 nav a {
-  padding: var(--nav-gutter-height) 0;
+  padding: var(--nav-gutter-height) var(--nav-gutter-width);
   text-decoration: none;
 }
 
 nav a.active {
   background-color: var(--darkblue);
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  padding: var(--nav-gutter-height) var(--nav-gutter-width);
+  background-color: var(--darkblue);
+  color: var(--yellow);
+  border-right: var(--nav-border-thickness) solid var(--green);
+}
+
+.name span::after {
+  content: "\a0";
+  display: inline-block;
+  width: 1ch;
+  background-color: var(--ice);
+  animation:
+    typing-cursor var(--type-time) steps(var(--name-steps)),
+    blink 0.5s step-end var(--type-time) infinite alternate;
+}
+
+.name span {
+  animation: typing var(--type-time) steps(var(--name-steps));
+}
+
+@keyframes typing {
+  0% { clip-path: inset(0 var(--name-width) 0 0); }
+  100% { clip-path: inset(0); }
+}
+
+@keyframes typing-cursor {
+  0% { transform: translateX(calc(-1 * var(--name-width))); }
+}
+
+@keyframes blink {
+  50% { background-color: transparent; }
 }
 
 /* Body */

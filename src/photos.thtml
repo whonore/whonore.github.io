@@ -10,13 +10,16 @@
   </head>
   <body>
     <div class="console">
-      <nav>
-        <a href="../index.html">/home</a>
-        <a href="projects.html">/projects</a>
-        <a href="music.html">/music</a>
-        <a href="#" class="active">/photos</a>
-        <a href="pubs.html">/publications</a>
-      </nav>
+      <header>
+        <div class="name"><span>wolf.html</span></div>
+        <nav>
+          <a href="../index.html">/home</a>
+          <a href="projects.html">/projects</a>
+          <a href="music.html">/music</a>
+          <a href="#" class="active">/photos</a>
+          <a href="pubs.html">/publications</a>
+        </nav>
+      </header>
       <main>
         <input id="map-zoom" type="checkbox" name="map-zoom" /><!-- JOIN
         --><label for="map-zoom">Toggle large/small map.</label>
