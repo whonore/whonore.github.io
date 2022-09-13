@@ -8,8 +8,8 @@
   --console-max-width: 41rem;
   --console-border-thickness: 0.2rem;
   --nav-border-thickness: 0.1rem;
-  --nav-min-width: 1rem;
-  --nav-gutter-width: 0.2rem;
+  --nav-gutter-width: 1rem;
+  --nav-gutter-height: 0.2rem;
   --map-width: 60rem;
   --map-zoom-width: 120rem;
   --black: #000000;
@@ -40,6 +40,7 @@
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -115,14 +116,19 @@ input[type="checkbox"]:checked::before {
 nav {
   width: 100%;
   border-bottom: var(--nav-border-thickness) solid var(--green);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  gap: 0 var(--nav-gutter-width);
 }
 
 nav a {
-  display: inline-block;
+  padding: var(--nav-gutter-height) 0;
   text-decoration: none;
-  background: var(--black);
-  min-width: var(--nav-min-width);
-  padding: 0 var(--nav-gutter-width);
 }
 
 nav a.active {
