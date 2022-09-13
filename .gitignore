@@ -1,4 +1,5 @@
 result
-assets/generated
+__pycache__/
+assets/generated/
 !assets/generated/.keepdir
 src/photos.html

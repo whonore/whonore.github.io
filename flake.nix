@@ -13,13 +13,28 @@
     gitignore,
   }: let
     inherit (gitignore.lib) gitignoreSource;
-    build-pkgs = system: let
+    build-pkgs = {
+      system,
+      dev ? false,
+    }: let
       pkgs = nixpkgs.legacyPackages.${system};
-      py-packages = python-packages: with python-packages; [pyshp];
-      python-shp = pkgs.python3.withPackages py-packages;
-    in [python-shp pkgs.minify pkgs.svgcleaner];
+      py-packages = python-packages:
+        with python-packages;
+          [pyshp]
+          ++ (
+            if dev
+            then [black flake8 isort mypy pathspec]
+            else []
+          );
+      python = pkgs.python3.withPackages py-packages;
+    in [python pkgs.minify pkgs.svgcleaner];
     env = system:
-      nixpkgs.legacyPackages.${system}.mkShell {packages = build-pkgs system;};
+      nixpkgs.legacyPackages.${system}.mkShell {
+        packages = build-pkgs {
+          inherit system;
+          dev = true;
+        };
+      };
     website = system:
       nixpkgs.legacyPackages.${system}.stdenv.mkDerivation {
         pname = "website";
@@ -28,7 +43,7 @@
 
         dontConfigure = true;
 
-        buildInputs = build-pkgs system;
+        buildInputs = build-pkgs {inherit system;};
 
         postPatch = "patchShebangs scripts";
 

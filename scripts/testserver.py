@@ -7,7 +7,12 @@ import contextlib
 import os
 import socket
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer, test
+from threading import Thread
 from typing import Any
+
+from rebuilder import watch
+
+WATCH = ["index.html", "src/", "assets/"]
 
 
 class CacheBusterHandler(SimpleHTTPRequestHandler):
@@ -68,6 +73,8 @@ if __name__ == "__main__":
             self.RequestHandlerClass(
                 request, client_address, self, directory=args.directory
             )
+
+    Thread(target=watch, args=WATCH, daemon=True).start()
 
     test(
         HandlerClass=CacheBusterHandler,
