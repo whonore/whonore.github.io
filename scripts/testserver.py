@@ -25,7 +25,8 @@ class CacheBusterHandler(SimpleHTTPRequestHandler):
         self.send_header("Expires", "Thu, 01 Jan 1970 00:00:01 GMT")
         self.send_header("Last-Modified", self.date_time_string())
         self.send_header(
-            "Cache-control", "max-age=0, no-cache, must-revalidate, proxy-revalidate"
+            "Cache-control",
+            "max-age=0, no-cache, must-revalidate, proxy-revalidate",
         )
         super().end_headers()
 
@@ -71,7 +72,10 @@ if __name__ == "__main__":
 
         def finish_request(self, request: Any, client_address: Any) -> Any:
             self.RequestHandlerClass(
-                request, client_address, self, directory=args.directory
+                request,
+                client_address,
+                self,
+                directory=args.directory,
             )
 
     Thread(target=watch, args=WATCH, daemon=True).start()

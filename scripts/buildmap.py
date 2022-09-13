@@ -3,18 +3,7 @@ import itertools
 import math
 import sys
 from pathlib import Path
-from typing import (
-    Any,
-    Iterable,
-    List,
-    NamedTuple,
-    Optional,
-    Sequence,
-    TextIO,
-    Tuple,
-    TypeVar,
-    cast,
-)
+from typing import Any, Iterable, NamedTuple, Optional, Sequence, TextIO, TypeVar, cast
 
 import shapefile  # type: ignore # pylint: disable=import-error
 
@@ -23,14 +12,18 @@ ROOT = DIR.parent
 
 Lat = float
 Lon = float
-Coord = Tuple[Lon, Lat]
-Point = Tuple[float, float]
+Coord = tuple[Lon, Lat]
+Point = tuple[float, float]
 
 POINT_DECIMALS = 2
 
 
 def scale(
-    v: float, from_min: float, from_max: float, to_min: float, to_max: float
+    v: float,
+    from_min: float,
+    from_max: float,
+    to_min: float,
+    to_max: float,
 ) -> float:
     assert (
         from_min <= v <= from_max
@@ -56,7 +49,7 @@ def lat_to_y(lat: float, h: int) -> float:
 T = TypeVar("T")
 
 
-def partition(xs: Sequence[T], idxs: Iterable[int]) -> List[List[T]]:
+def partition(xs: Sequence[T], idxs: Iterable[int]) -> list[list[T]]:
     return [
         list(xs[start:end])
         for start, end in itertools.pairwise(itertools.chain(idxs, (None,)))
@@ -72,19 +65,19 @@ def photo_link(name: str) -> Optional[Path]:
 
 class Region(NamedTuple):
     name: str
-    borders: List[List[Coord]]
+    borders: list[list[Coord]]
 
 
 class Poly(NamedTuple):
     name: str
-    points: List[Coord]
+    points: list[Coord]
 
 
 class Svg:
     def __init__(self, w: int, h: int) -> None:
         self.width = w
         self.height = h
-        self.shapes: List[Poly] = []
+        self.shapes: list[Poly] = []
 
     def add_region(self, reg: Region) -> None:
         shapes = [
@@ -125,7 +118,7 @@ class Svg:
         return str(int(x) if x == int(x) else x)
 
 
-def parse_regions(shpf: str) -> List[Region]:
+def parse_regions(shpf: str) -> list[Region]:
     def name(rec: Any) -> str:
         keys = ("name_en", "NAME_EN")
         for key in keys:
@@ -142,7 +135,7 @@ def parse_regions(shpf: str) -> List[Region]:
         ]
 
 
-def main(out: str, shps: List[str], w: int, h: int) -> None:
+def main(out: str, shps: list[str], w: int, h: int) -> None:
     regs = [reg for shp in shps for reg in parse_regions(shp)]
     svg = Svg(w, h)
     for reg in regs:

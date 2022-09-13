@@ -4,7 +4,6 @@ import sys
 from abc import ABC, abstractmethod
 from io import TextIOBase
 from pathlib import Path
-from typing import List, Tuple
 
 
 class Span(ABC):
@@ -32,7 +31,7 @@ class LoadFile(Span):
 
 class Template:
     def __init__(self, tmpl_file: Path) -> None:
-        self.spans: List[Span] = []
+        self.spans: list[Span] = []
         with open(tmpl_file, "r", encoding="utf-8") as f:
             spans = self._parse(f.read())
         for kind, span in spans:
@@ -43,7 +42,7 @@ class Template:
             else:
                 raise ValueError(f"Invalid span type: {kind}")
 
-    def _parse(self, txt: str) -> List[Tuple[str, str]]:
+    def _parse(self, txt: str) -> list[tuple[str, str]]:
         spans = []
         fields = re.split(r"(<%\w|%>)", txt)
         inside = False
