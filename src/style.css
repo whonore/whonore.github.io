@@ -190,7 +190,7 @@ nav a.active {
   }
 
   @keyframes blink {
-    50% { background-color: transparent; }
+    50% { opacity: 0; }
   }
 }
 
