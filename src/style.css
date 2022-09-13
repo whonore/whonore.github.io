@@ -165,31 +165,33 @@ nav a.active {
   border-right: var(--nav-border-thickness) solid var(--green);
 }
 
-.name span::after {
-  content: "\a0";
-  display: inline-block;
-  width: 1ch;
-  background-color: var(--ice);
-  animation:
-    typing-cursor var(--type-time) steps(var(--name-steps)),
-    blink 0.5s step-end var(--type-time) infinite alternate;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .name span::after {
+    content: "\a0";
+    display: inline-block;
+    width: 1ch;
+    background-color: var(--ice);
+    animation:
+      typing-cursor var(--type-time) steps(var(--name-steps)),
+      blink 0.5s step-end var(--type-time) infinite alternate;
+  }
 
-.name span {
-  animation: typing var(--type-time) steps(var(--name-steps));
-}
+  .name span {
+    animation: typing var(--type-time) steps(var(--name-steps));
+  }
 
-@keyframes typing {
-  0% { clip-path: inset(0 var(--name-width) 0 0); }
-  100% { clip-path: inset(0); }
-}
+  @keyframes typing {
+    0% { clip-path: inset(0 var(--name-width) 0 0); }
+    100% { clip-path: inset(0); }
+  }
 
-@keyframes typing-cursor {
-  0% { transform: translateX(calc(-1 * var(--name-width))); }
-}
+  @keyframes typing-cursor {
+    0% { transform: translateX(calc(-1 * var(--name-width))); }
+  }
 
-@keyframes blink {
-  50% { background-color: transparent; }
+  @keyframes blink {
+    50% { background-color: transparent; }
+  }
 }
 
 /* Body */
