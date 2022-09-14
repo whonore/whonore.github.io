@@ -27,7 +27,7 @@
             else []
           );
       python = pkgs.python3.withPackages py-packages;
-    in [python pkgs.minify pkgs.svgcleaner];
+    in [python pkgs.minify pkgs.postcss-cli pkgs.svgcleaner];
     env = system:
       nixpkgs.legacyPackages.${system}.mkShell {
         packages = build-pkgs {
@@ -48,6 +48,7 @@
         postPatch = "patchShebangs scripts";
 
         postBuild = ''
+          postcss src/*.css --replace --no-map
           minify --recursive --sync \
             --html-keep-whitespace \
             --html-keep-end-tags \
