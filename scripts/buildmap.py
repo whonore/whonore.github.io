@@ -105,7 +105,7 @@ class Svg:
             photos = photo_link(shape.name)
             if photos is not None:
                 attrs["class"] = "active"
-                f.write(f'  <a xlink:href="{photos.relative_to("src")}">')
+                f.write(f'  <a xlink:href="/{photos}">')
             attrstr = " ".join(f'{attr}="{val}"' for attr, val in attrs.items())
             f.write(f"  <polygon {attrstr}><title>{shape.name}</title></polygon>\n")
             if photos is not None:
