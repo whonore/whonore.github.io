@@ -11,7 +11,7 @@
   <body>
     <div class="console">
       <header>
-        <div class="name"><span>wolf.html</span></div>
+        <div class="typed"><span>wolf.html</span></div>
         <nav>
           <a href="../index.html">/home</a>
           <a href="projects.html">/projects</a>

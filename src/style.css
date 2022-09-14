@@ -11,8 +11,8 @@
   --nav-gutter-width: 0.3rem;
   --nav-gutter-height: 0.2rem;
   --nav-gap: 1rem;
-  --name-steps: 9;
-  --name-width: 9ch;
+  --typed-steps: 9;
+  --typed-width: 9ch;
   --type-time: 1.5s;
   --map-width: 60rem;
   --black: #000000;
@@ -135,7 +135,7 @@ nav a.active {
   background-color: var(--darkblue);
 }
 
-.name {
+.typed {
   display: flex;
   align-items: center;
   padding: var(--nav-gutter-height) var(--nav-gutter-width);
@@ -145,27 +145,27 @@ nav a.active {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .name span::after {
+  .typed span::after {
     content: "\a0";
     display: inline-block;
     width: 1ch;
     background-color: var(--ice);
     animation:
-      typing-cursor var(--type-time) steps(var(--name-steps)),
+      typing-cursor var(--type-time) steps(var(--typed-steps)),
       blink 0.5s step-end var(--type-time) infinite alternate;
   }
 
-  .name span {
-    animation: typing var(--type-time) steps(var(--name-steps));
+  .typed span {
+    animation: typing var(--type-time) steps(var(--typed-steps));
   }
 
   @keyframes typing {
-    0% { clip-path: inset(0 var(--name-width) 0 0); }
+    0% { clip-path: inset(0 var(--typed-width) 0 0); }
     100% { clip-path: inset(0); }
   }
 
   @keyframes typing-cursor {
-    0% { transform: translateX(calc(-1 * var(--name-width))); }
+    0% { transform: translateX(calc(-1 * var(--typed-width))); }
   }
 
   @keyframes blink {
