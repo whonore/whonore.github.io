@@ -186,6 +186,12 @@ main {
 /* Map */
 .map {
   overflow-x: scroll;
+  position: relative;
+}
+
+.map figcaption {
+  position: sticky;
+  left: 0;
 }
 
 .map svg {
