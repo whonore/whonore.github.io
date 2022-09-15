@@ -11,10 +11,15 @@
   --nav-gutter-width: 0.3rem;
   --nav-gutter-height: 0.2rem;
   --nav-gap: 1rem;
+  --main-padding: 0.5rem;
+  --interview-indent: 3rem;
   --typed-steps: 9;
   --typed-width: 9ch;
   --type-time: 1.5s;
+  --blink-time: 0.5s;
   --map-width: 60rem;
+  --map-thickness: 0.1rem;
+  --map-zoom-time: 0.2s;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -152,7 +157,7 @@ nav a.active {
     background-color: var(--ice);
     animation:
       typing-cursor var(--type-time) steps(var(--typed-steps)),
-      blink 0.5s step-end var(--type-time) infinite alternate;
+      blink var(--blink-time) step-end var(--type-time) infinite alternate;
   }
 
   .typed span {
@@ -175,12 +180,12 @@ nav a.active {
 
 /* Body */
 main {
-  padding: 0.5rem;
+  padding: var(--main-padding);
   counter-reset: line;
 }
 
 .interview dd {
-  padding-left: 3rem;
+  padding-left: var(--interview-indent);
 }
 
 /* Map */
@@ -200,13 +205,13 @@ main {
 
 @media (prefers-reduced-motion: no-preference) {
   .map svg {
-    transition: min-width 0.2s ease-in;
+    transition: min-width var(--map-zoom-time) ease-in;
   }
 }
 
 .map path {
   stroke: green;
-  stroke-width: 0.1rem;
+  stroke-width: var(--map-thickness);
   fill: transparent;
 }
 
