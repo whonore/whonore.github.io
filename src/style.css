@@ -20,6 +20,10 @@
   --map-width: 60rem;
   --map-thickness: 0.1rem;
   --map-zoom-time: 0.2s;
+  --link-arrow-size: 0.3rem;
+  --link-arrow-thickness: 0.1rem;
+  --link-arrow-scale: 1.5;
+  --link-arrow-scale-time: 0.1s;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -76,14 +80,11 @@ body {
 
 a {
   color: var(--teal);
+  text-decoration: none;
 }
 
 a:hover {
   background-color: var(--darkblue);
-}
-
-a:visited {
-  color: var(--pink);
 }
 
 h1::before {
@@ -133,11 +134,11 @@ nav {
 
 nav a {
   padding: var(--nav-gutter-height) var(--nav-gutter-width);
-  text-decoration: none;
 }
 
 nav a.active {
   background-color: var(--darkblue);
+  font-weight: bold;
 }
 
 .typed {
@@ -182,6 +183,35 @@ nav a.active {
 main {
   padding: var(--main-padding);
   counter-reset: line;
+}
+
+main a {
+  position: relative;
+  padding-right: var(--link-arrow-size);
+}
+
+main a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: var(--link-arrow-size);
+  height: var(--link-arrow-size);
+  border-top: var(--link-arrow-thickness) solid currentcolor;
+  border-right: var(--link-arrow-thickness) solid currentcolor;
+  transition-property: width, height;
+  transition-duration: var(--link-arrow-scale-time);
+  transition-timing-function: ease-in-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main a:hover::after {
+    width: calc(var(--link-arrow-scale) * var(--link-arrow-size));
+    height: calc(var(--link-arrow-scale) * var(--link-arrow-size));
+  }
+}
+
+main a:visited {
+  color: var(--palepink);
 }
 
 .interview dd {
