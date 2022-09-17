@@ -1,0 +1,32 @@
+{
+    "title": "Big Bend National Park",
+    "description": "TODO",
+    "path": "texas",
+    "photos": [
+        {
+            "src": "river.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "deer.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "big-rocks.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "window.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "sunset-rock.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

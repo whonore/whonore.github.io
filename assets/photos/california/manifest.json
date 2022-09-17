@@ -1,0 +1,32 @@
+{
+    "title": "Death Valley National Park",
+    "description": "TODO",
+    "path": "california",
+    "photos": [
+        {
+            "src": "wavy-shadow.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "wavy-rocks.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "raven.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "bumpy.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "snow-tracks.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

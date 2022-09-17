@@ -1,0 +1,37 @@
+{
+    "title": "Smoky Mountain National Park",
+    "description": "TODO",
+    "path": "tennessee",
+    "photos": [
+        {
+            "src": "roots.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "spider.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "fog.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "forested-mountain.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "droplets.jpg",
+            "description": "Water droplets dripping from above part-way up Mount LeConte.",
+            "alt": "TODO"
+        },
+        {
+            "src": "leconte.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

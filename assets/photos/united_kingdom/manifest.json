@@ -1,0 +1,32 @@
+{
+    "title": "United Kingdom",
+    "description": "TODO",
+    "path": "united_kingdom",
+    "photos": [
+        {
+            "src": "tower-bridge.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "cow.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "loch.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "chicken.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "hadrians-wall.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "title": "Yosemite National Park",
+    "description": "TODO",
+    "path": "yosemite",
+    "photos": [
+        {
+            "src": "sequoia.jpg",
+            "description": "A giant sequoia tree. It's pretty big.",
+            "alt": "TODO"
+        },
+        {
+            "src": "half-dome-1.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "half-dome-2.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "raven.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "jet-trail.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

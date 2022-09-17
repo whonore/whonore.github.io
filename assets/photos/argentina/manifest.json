@@ -1,0 +1,57 @@
+{
+    "title": "Patagonia, Argentina",
+    "description": "TODO",
+    "path": "argentina",
+    "photos": [
+        {
+            "src": "magellanic-penguins.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "shore.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "path.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "hawk.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "ushuaia.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "glacier.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "glowing-ice.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "dripping.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "dogs.jpg",
+            "description": "A trio of authentic Patagonian dogs wrestling.",
+            "alt": "TODO"
+        },
+        {
+            "src": "lake.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

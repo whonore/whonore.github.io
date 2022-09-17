@@ -1,0 +1,42 @@
+{
+    "title": "Grand Canyon National Park",
+    "description": "TODO",
+    "path": "arizona",
+    "photos": [
+        {
+            "src": "canyon-1.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "canyon-2.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "bug.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "canyon-3.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "raven-flying.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "raven-tree.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "canyon-4.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

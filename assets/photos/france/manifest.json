@@ -1,0 +1,57 @@
+{
+    "title": "France",
+    "description": "TODO",
+    "path": "france",
+    "photos": [
+        {
+            "src": "eiffel.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "eiffel.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "bird-statue.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "notre-dame.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "pigeons.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "versaille.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "fountains.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "stained-glass.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "rainbow-reflection.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "beach.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

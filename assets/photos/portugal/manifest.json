@@ -1,0 +1,32 @@
+{
+    "title": "Cascais, Portugal",
+    "description": "TODO",
+    "path": "portugal",
+    "photos": [
+        {
+            "src": "cascais-morning.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "pink-sky.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "street.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "orange-glow.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "cascais-day.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

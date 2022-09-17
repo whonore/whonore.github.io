@@ -1,0 +1,32 @@
+{
+    "title": "Hawaii",
+    "description": "TODO",
+    "path": "hawaii",
+    "photos": [
+        {
+            "src": "palm.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "sunrise.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "chickens.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "tree.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "stream.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

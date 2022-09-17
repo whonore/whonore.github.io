@@ -1,0 +1,47 @@
+{
+    "title": "Peru",
+    "description": "TODO",
+    "path": "peru",
+    "photos": [
+        {
+            "src": "bird.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "salkantay-1.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "salkantay-2.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "chicken.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "bear.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "machu-picchu.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "alpaca.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "cusco.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

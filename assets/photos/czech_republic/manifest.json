@@ -1,0 +1,37 @@
+{
+    "title": "Prague, Czech Republic",
+    "description": "TODO",
+    "path": "czech_republic",
+    "photos": [
+        {
+            "src": "storefronts.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "clock.jpg",
+            "description": "The Prague Astronomical Clock, one of the oldest functional clocks in the world.",
+            "alt": "TODO"
+        },
+        {
+            "src": "ossuary-1.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "ossuary-2.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "castle.jpg",
+            "description": "Karlštejn Castle, built by Charles IV in the 14th century.",
+            "alt": "TODO"
+        },
+        {
+            "src": "cat.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}

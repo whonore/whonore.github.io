@@ -1,0 +1,62 @@
+{
+    "title": "Jordan",
+    "description": "TODO",
+    "path": "jordan",
+    "photos": [
+        {
+            "src": "pillars.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "lizard.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "dead-sea.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "sunset-mountains.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "desert-1.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "solo-tree.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "rock-moon.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "desert-2.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "petra.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "sunset.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        },
+        {
+            "src": "camel.jpg",
+            "description": "TODO",
+            "alt": "TODO"
+        }
+    ]
+}
