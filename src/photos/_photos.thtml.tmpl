@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolf Honore -- Photos -- <%j $MANIFEST.title %></title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300" />
+    <link rel="link" href="/src/assets/favicon.png" />
+  </head>
+  <body>
+    <div class="console">
+      <header>
+        <div class="typed"><span>wolf.html</span></div>
+        <nav>
+          <a href="/index.html">/home</a>
+          <a href="/src/projects.html">/projects</a>
+          <a href="/src/music.html">/music</a>
+          <a href="/src/photos.html">/photos</a>
+          <a href="/src/pubs.html">/publications</a>
+        </nav>
+      </header>
+      <main>
+        <h1><%j $MANIFEST.title %></h1>
+        <p><%j $MANIFEST.description %></p>
+        <div class="gallery">
+          <%%j $MANIFEST.photos %>
+            <figure>
+              <figcaption>
+                <%ji .description %>
+              </figcaption>
+              <img src="../../assets/photos/<%j $MANIFEST.path %>/<%ji .src %>" alt="<%ji .alt %>" />
+            </figure>
+          <%%e %>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

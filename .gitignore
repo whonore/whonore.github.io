@@ -3,3 +3,5 @@ __pycache__/
 assets/generated/
 !assets/generated/.keepdir
 src/photos.html
+src/photos/*.html
+src/photos/*.thtml
