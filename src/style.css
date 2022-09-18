@@ -24,6 +24,7 @@
   --link-arrow-thickness: 0.1rem;
   --link-arrow-scale: 1.5;
   --link-arrow-scale-time: 0.1s;
+  --gallery-scale-time: 0.1s;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -264,6 +265,26 @@ main a:visited {
 
 #map-zoom ~ label {
   cursor: pointer;
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 1em;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.gallery figure {
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
 }
 
 /* Syntax Highlighting */
