@@ -25,13 +25,19 @@
         --><label for="map-zoom">Zoom in/out.</label>
         <figure class="map">
           <figcaption>
-            Click a highlighted location to see photos from there.
+            Click a highlighted location to see photos from there, or pick from
+            the list below.
             <br />
             Map data from
             <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/">Natural Earth Data</a>.
           </figcaption>
           <%f ../assets/generated/map.svg %>
         </figure>
+        <ul>
+          <%%j ../assets/photos/manifest.json.photos %>
+            <li><a href="/src/photos/<%ji .path %>.html"><%ji .name %></a></li>
+          <%%e %>
+        </ul>
       </main>
     </div>
   </body>

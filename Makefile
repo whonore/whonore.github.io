@@ -5,7 +5,7 @@ MAPHEIGHT := 800
 
 ASSETS := $(MAP)
 HTML := $(patsubst %.thtml,%.html,$(wildcard src/*.thtml))
-TPHOTOS := $(addprefix src/photos/,$(addsuffix .thtml,$(notdir $(wildcard assets/photos/*))))
+TPHOTOS := $(addprefix src/photos/,$(addsuffix .thtml,$(notdir $(filter-out %.json,$(wildcard assets/photos/*)))))
 PHOTOS := $(patsubst %.thtml,%.html,$(TPHOTOS))
 
 .PHONY: all

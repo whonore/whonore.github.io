@@ -1,0 +1,60 @@
+{
+    "photos": [
+        {
+            "path": "antarctica",
+            "name": "Antarctica"
+        },
+        {
+            "path": "argentina",
+            "name": "Argentina"
+        },
+        {
+            "path": "portugal",
+            "name": "Cascais"
+        },
+        {
+            "path": "france",
+            "name": "France"
+        },
+        {
+            "path": "jordan",
+            "name": "Jordan"
+        },
+        {
+            "path": "peru",
+            "name": "Peru"
+        },
+        {
+            "path": "czech_republic",
+            "name": "Prague"
+        },
+        {
+            "path": "united_kingdom",
+            "name": "United Kingdom"
+        },
+        {
+            "path": "hawaii",
+            "name": "Hawaii"
+        },
+        {
+            "path": "texas",
+            "name": "Big Bend National Park"
+        },
+        {
+            "path": "california",
+            "name": "Death Valley National Park"
+        },
+        {
+            "path": "arizona",
+            "name": "Grand Canyon National Park"
+        },
+        {
+            "path": "tennessee",
+            "name": "Smoky Mountain National Park"
+        },
+        {
+            "path": "yosemite",
+            "name": "Yosemite National Park"
+        }
+    ]
+}
