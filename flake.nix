@@ -27,7 +27,7 @@
             else []
           );
       python = pkgs.python3.withPackages py-packages;
-    in [python pkgs.minify pkgs.postcss-cli pkgs.svgcleaner];
+    in [python pkgs.jpegoptim pkgs.minify pkgs.postcss-cli pkgs.svgcleaner];
     env = system:
       nixpkgs.legacyPackages.${system}.mkShell {
         packages = build-pkgs {
@@ -50,6 +50,7 @@
 
         postBuild = ''
           postcss src/*.css --replace --no-map
+          jpegoptim --workers=0 --max=60 --all-progressive --strip-all assets/photos/**/*.jpg
           minify --recursive --sync \
             --html-keep-whitespace \
             --html-keep-end-tags \
