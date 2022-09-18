@@ -95,6 +95,14 @@ rt {
   font-size: 80%;
 }
 
+li {
+  list-style: none;
+}
+
+ul li::before {
+  content: "-\a0";
+}
+
 input[type="checkbox"] {
   appearance: none;
   cursor: pointer;
