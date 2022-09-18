@@ -207,12 +207,15 @@ main a::after {
   height: var(--link-arrow-size);
   border-top: var(--link-arrow-thickness) solid currentcolor;
   border-right: var(--link-arrow-thickness) solid currentcolor;
-  transition-property: width, height;
-  transition-duration: var(--link-arrow-scale-time);
-  transition-timing-function: ease-in-out;
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  main a::after {
+    transition-property: width, height;
+    transition-duration: var(--link-arrow-scale-time);
+    transition-timing-function: ease-in-out;
+  }
+
   main a:hover::after {
     width: calc(var(--link-arrow-scale) * var(--link-arrow-size));
     height: calc(var(--link-arrow-scale) * var(--link-arrow-size));
