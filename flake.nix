@@ -55,18 +55,21 @@
             --html-keep-end-tags \
             --html-keep-document-tags \
             --html-keep-comments \
-            --output minified/ .
+            --output build/ .
         '';
 
         installPhase = ''
           runHook preInstall
 
-          install -Dm644 -t"$out/" minified/*.{html,css} || true
-          install -Dm644 -t"$out/src/" minified/src/*.{html,css} || true
-          install -Dm644 -t"$out/src/photos/" minified/src/photos/*.{html,css} || true
-          install -Dm644 -t"$out/assets/" minified/assets/*.{jpeg,png,pdf} || true
-          install -Dm644 -t"$out/assets/generated/" minified/assets/generated/*.{jpeg,png,pdf} || true
-          install -Dm644 -t"$out/assets/photos/" minified/assets/photos/*.{jpeg,png,pdf} || true
+          install -Dm644 -t"$out/" build/*.{html,css} || true
+          install -Dm644 -t"$out/src/" build/src/*.{html,css} || true
+          install -Dm644 -t"$out/src/photos/" build/src/photos/*.{html,css} || true
+          install -Dm644 -t"$out/assets/" build/assets/*.{jpg,png,pdf} || true
+          install -Dm644 -t"$out/assets/generated/" build/assets/generated/*.{jpg,png,pdf} || true
+          for d in $(ls -d build/assets/photos/*); do
+            d=$(basename $d)
+            install -Dm644 -t"$out/assets/photos/$d" build/assets/photos/$d/*.{jpg,png,pdf} || true
+          done
 
           runHook postInstall
         '';
