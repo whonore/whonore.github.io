@@ -42,6 +42,7 @@
         src = gitignoreSource ./.;
 
         dontConfigure = true;
+        enableParallelBuilding = true;
 
         buildInputs = build-pkgs {inherit system;};
 

@@ -42,7 +42,10 @@ def rebuild(replace: bool = True) -> None:
                 result_real = result.resolve()
                 result.unlink()
                 subprocess.run(("nix", "store", "delete", result_real), check=True)
-        subprocess.run(("nix", "build"), check=True)
+        subprocess.run(
+            ("nix", "build", "--max-jobs", "auto", "--cores", "0"),
+            check=True,
+        )
     except subprocess.CalledProcessError:
         print("BUILDING FAILED")
 
