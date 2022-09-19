@@ -36,7 +36,7 @@
         <hr />
         <ul>
           <%%j ../assets/photos/manifest.json.photos %>
-            <li><a href="/src/photos/<%ji .path %>.html"><%ji .name %></a></li>
+            <li data-icon="<%ji .icon %>"><a href="/src/photos/<%ji .path %>.html"><%ji .name %></a></li>
           <%%e %>
         </ul>
       </main>

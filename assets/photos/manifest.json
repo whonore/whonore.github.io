@@ -2,59 +2,73 @@
     "photos": [
         {
             "path": "antarctica",
-            "name": "Antarctica"
+            "name": "Antarctica",
+            "icon": "🇦🇶"
         },
         {
             "path": "argentina",
-            "name": "Argentina"
+            "name": "Argentina",
+            "icon": "🇦🇷"
         },
         {
             "path": "portugal",
-            "name": "Cascais"
+            "name": "Cascais",
+            "icon": "🇵🇹"
         },
         {
             "path": "france",
-            "name": "France"
+            "name": "France",
+            "icon": "🇫🇷"
         },
         {
             "path": "jordan",
-            "name": "Jordan"
+            "name": "Jordan",
+            "icon": "🇯🇴"
         },
         {
             "path": "peru",
-            "name": "Peru"
+            "name": "Peru",
+            "icon": "🇵🇪"
         },
         {
             "path": "czech_republic",
-            "name": "Prague"
+            "name": "Prague",
+            "icon": "🇨🇿"
         },
         {
             "path": "united_kingdom",
-            "name": "United Kingdom"
+            "name": "United Kingdom",
+            "icon": "🇬🇧"
         },
         {
             "path": "hawaii",
-            "name": "Hawaii"
+            "name": "Hawaii",
+            "icon": "🇺🇸"
         },
         {
             "path": "texas",
-            "name": "Big Bend National Park"
+            "name": "Big Bend National Park",
+            "icon": "🇺🇸"
         },
         {
             "path": "california",
-            "name": "Death Valley National Park"
+            "name": "Death Valley National Park",
+            "icon": "🇺🇸"
         },
         {
             "path": "arizona",
-            "name": "Grand Canyon National Park"
+            "name": "Grand Canyon National Park",
+            "icon": "🇺🇸"
         },
         {
             "path": "tennessee",
-            "name": "Smoky Mountain National Park"
+            "name": "Smoky Mountain National Park",
+            "icon": "🇺🇸"
         },
         {
             "path": "yosemite",
-            "name": "Yosemite National Park"
+            "name": "Yosemite National Park",
+            "icon": "🇺🇸"
         }
     ]
 }

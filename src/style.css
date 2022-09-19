@@ -3,6 +3,7 @@
   --font-base: "Fira Code", "Courier New", monospace;
   --gutter-width: 1rem;
   --gutter-height: 2rem;
+  --li-gutter: 0.3rem;
   --hr-gutter: 0.5rem;
   --hr-thickness: 0.1rem;
   --checkbox-width: 1.8rem;
@@ -103,7 +104,12 @@ li {
 }
 
 ul li::before {
-  content: "-\a0";
+  content: "-";
+  padding-right: var(--li-gutter);
+}
+
+ul li[data-icon]::before {
+  content: attr(data-icon);
 }
 
 hr {
