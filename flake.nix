@@ -27,7 +27,7 @@
             else []
           );
       python = pkgs.python3.withPackages py-packages;
-    in [python pkgs.jpegoptim pkgs.minify pkgs.postcss-cli pkgs.svgcleaner];
+    in [python pkgs.imagemagick pkgs.jpegoptim pkgs.minify pkgs.postcss-cli pkgs.svgcleaner];
     env = system:
       nixpkgs.legacyPackages.${system}.mkShell {
         packages = build-pkgs {
