@@ -33,6 +33,7 @@
           </figcaption>
           <%f ../assets/generated/map.svg %>
         </figure>
+        <hr />
         <ul>
           <%%j ../assets/photos/manifest.json.photos %>
             <li><a href="/src/photos/<%ji .path %>.html"><%ji .name %></a></li>

@@ -3,6 +3,8 @@
   --font-base: "Fira Code", "Courier New", monospace;
   --gutter-width: 1rem;
   --gutter-height: 2rem;
+  --hr-gutter: 0.5rem;
+  --hr-thickness: 0.1rem;
   --checkbox-width: 1.8rem;
   --checkbox-gutter: 0.5rem;
   --console-max-width: 41rem;
@@ -102,6 +104,15 @@ li {
 
 ul li::before {
   content: "-\a0";
+}
+
+hr {
+  height: 0.5ch;
+  width: 100%;
+  margin: var(--hr-gutter) 0;
+  border: var(--green) solid var(--hr-thickness);
+  border-left: none;
+  border-right: none;
 }
 
 input[type="checkbox"] {
