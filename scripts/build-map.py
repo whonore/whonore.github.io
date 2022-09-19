@@ -57,10 +57,10 @@ def partition(xs: Sequence[T], idxs: Iterable[int]) -> list[list[T]]:
 
 
 def photo_link(name: str) -> Optional[Path]:
-    src = ROOT / "src/photos"
     canonical = name.lower().replace(" ", "_")
-    photos = Path(src / canonical).with_suffix(".html").relative_to(ROOT)
-    return photos if photos.exists() else None
+    photos = ROOT / "assets/photos" / canonical
+    html = (ROOT / "src/photos" / canonical).with_suffix(".html").relative_to(ROOT)
+    return html if photos.exists() else None
 
 
 class Region(NamedTuple):

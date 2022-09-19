@@ -42,38 +42,13 @@
         src = gitignoreSource ./.;
 
         dontConfigure = true;
-        enableParallelBuilding = true;
-
-        buildInputs = build-pkgs {inherit system;};
 
         postPatch = "patchShebangs scripts";
 
-        postBuild = ''
-          postcss src/*.css --replace --no-map
-          jpegoptim --workers=0 --max=60 --all-progressive --strip-all assets/photos/**/*.jpg
-          minify --recursive --sync \
-            --html-keep-whitespace \
-            --html-keep-end-tags \
-            --html-keep-document-tags \
-            --html-keep-comments \
-            --output build/ .
-        '';
+        enableParallelBuilding = true;
+        buildInputs = build-pkgs {inherit system;};
 
-        installPhase = ''
-          runHook preInstall
-
-          install -Dm644 -t"$out/" build/*.{html,css} || true
-          install -Dm644 -t"$out/src/" build/src/*.{html,css} || true
-          install -Dm644 -t"$out/src/photos/" build/src/photos/*.{html,css} || true
-          install -Dm644 -t"$out/assets/" build/assets/*.{jpg,png,pdf} || true
-          install -Dm644 -t"$out/assets/generated/" build/assets/generated/*.{jpg,png,pdf} || true
-          for d in $(ls -d build/assets/photos/*); do
-            d=$(basename $d)
-            install -Dm644 -t"$out/assets/photos/$d" build/assets/photos/$d/*.{jpg,png,pdf} || true
-          done
-
-          runHook postInstall
-        '';
+        installFlags = ["INSTALL_DIR=${placeholder "out"}"];
       };
   in {
     packages.aarch64-darwin.default = website "aarch64-darwin";

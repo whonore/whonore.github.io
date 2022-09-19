@@ -142,13 +142,13 @@ class Template:
             f.write(span.eval())
 
 
-def main(tmpl_file: Path) -> None:
+def main(tmpl_file: Path, out: Path) -> None:
     tmpl = Template(tmpl_file)
-    with open(tmpl_file.with_suffix(".html"), "w", encoding="utf-8") as f:
+    with open(out, "w", encoding="utf-8") as f:
         tmpl.write(f)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        sys.exit(f"Usage: {sys.argv[0]} THTML")
-    main(Path(sys.argv[1]))
+    if len(sys.argv) < 3:
+        sys.exit(f"Usage: {sys.argv[0]} THTML OUT")
+    main(Path(sys.argv[1]), Path(sys.argv[2]))

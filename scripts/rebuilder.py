@@ -33,24 +33,17 @@ def collect_files(fs: Iterable[str | Path], ignore: PathSpec) -> list[Path]:
     return ps
 
 
-def rebuild(replace: bool = True) -> None:
+def rebuild(*, production: bool = False) -> None:
     print("BUILDING")
     try:
-        if replace:
-            result = Path(ROOT / "result")
-            if result.exists():
-                result_real = result.resolve()
-                result.unlink()
-                subprocess.run(("nix", "store", "delete", result_real), check=True)
-        subprocess.run(
-            ("nix", "build", "--max-jobs", "auto", "--cores", "0"),
-            check=True,
-        )
+        subprocess.run(("make", "-j"), check=True)
+        if production:
+            subprocess.run(("make", "install"), check=True)
     except subprocess.CalledProcessError:
         print("BUILDING FAILED")
 
 
-def watch(*args: str) -> None:
+def watch(*args: str, production: bool = False) -> None:
     ignore = gitignore(ROOT / ".gitignore")
     mtimes: DefaultDict[Path, float] = ddict(float)
     while True:
@@ -62,7 +55,7 @@ def watch(*args: str) -> None:
                 mtimes[f] = mtime
                 build = True
         if build:
-            rebuild()
+            rebuild(production=production)
         time.sleep(POLL_RATE_MS / 1000)
 
 

@@ -39,27 +39,32 @@ if __name__ == "__main__":
         "-b",
         "--bind",
         metavar="ADDRESS",
-        help="bind to this address " "(default: all interfaces)",
+        help="bind to this address (default: all interfaces)",
     )
     parser.add_argument(
         "-d",
         "--directory",
         default=os.getcwd(),
-        help="serve this directory " "(default: current directory)",
+        help="serve this directory (default: current directory)",
     )
     parser.add_argument(
         "-p",
-        "--protocol",
-        metavar="VERSION",
-        default="HTTP/1.0",
-        help="conform to this HTTP version " "(default: %(default)s)",
+        "--production",
+        action="store_true",
+        help="build the production version (default: %(default)s)",
+    )
+    parser.add_argument(
+        "-w",
+        "--watch",
+        action="store_true",
+        help="automatically rebuild (default: %(default)s)",
     )
     parser.add_argument(
         "port",
         default=8000,
         type=int,
         nargs="?",
-        help="bind to this port " "(default: %(default)s)",
+        help="bind to this port (default: %(default)s)",
     )
     args = parser.parse_args()
 
@@ -78,12 +83,18 @@ if __name__ == "__main__":
                 directory=args.directory,
             )
 
-    Thread(target=watch, args=WATCH, daemon=True).start()
+    if args.watch:
+        Thread(
+            target=watch,
+            args=WATCH,
+            kwargs={"production": args.production},
+            daemon=True,
+        ).start()
 
     test(
         HandlerClass=CacheBusterHandler,
         ServerClass=DualStackServer,
         port=args.port,
         bind=args.bind,
-        protocol=args.protocol,
+        protocol='HTTP/1.1',
     )

@@ -1,27 +1,94 @@
-MAP := assets/generated/map.svg
+BUILD_DIR ?= build
+INSTALL_DIR ?= www
+
+MAP := $(BUILD_DIR)/assets/generated/map.svg
 MAPDATA := $(wildcard assets/ne_*.zip)
 MAPWIDTH := 1600
 MAPHEIGHT := 800
 
-ASSETS := $(MAP)
-HTML := $(patsubst %.thtml,%.html,$(wildcard src/*.thtml))
-TPHOTOS := $(addprefix src/photos/,$(addsuffix .thtml,$(notdir $(filter-out %.json,$(wildcard assets/photos/*)))))
-PHOTOS := $(patsubst %.thtml,%.html,$(TPHOTOS))
+PHOTOS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/photos/*/*.jpg))
+MANIFESTS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/**/manifest.json))
 
-.PHONY: all
+ASSETS := $(MAP) $(PHOTOS) $(MANIFESTS)
 
-all: $(PHOTOS) $(ASSETS) $(HTML)
+PLACES := $(notdir $(filter-out %.json,$(wildcard assets/photos/*)))
+PHOTOS_THTML := $(addprefix $(BUILD_DIR)/src/photos/,$(addsuffix .thtml,$(PLACES)))
+PHOTOS_HTML := $(patsubst %.thtml,%.html,$(PHOTOS_THTML))
 
-$(MAP): $(MAPDATA) $(PHOTOS) scripts/build-map.py
-	mkdir -p $(@D)
+THTML := $(addprefix $(BUILD_DIR)/,$(patsubst %.thtml,%.html,$(wildcard src/*.thtml)))
+
+GEN_HTML := $(THTML) $(PHOTOS_THTML)
+COPY_HTML := $(addprefix $(BUILD_DIR)/,$(wildcard *.html src/*.html))
+HTML := $(GEN_HTML) $(COPY_HTML)
+
+CSS := $(addprefix $(BUILD_DIR)/,$(wildcard src/*.css))
+
+.PHONY: all install
+
+all: $(ASSETS) $(HTML) $(CSS)
+
+install: all
+	for f in $$(find $(BUILD_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.jpg'); do \
+		out=$${f/#$(BUILD_DIR)/$(INSTALL_DIR)}; \
+		mkdir -p $$(dirname $$out); \
+		cp $$f $$out; \
+	done
+
+$(MAP): $(MAPDATA) $(PHOTOS_HTML) scripts/build-map.py
+	@mkdir -p $(@D)
 	scripts/build-map.py - $(MAPWIDTH) $(MAPHEIGHT) $(filter %.zip,$^) \
 		| svgcleaner --remove-title=no --remove-unresolved-classes=no -c - > $@
 
-src/%.html: src/%.thtml $(ASSETS) scripts/thtml.py
-	scripts/thtml.py $<
+$(BUILD_DIR)/src/photos/%.thtml: src/photos/_photos.thtml.tmpl scripts/build-photos.py
+	@mkdir -p $(@D)
+	scripts/build-photos.py $(notdir $(basename $@)) $(BUILD_DIR)
 
-src/photos/%.thtml: src/photos/_photos.thtml.tmpl scripts/build-photos.py
-	scripts/build-photos.py $(notdir $(basename $@))
+$(BUILD_DIR)/%.thtml: %.thtml
+	@mkdir -p $(@D)
+	cp $< $@
 
-src/photos/%.html: src/photos/%.thtml scripts/thtml.py
-	scripts/thtml.py $<
+$(BUILD_DIR)/src/photos/%.html.unmin: $(BUILD_DIR)/src/photos/%.thtml scripts/thtml.py
+	@mkdir -p $(@D)
+	scripts/thtml.py $< $@
+
+$(BUILD_DIR)/src/photos.html.unmin: $(BUILD_DIR)/src/photos.thtml $(MAP) $(MANIFESTS) scripts/thtml.py
+	@mkdir -p $(@D)
+	scripts/thtml.py $< $@
+
+$(BUILD_DIR)/%.html.unmin: %.thtml scripts/thtml.py
+	@mkdir -p $(@D)
+	scripts/thtml.py $< $@
+
+$(BUILD_DIR)/%.html.unmin: %.html
+	@mkdir -p $(@D)
+	cp $< $@
+
+$(BUILD_DIR)/%.html: $(BUILD_DIR)/%.html.unmin
+	minify --type html \
+          --html-keep-whitespace \
+          --html-keep-end-tags \
+          --html-keep-document-tags \
+          --html-keep-comments \
+          --output $@ $<
+
+$(BUILD_DIR)/%.css.unmin: %.css
+	@mkdir -p $(@D)
+	postcss $< --output $@ --no-map
+
+$(BUILD_DIR)/%.css: $(BUILD_DIR)/%.css.unmin
+	@mkdir -p $(@D)
+	minify --type css \
+          --html-keep-whitespace \
+          --html-keep-end-tags \
+          --html-keep-document-tags \
+          --html-keep-comments \
+          --output $@ $<
+
+$(BUILD_DIR)/%.jpg: %.jpg
+	@mkdir -p $(@D)
+	@cp $< $@
+	jpegoptim --max=60 --all-progressive --strip-all $@
+
+$(BUILD_DIR)/%.json: %.json
+	@mkdir -p $(@D)
+	cp $< $@
