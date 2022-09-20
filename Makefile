@@ -1,6 +1,13 @@
 BUILD_DIR ?= build
 INSTALL_DIR ?= www
 
+ifeq ($(BUILD_DIR),)
+$(error BUILD_DIR cannot be empty)
+endif
+ifeq ($(INSTALL_DIR),)
+$(error INSTALL_DIR cannot be empty)
+endif
+
 MAP := $(BUILD_DIR)/assets/generated/map.svg
 MAPDATA := $(wildcard assets/ne_*.zip)
 MAPWIDTH := 1600
