@@ -16,6 +16,7 @@ MAPHEIGHT := 800
 PHOTOS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/photos/*/*.jpg))
 MANIFESTS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/**/manifest.json))
 PHOTO_SIZE := 1024
+PHOTO_QUALITY := 60
 
 ASSETS := $(MAP) $(PHOTOS) $(MANIFESTS)
 
@@ -96,7 +97,7 @@ $(BUILD_DIR)/%.jpg: %.jpg
 	@mkdir -p $(@D)
 	@cp $< $@
 	mogrify -resize $(PHOTO_SIZE) -auto-orient $@
-	jpegoptim --max=60 --all-progressive --strip-all --keep-exif $@
+	jpegoptim --max=$(PHOTO_QUALITY) --all-progressive --strip-all --keep-exif $@
 
 $(BUILD_DIR)/%.json: %.json
 	@mkdir -p $(@D)
