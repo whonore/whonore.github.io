@@ -14,7 +14,7 @@ MAPWIDTH := 1600
 MAPHEIGHT := 800
 
 PHOTOS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/photos/*/*.jpg))
-MANIFESTS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/**/manifest.json))
+MANIFESTS := $(addprefix $(BUILD_DIR)/,assets/photos/manifest.json $(wildcard assets/*/*/manifest.json))
 PHOTO_WIDTH := 1024
 PHOTO_HEIGHT := 680
 PHOTO_QUALITY := 60
@@ -49,7 +49,7 @@ $(MAP): $(MAPDATA) $(PHOTOS_HTML) scripts/build-map.py
 	scripts/build-map.py - $(MAPWIDTH) $(MAPHEIGHT) $(filter %.zip,$^) \
 		| svgcleaner --remove-title=no --remove-unresolved-classes=no -c - > $@
 
-$(BUILD_DIR)/src/photos/%.thtml: src/photos/_photos.thtml.tmpl scripts/build-photos.py
+$(BUILD_DIR)/src/photos/%.thtml: src/photos/_photos.thtml.tmpl $(MANIFESTS) scripts/build-photos.py
 	@mkdir -p $(@D)
 	scripts/build-photos.py $(notdir $(basename $@)) $(BUILD_DIR)
 
