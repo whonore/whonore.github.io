@@ -1,46 +1,46 @@
 {
     "title": "Patagonia, Argentina",
-    "description": "TODO",
+    "description": "In December 2011 my family took a trip to Patagonia, the southernmost region of Argentina.",
     "path": "argentina",
     "photos": [
         {
             "src": "magellanic-penguins.jpg",
-            "description": "TODO",
+            "description": "Two Magellanic penguins wondering what we're doing.",
             "alt": "TODO"
         },
         {
             "src": "shore.jpg",
-            "description": "TODO",
+            "description": "A cool shoreline. I like how the trees go almost up to the water.",
             "alt": "TODO"
         },
         {
             "src": "path.jpg",
-            "description": "TODO",
+            "description": "A path on a grassy hill leading off into the distance in a very motivational-poster-follow-your-own-path kind of way.",
             "alt": "TODO"
         },
         {
             "src": "hawk.jpg",
-            "description": "TODO",
+            "description": "A hawk or something looking pretty cool.",
             "alt": "TODO"
         },
         {
             "src": "ushuaia.jpg",
-            "description": "TODO",
+            "description": "Ushuaia, the southernmost city in Argentina. I think those mountains across the water are in Chile.",
             "alt": "TODO"
         },
         {
             "src": "glacier.jpg",
-            "description": "TODO",
+            "description": "A very spiky glacier that we hiked around on.",
             "alt": "TODO"
         },
         {
             "src": "glowing-ice.jpg",
-            "description": "TODO",
+            "description": "Some glowing blue ice on the glacier. Something to do with the light entering and bouncing around inside the ice before coming back out.",
             "alt": "TODO"
         },
         {
             "src": "dripping.jpg",
-            "description": "TODO",
+            "description": "Artistic droplets.",
             "alt": "TODO"
         },
         {
@@ -50,7 +50,7 @@
         },
         {
             "src": "lake.jpg",
-            "description": "TODO",
+            "description": "A very cold lake at the top of a mountain.",
             "alt": "TODO"
         }
     ]

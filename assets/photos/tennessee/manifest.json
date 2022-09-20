@@ -1,36 +1,36 @@
 {
     "title": "Smoky Mountain National Park",
-    "description": "TODO",
+    "description": "In October 2018 my wife and I went to the Smoky Mountains.",
     "path": "tennessee",
     "photos": [
         {
             "src": "roots.jpg",
-            "description": "TODO",
+            "description": "Some tree roots. I like the kind of shiny/slimy-looking texture.",
             "alt": "TODO"
         },
         {
             "src": "spider.jpg",
-            "description": "TODO",
+            "description": "A spider that my camera struggled to find enough light to capture.",
             "alt": "TODO"
         },
         {
             "src": "fog.jpg",
-            "description": "TODO",
+            "description": "A bunch of fog, hence the \"smoky\" part.",
             "alt": "TODO"
         },
         {
             "src": "forested-mountain.jpg",
-            "description": "TODO",
+            "description": "Many trees on some mountains and more fog.",
             "alt": "TODO"
         },
         {
             "src": "droplets.jpg",
-            "description": "Water droplets dripping from above part-way up Mount LeConte.",
+            "description": "Water droplets dripping from above part-way up Mount LeConte. Lens flare too for extra style.",
             "alt": "TODO"
         },
         {
             "src": "leconte.jpg",
-            "description": "TODO",
+            "description": "A view from the top of Mount LeConte. I'm not sure what those flowers (?) are in the foreground, but I like the texture they add.",
             "alt": "TODO"
         }
     ]

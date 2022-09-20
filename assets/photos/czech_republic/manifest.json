@@ -1,11 +1,11 @@
 {
     "title": "Prague, Czech Republic",
-    "description": "TODO",
+    "description": "In July 2017 my wife and I visited a friend who was spending the summer in Prague for his PhD research.",
     "path": "czech_republic",
     "photos": [
         {
             "src": "storefronts.jpg",
-            "description": "TODO",
+            "description": "Some storefronts. Nice colors.",
             "alt": "TODO"
         },
         {
@@ -15,12 +15,12 @@
         },
         {
             "src": "ossuary-1.jpg",
-            "description": "TODO",
+            "description": "A bunch of skull candles and other assorted bones in the Sedlec Ossuary.",
             "alt": "TODO"
         },
         {
             "src": "ossuary-2.jpg",
-            "description": "TODO",
+            "description": "More bones. It was very dark so the camera was struggling.",
             "alt": "TODO"
         },
         {
@@ -30,7 +30,7 @@
         },
         {
             "src": "cat.jpg",
-            "description": "TODO",
+            "description": "A sleepy Czech cat somewhere outside the castle.",
             "alt": "TODO"
         }
     ]

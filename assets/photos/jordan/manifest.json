@@ -1,61 +1,61 @@
 {
     "title": "Jordan",
-    "description": "TODO",
+    "description": "In December 2009 my family took a trip to Jordan with a guide that we met on the Peru trip to hike/camp through the desert for a week to Petra.",
     "path": "jordan",
     "photos": [
         {
             "src": "pillars.jpg",
-            "description": "TODO",
+            "description": "Pillars from Roman ruins.",
             "alt": "TODO"
         },
         {
             "src": "lizard.jpg",
-            "description": "TODO",
+            "description": "A lizard on a rock wall.",
             "alt": "TODO"
         },
         {
             "src": "dead-sea.jpg",
-            "description": "TODO",
+            "description": "The sun setting over the Dead Sea. Very cold, very salty. Made my skin feel bad.",
             "alt": "TODO"
         },
         {
             "src": "sunset-mountains.jpg",
-            "description": "TODO",
+            "description": "A cool double-peaked hill/mountain at sunset.",
             "alt": "TODO"
         },
         {
             "src": "desert-1.jpg",
-            "description": "TODO",
+            "description": "Desert. Saw a lot of this for several days.",
             "alt": "TODO"
         },
         {
             "src": "solo-tree.jpg",
-            "description": "TODO",
+            "description": "A lone tree.",
             "alt": "TODO"
         },
         {
             "src": "rock-moon.jpg",
-            "description": "TODO",
+            "description": "A rock trying to reach the moon.",
             "alt": "TODO"
         },
         {
             "src": "desert-2.jpg",
-            "description": "TODO",
+            "description": "More desert. There's really a lot of it.",
             "alt": "TODO"
         },
         {
             "src": "petra.jpg",
-            "description": "TODO",
+            "description": "Then Petra kind of out of nowhere. I don't actually have that many pictures of it because there were too many people in most of the shots.",
             "alt": "TODO"
         },
         {
             "src": "sunset.jpg",
-            "description": "TODO",
+            "description": "Very nice sunset clouds.",
             "alt": "TODO"
         },
         {
             "src": "camel.jpg",
-            "description": "TODO",
+            "description": "A camel that I'm about to ride.",
             "alt": "TODO"
         }
     ]

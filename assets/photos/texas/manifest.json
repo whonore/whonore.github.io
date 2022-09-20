@@ -1,31 +1,31 @@
 {
     "title": "Big Bend National Park",
-    "description": "TODO",
+    "description": "In April 2012 my school took a class trip to Big Bend.",
     "path": "texas",
     "photos": [
         {
             "src": "river.jpg",
-            "description": "TODO",
+            "description": "A stream and some representative landscape.",
             "alt": "TODO"
         },
         {
             "src": "deer.jpg",
-            "description": "TODO",
+            "description": "A deer. Also a cactus to prove this is a southwestern deer.",
             "alt": "TODO"
         },
         {
             "src": "big-rocks.jpg",
-            "description": "TODO",
+            "description": "Some big rocks.",
             "alt": "TODO"
         },
         {
             "src": "window.jpg",
-            "description": "TODO",
+            "description": "A cool window in the rocks. I think that's not water on the ground, just very slick rock, so you probably shouldn't walk too close.",
             "alt": "TODO"
         },
         {
             "src": "sunset-rock.jpg",
-            "description": "TODO",
+            "description": "A rock on a bigger rock with nice light and shadows.",
             "alt": "TODO"
         }
     ]

@@ -1,51 +1,51 @@
 {
     "title": "France",
-    "description": "TODO",
+    "description": "In August 2011 my family took a trip to France. Mostly Paris, but we also went to the southern coast.",
     "path": "france",
     "photos": [
         {
             "src": "eiffel.jpg",
-            "description": "TODO",
+            "description": "The lower half of the Eiffel tower and an orange balloon. I like this picture a lot.",
             "alt": "TODO"
         },
         {
             "src": "bird-statue.jpg",
-            "description": "TODO",
+            "description": "Some pigeons on a bird statue.",
             "alt": "TODO"
         },
         {
             "src": "notre-dame.jpg",
-            "description": "TODO",
+            "description": "Notre Dame, carefully angled to avoid as much of the throng below as I could.",
             "alt": "TODO"
         },
         {
             "src": "pigeons.jpg",
-            "description": "TODO",
+            "description": "Deux pigeons on the wing.",
             "alt": "TODO"
         },
         {
             "src": "versaille.jpg",
-            "description": "TODO",
+            "description": "Versaille, again carefully framed to appear less zoo-like.",
             "alt": "TODO"
         },
         {
             "src": "fountains.jpg",
-            "description": "TODO",
+            "description": "Some fountains in the gardens of Versaille.",
             "alt": "TODO"
         },
         {
             "src": "stained-glass.jpg",
-            "description": "TODO",
+            "description": "Stained glass and a cool statue silhouette in Notre Dame.",
             "alt": "TODO"
         },
         {
             "src": "rainbow-reflection.jpg",
-            "description": "TODO",
+            "description": "A rainbow reflected in a glass door. I have a couple of it near the Eiffel tower too, but it was gray and rainy so they're not that great.",
             "alt": "TODO"
         },
         {
             "src": "beach.jpg",
-            "description": "TODO",
+            "description": "A pier and beach and lighthouse somewhere in the south of France.",
             "alt": "TODO"
         }
     ]

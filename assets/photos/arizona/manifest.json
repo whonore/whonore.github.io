@@ -1,41 +1,41 @@
 {
     "title": "Grand Canyon National Park",
-    "description": "TODO",
+    "description": "In May 2016 my wife and I took a post-graduation roadtrip to the Grand Canyon.",
     "path": "arizona",
     "photos": [
         {
             "src": "canyon-1.jpg",
-            "description": "TODO",
+            "description": "The canyon. A lot of it looks like this, but I liked the outcropping in the foreground.",
             "alt": "TODO"
         },
         {
             "src": "canyon-2.jpg",
-            "description": "TODO",
+            "description": "More canyon. It's very deep and long and wide.",
             "alt": "TODO"
         },
         {
             "src": "bug.jpg",
-            "description": "TODO",
+            "description": "Some flying insect that I spent quite a while trying to get in focus because I refuse to use auto-focus for no real reason other than it's a fun game.",
             "alt": "TODO"
         },
         {
             "src": "canyon-3.jpg",
-            "description": "TODO",
+            "description": "The canyon again.",
             "alt": "TODO"
         },
         {
             "src": "raven-flying.jpg",
-            "description": "TODO",
+            "description": "A raven flying over the canyon. If you look at my other photos you'll see a trend of birds in flight.",
             "alt": "TODO"
         },
         {
             "src": "raven-tree.jpg",
-            "description": "TODO",
+            "description": "A raven looking much more magestic sitting in a tree than they do hopping around on the ground eating cheetos that people dropped.",
             "alt": "TODO"
         },
         {
             "src": "canyon-4.jpg",
-            "description": "TODO",
+            "description": "One more canyon shot, but this time with the river.",
             "alt": "TODO"
         }
     ]

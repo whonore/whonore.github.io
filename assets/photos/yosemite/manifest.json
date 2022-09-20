@@ -1,6 +1,6 @@
 {
     "title": "Yosemite National Park",
-    "description": "TODO",
+    "description": "In November 2009 my school took a class trip to Yosemite.",
     "path": "yosemite",
     "photos": [
         {
@@ -10,22 +10,22 @@
         },
         {
             "src": "half-dome-1.jpg",
-            "description": "TODO",
+            "description": "Half Dome. I think \"dome\" is generous, but it is definitely rounded.",
             "alt": "TODO"
         },
         {
             "src": "half-dome-2.jpg",
-            "description": "TODO",
+            "description": "Half Dome again from somewhere else. Notice the many trees.",
             "alt": "TODO"
         },
         {
             "src": "raven.jpg",
-            "description": "TODO",
+            "description": "A raven mid-caw.",
             "alt": "TODO"
         },
         {
             "src": "jet-trail.jpg",
-            "description": "TODO",
+            "description": "A jet trail heading apparently directly into a mountain. Reminds me a bit of an inspirational poster. Lots of space for a quote in the sky.",
             "alt": "TODO"
         }
     ]

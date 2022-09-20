@@ -1,31 +1,31 @@
 {
     "title": "United Kingdom",
-    "description": "TODO",
+    "description": "In July 2010 my family took a trip to the UK where we drove from London up into Scotland and then back down.",
     "path": "united_kingdom",
     "photos": [
         {
             "src": "tower-bridge.jpg",
-            "description": "TODO",
+            "description": "Underneath Tower Bridge. Apparently not falling down.",
             "alt": "TODO"
         },
         {
             "src": "cow.jpg",
-            "description": "TODO",
+            "description": "A very hairy cow. I'd like a better picture, but the only time we saw them closer it was very dark.",
             "alt": "TODO"
         },
         {
             "src": "loch.jpg",
-            "description": "TODO",
+            "description": "A loch.",
             "alt": "TODO"
         },
         {
             "src": "chicken.jpg",
-            "description": "TODO",
+            "description": "Another international chicken sighting.",
             "alt": "TODO"
         },
         {
             "src": "hadrians-wall.jpg",
-            "description": "TODO",
+            "description": "Hadrian's wall in a field of sheep (not pictured). Pretty good framing I think.",
             "alt": "TODO"
         }
     ]

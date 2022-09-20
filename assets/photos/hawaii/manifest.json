@@ -1,31 +1,31 @@
 {
     "title": "Hawaii",
-    "description": "TODO",
+    "description": "In February 2019 my wife and I went to Oahu to present at the ComputEL workshop.",
     "path": "hawaii",
     "photos": [
         {
             "src": "palm.jpg",
-            "description": "TODO",
+            "description": "A palm and a sunrise. Jet lag and time zones meant we were awake at 4 AM, so we went for a hike from our hotel to Diamond Head.",
             "alt": "TODO"
         },
         {
             "src": "sunrise.jpg",
-            "description": "TODO",
+            "description": "More sunrise hiking.",
             "alt": "TODO"
         },
         {
             "src": "chickens.jpg",
-            "description": "TODO",
+            "description": "Some chickens and chicks that were wandering around the parking lot for Manoa falls.",
             "alt": "TODO"
         },
         {
             "src": "tree.jpg",
-            "description": "TODO",
+            "description": "Some viney things climbing up a tree.",
             "alt": "TODO"
         },
         {
             "src": "stream.jpg",
-            "description": "TODO",
+            "description": "A mini waterfall.",
             "alt": "TODO"
         }
     ]

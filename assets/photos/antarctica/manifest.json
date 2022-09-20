@@ -1,126 +1,126 @@
 {
     "title": "Antarctica",
-    "description": "TODO",
+    "description": "In January 2022 my wife and I went on our (delayed by 1.5 years) honeymoon to Antarctica with National Geographic/Lindblad Expeditions. We started from the southernmost point of Argentina and spent 2 weeks cruising around the edge of the Antarctic peninsula with a few shore excursions.",
     "path": "antarctica",
     "photos": [
         {
             "src": "plane.jpg",
-            "description": "TODO",
+            "description": "A plane landing at the Ushuaia airport.",
             "alt": "TODO"
         },
         {
             "src": "glacier.jpg",
-            "description": "TODO",
+            "description": "A glacier with layers of volcanic ash.",
             "alt": "TODO"
         },
         {
             "src": "leopard-seal.jpg",
-            "description": "TODO",
+            "description": "A leopard seal yawning on an ice floe. Taken from about 100ft away in an inflatable Zodiac, which they are apparently known to pop.",
             "alt": "TODO"
         },
         {
             "src": "orca-minke.jpg",
-            "description": "TODO",
+            "description": "An orca and a Minke whale. This was one of two fairly large pods of orcas we saw.",
             "alt": "TODO"
         },
         {
             "src": "porpoising.jpg",
-            "description": "TODO",
+            "description": "Some porpoising Adélie penguins.",
             "alt": "TODO"
         },
         {
             "src": "continent.jpg",
-            "description": "TODO",
+            "description": "The antarctic continent. Taken after hiking up a hill and it was actually pretty warm with the sun out (~40°F).",
             "alt": "TODO"
         },
         {
             "src": "weddell.jpg",
-            "description": "TODO",
+            "description": "A Weddell seal trying to nap.",
             "alt": "TODO"
         },
         {
             "src": "two-adelie.jpg",
-            "description": "TODO",
+            "description": "Two Adélie penguins considering sliding down the hill.",
             "alt": "TODO"
         },
         {
             "src": "following-chick.jpg",
-            "description": "TODO",
+            "description": "A Gentoo penguin chick following its parent. There were thousands of these things in the colony and they smelled awful.",
             "alt": "TODO"
         },
         {
             "src": "diving.jpg",
-            "description": "TODO",
+            "description": "Adélie penguins diving into the water from an iceberg.",
             "alt": "TODO"
         },
         {
             "src": "chattering.jpg",
-            "description": "TODO",
+            "description": "Two Adélie penguins chattering at each other. Taken with a very cool, very heavy 600mm telephoto lens that I was able to borrow from National Geographic for the duration of the trip.",
             "alt": "TODO"
         },
         {
             "src": "side-eye.jpg",
-            "description": "TODO",
+            "description": "Some Adélie penguins lining up very nicely for their portraits.",
             "alt": "TODO"
         },
         {
             "src": "humpback.jpg",
-            "description": "TODO",
+            "description": "A humpback breaching out of the water. There was actually another one doing this simultaneously out of frame to the right, but I didn't get it.",
             "alt": "TODO"
         },
         {
             "src": "rocketing.jpg",
-            "description": "TODO",
+            "description": "An Adélie penguin demonstrating how they get up on the icebergs. They don't jump high enough and slip off pretty often.",
             "alt": "TODO"
         },
         {
             "src": "adelie-colony.jpg",
-            "description": "TODO",
+            "description": "A colony of over 1.5 million Adélies on Paulet island.",
             "alt": "TODO"
         },
         {
             "src": "evil-eye.jpg",
-            "description": "TODO",
+            "description": "An Adélie staring me down out of the crowd.",
             "alt": "TODO"
         },
         {
             "src": "orca.jpg",
-            "description": "TODO",
+            "description": "A spy-hopping orca. This was the second pod that the crew woke us up at 3:45 AM to see.",
             "alt": "TODO"
         },
         {
             "src": "sunrise.jpg",
-            "description": "TODO",
+            "description": "The sun \"rising\" over a ridge. Since it was summer the sun never fully set below the horizon, so this blueish light is about as dark as it got.",
             "alt": "TODO"
         },
         {
             "src": "reflection.jpg",
-            "description": "TODO",
+            "description": "A mountain reflected in the water.",
             "alt": "TODO"
         },
         {
             "src": "sea-ice.jpg",
-            "description": "TODO",
+            "description": "A bunch of very picturesque sea ice. The ship had broken through it only about 20 minutes earlier, but it reforms very quickly.",
             "alt": "TODO"
         },
         {
             "src": "strolling.jpg",
-            "description": "TODO",
+            "description": "A Gentoo going for a stroll.",
             "alt": "TODO"
         },
         {
             "src": "humpback-tail.jpg",
-            "description": "TODO",
+            "description": "A diving humpback's tail.",
             "alt": "TODO"
         },
         {
             "src": "preening.jpg",
-            "description": "TODO",
+            "description": "A preening Gentoo.",
             "alt": "TODO"
         },
         {
             "src": "highway.jpg",
-            "description": "TODO",
+            "description": "A Gentoo waddling towards me down one of the highways that they dig out by walking over the same path.",
             "alt": "TODO"
         }
     ]

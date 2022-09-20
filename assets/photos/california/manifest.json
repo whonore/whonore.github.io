@@ -1,31 +1,31 @@
 {
     "title": "Death Valley National Park",
-    "description": "TODO",
+    "description": "In December 2012 my family took a trip to Death Valley.",
     "path": "california",
     "photos": [
         {
             "src": "wavy-shadow.jpg",
-            "description": "TODO",
+            "description": "A cool wavy shadow on some rocks.",
             "alt": "TODO"
         },
         {
             "src": "wavy-rocks.jpg",
-            "description": "TODO",
+            "description": "Some more wavy rocks. I guess it's probably wind that does that.",
             "alt": "TODO"
         },
         {
             "src": "raven.jpg",
-            "description": "TODO",
+            "description": "A raven staring at me.",
             "alt": "TODO"
         },
         {
             "src": "bumpy.jpg",
-            "description": "TODO",
+            "description": "Some very bumpy rocks/mud/salt. I like how flat it seems from a distance.",
             "alt": "TODO"
         },
         {
             "src": "snow-tracks.jpg",
-            "description": "TODO",
+            "description": "Some tracks in the snow. I don't remember where exactly this was, but I think it was at a higher elevation than the rest of the trip.",
             "alt": "TODO"
         }
     ]

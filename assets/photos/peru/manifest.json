@@ -1,46 +1,46 @@
 {
     "title": "Peru",
-    "description": "TODO",
+    "description": "In December 2008 my family went on a National Geographic Expedition that led you on a week of hiking to Machu Picchu.",
     "path": "peru",
     "photos": [
         {
             "src": "bird.jpg",
-            "description": "TODO",
+            "description": "A bird. I'm not that excited about birds specifically, but I like animal photography and they just tend to be what you see the most of.",
             "alt": "TODO"
         },
         {
             "src": "salkantay-1.jpg",
-            "description": "TODO",
+            "description": "Salkantay. I like the framing with the valley.",
             "alt": "TODO"
         },
         {
             "src": "salkantay-2.jpg",
-            "description": "TODO",
+            "description": "I think Salktantay again from the other side, but maybe it's some other mountain.",
             "alt": "TODO"
         },
         {
             "src": "chicken.jpg",
-            "description": "TODO",
+            "description": "A cool feathery red rooster.",
             "alt": "TODO"
         },
         {
             "src": "bear.jpg",
-            "description": "TODO",
+            "description": "A spectacled bear eating watermelon/staring pensively. I think this was some sort of nature preserve. There's a fence in the extreme foreground, but I mostly managed to hide it in this shot.",
             "alt": "TODO"
         },
         {
             "src": "machu-picchu.jpg",
-            "description": "TODO",
+            "description": "Machu Picchu from the spot where everyone photographs it.",
             "alt": "TODO"
         },
         {
             "src": "alpaca.jpg",
-            "description": "TODO",
+            "description": "Tiered grazing alpaca.",
             "alt": "TODO"
         },
         {
             "src": "cusco.jpg",
-            "description": "TODO",
+            "description": "Cusco.",
             "alt": "TODO"
         }
     ]

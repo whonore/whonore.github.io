@@ -1,31 +1,31 @@
 {
     "title": "Cascais, Portugal",
-    "description": "TODO",
+    "description": "In January 2019 I went to Cascais to attend POPL.",
     "path": "portugal",
     "photos": [
         {
             "src": "cascais-morning.jpg",
-            "description": "TODO",
+            "description": "Cascais during a morning walk.",
             "alt": "TODO"
         },
         {
             "src": "pink-sky.jpg",
-            "description": "TODO",
+            "description": "A pretty pink sunrise. Those three lights on the building are a nice accent too.",
             "alt": "TODO"
         },
         {
             "src": "street.jpg",
-            "description": "TODO",
+            "description": "A street with more of that early morning glow.",
             "alt": "TODO"
         },
         {
             "src": "orange-glow.jpg",
-            "description": "TODO",
+            "description": "Another morning shot with a mysterious orange glow.",
             "alt": "TODO"
         },
         {
             "src": "cascais-day.jpg",
-            "description": "TODO",
+            "description": "Cascais during the day.",
             "alt": "TODO"
         }
     ]
