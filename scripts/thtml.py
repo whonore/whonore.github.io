@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 import json
+import os
 import re
 import sys
 from abc import ABC, abstractmethod
 from io import TextIOBase
 from pathlib import Path
 from typing import Any, Generator, Iterator, Mapping
+
+
+def debug(msg: str) -> None:
+    if bool(int(os.getenv("DEBUG", '0'))):
+        print(msg, file=sys.stderr)
 
 
 class Span(ABC):
@@ -19,7 +25,11 @@ class Text(Span):
         self.txt = txt
 
     def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
         return self.txt
+
+    def __repr__(self) -> str:
+        return f"Text({self.txt})"
 
 
 class LoadFile(Span):
@@ -27,8 +37,12 @@ class LoadFile(Span):
         self.file = base / Path(span.strip())
 
     def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
         with open(self.file, "r", encoding="utf-8") as f:
             return f.read()
+
+    def __repr__(self) -> str:
+        return f"LoadFile({self.file})"
 
 
 class Json(Span):
@@ -38,9 +52,13 @@ class Json(Span):
         self.field = field
 
     def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
         with open(self.file, "r", encoding="utf-8") as f:
             data = json.load(f)
             return data[self.field]  # type: ignore
+
+    def __repr__(self) -> str:
+        return f"Json({self.file}, {self.field})"
 
 
 class JsonItem(Span):
@@ -52,9 +70,13 @@ class JsonItem(Span):
         self.data = data
 
     def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
         if self.data is None:
             raise ValueError("Must call .apply() before .eval() for a JsonItem")
         return self.data[self.field]  # type: ignore
+
+    def __repr__(self) -> str:
+        return f"JsonItem({self.field})"
 
 
 class JsonBlock(Span):
@@ -65,6 +87,7 @@ class JsonBlock(Span):
         self.inner = inner
 
     def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
         with open(self.file, "r", encoding="utf-8") as f:
             data = json.load(f)
             items = data[self.field]
@@ -75,6 +98,9 @@ class JsonBlock(Span):
                     span.apply(item)
                 txt.append(span.eval())
         return "".join(txt)
+
+    def __repr__(self) -> str:
+        return f"JsonBlock({self.file}, {self.field}, {self.inner!r})"
 
 
 class Template:
