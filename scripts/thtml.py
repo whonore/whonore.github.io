@@ -19,6 +19,13 @@ class Span(ABC):
     def eval(self) -> str:
         ...
 
+    @staticmethod
+    def read_field(data: Any, field: str) -> Any:
+        if field == "_":
+            return data
+        assert isinstance(data, Mapping), f"{data} {field}"
+        return data[field]
+
 
 class Text(Span):
     def __init__(self, txt: str) -> None:
@@ -55,7 +62,7 @@ class Json(Span):
         debug(f"EVAL: {self!r}")
         with open(self.file, "r", encoding="utf-8") as f:
             data = json.load(f)
-            return data[self.field]  # type: ignore
+            return str(Span.read_field(data, self.field))
 
     def __repr__(self) -> str:
         return f"Json({self.file}, {self.field})"
@@ -73,7 +80,7 @@ class JsonItem(Span):
         debug(f"EVAL: {self!r}")
         if self.data is None:
             raise ValueError("Must call .apply() before .eval() for a JsonItem")
-        return self.data[self.field]  # type: ignore
+        return str(Span.read_field(self.data, self.field))
 
     def __repr__(self) -> str:
         return f"JsonItem({self.field})"
@@ -90,17 +97,43 @@ class JsonBlock(Span):
         debug(f"EVAL: {self!r}")
         with open(self.file, "r", encoding="utf-8") as f:
             data = json.load(f)
-            items = data[self.field]
+            items = Span.read_field(data, self.field)
         txt = []
         for item in items:
             for span in self.inner:
-                if isinstance(span, JsonItem):
+                if isinstance(span, (JsonItem, JsonBlockItem)):
                     span.apply(item)
                 txt.append(span.eval())
         return "".join(txt)
 
     def __repr__(self) -> str:
         return f"JsonBlock({self.file}, {self.field}, {self.inner!r})"
+
+
+class JsonBlockItem(Span):
+    def __init__(self, span: str, inner: list[Span]) -> None:
+        self.field = span.strip().lstrip(".")
+        self.data: Mapping[str, Any] | None = None
+        self.inner = inner
+
+    def apply(self, data: Mapping[str, Any]) -> None:
+        self.data = data
+
+    def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
+        if self.data is None:
+            raise ValueError("Must call .apply() before .eval() for a JsonBlockItem")
+        items = Span.read_field(self.data, self.field)
+        txt = []
+        for item in items:
+            for span in self.inner:
+                if isinstance(span, (JsonItem, JsonBlockItem)):
+                    span.apply(item)
+                txt.append(span.eval())
+        return "".join(txt)
+
+    def __repr__(self) -> str:
+        return f"JsonBlockItem({self.field}, {self.inner!r})"
 
 
 class Template:
@@ -111,15 +144,19 @@ class Template:
         self.tmpl_file = tmpl_file.resolve()
         self.spans = self._build_spans(spans)
 
-    def _parse(self, txt: str) -> Generator[tuple[str, bool, str], None, None]:
+    def _parse(self, txt: str) -> Generator[tuple[str, int, str], None, None]:
         fields = re.split(r"(<%+\w+|%>)", txt)
         inside = False
-        block = False
+        blockdepth = 0
         kind = ""
         for f in fields:
             if f.startswith("<%%"):
                 kind = f[3:].strip()
-                block = kind != "e"
+                if kind != "e":
+                    blockdepth += 1
+                else:
+                    assert blockdepth > 0
+                    blockdepth -= 1
             if f.startswith("<%"):
                 if inside:
                     raise ValueError("Found nested <% %>")
@@ -129,17 +166,17 @@ class Template:
                 kind = ""
                 inside = False
             else:
-                yield (kind, block, f)
+                yield (kind, blockdepth, f)
 
     def _build_spans(
         self,
-        txt_spans: Iterator[tuple[str, bool, str]],
-        in_block: bool = False,
+        txt_spans: Iterator[tuple[str, int, str]],
+        curdepth: int = 0,
     ) -> list[Span]:
         spans: list[Span] = []
         try:
             while True:
-                kind, block, span = next(txt_spans)
+                kind, blockdepth, span = next(txt_spans)
                 if kind == "f":
                     spans.append(LoadFile(span, self.tmpl_file.parent))
                 elif kind == "j":
@@ -147,9 +184,13 @@ class Template:
                 elif kind == "ji":
                     spans.append(JsonItem(span))
                 elif kind == "%j":
-                    assert block
-                    inner = self._build_spans(txt_spans, in_block=True)
+                    assert 0 < blockdepth and curdepth < blockdepth
+                    inner = self._build_spans(txt_spans, curdepth=blockdepth)
                     spans.append(JsonBlock(span, inner, self.tmpl_file.parent))
+                elif kind == "%ji":
+                    assert 0 < blockdepth and curdepth < blockdepth
+                    inner = self._build_spans(txt_spans, curdepth=blockdepth)
+                    spans.append(JsonBlockItem(span, inner))
                 elif kind == "":
                     spans.append(Text(span))
                 elif kind == "%e":
@@ -157,7 +198,7 @@ class Template:
                 else:
                     raise ValueError(f"Invalid span type: {kind}")
 
-                if in_block and not block:
+                if blockdepth < curdepth:
                     return spans
         except StopIteration:
             pass
@@ -170,8 +211,12 @@ class Template:
 
 def main(tmpl_file: Path, out: Path) -> None:
     tmpl = Template(tmpl_file)
-    with open(out, "w", encoding="utf-8") as f:
-        tmpl.write(f)
+    try:
+        with open(out, "w", encoding="utf-8") as f:
+            tmpl.write(f)
+    except (ValueError, AssertionError) as e:
+        out.unlink(missing_ok=True)
+        raise e
 
 
 if __name__ == "__main__":
