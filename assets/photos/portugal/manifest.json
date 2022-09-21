@@ -6,27 +6,27 @@
         {
             "src": "cascais-morning.jpg",
             "description": "Cascais during a morning walk.",
-            "alt": "TODO"
+            "alt": "A town across a small bay in the morning."
         },
         {
             "src": "pink-sky.jpg",
             "description": "A pretty pink sunrise. Those three lights on the building are a nice accent too.",
-            "alt": "TODO"
+            "alt": "A cloudy sky colored by the sunrise and a large house with lights in the front."
         },
         {
             "src": "street.jpg",
             "description": "A street with more of that early morning glow.",
-            "alt": "TODO"
+            "alt": "A narrow street, lined with trees, reflecting the sunrise."
         },
         {
             "src": "orange-glow.jpg",
             "description": "Another morning shot with a mysterious orange glow.",
-            "alt": "TODO"
+            "alt": "A gray sky and a stone building on the left with a glow coming from out of frame."
         },
         {
             "src": "cascais-day.jpg",
             "description": "Cascais during the day.",
-            "alt": "TODO"
+            "alt": "A town across the bay in bright daylight."
         }
     ]
 }

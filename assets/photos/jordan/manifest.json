@@ -6,57 +6,57 @@
         {
             "src": "pillars.jpg",
             "description": "Pillars from Roman ruins.",
-            "alt": "TODO"
+            "alt": "Ancient pillars in the foreground with many more in the distance."
         },
         {
             "src": "lizard.jpg",
             "description": "A lizard on a rock wall.",
-            "alt": "TODO"
+            "alt": "A rock wall with a small lizard."
         },
         {
             "src": "dead-sea.jpg",
             "description": "The sun setting over the Dead Sea. Very cold, very salty. Made my skin feel bad.",
-            "alt": "TODO"
+            "alt": "A sunset over the Dead Sea."
         },
         {
             "src": "sunset-mountains.jpg",
             "description": "A cool double-peaked hill/mountain at sunset.",
-            "alt": "TODO"
+            "alt": "The sun setting behind a double-peaked mountain."
         },
         {
             "src": "desert-1.jpg",
             "description": "Desert. Saw a lot of this for several days.",
-            "alt": "TODO"
+            "alt": "A wide view of mostly empty desert with mountains in the background."
         },
         {
             "src": "solo-tree.jpg",
             "description": "A lone tree.",
-            "alt": "TODO"
+            "alt": "A single tree in an otherwise empty, rocky desert."
         },
         {
             "src": "rock-moon.jpg",
             "description": "A rock trying to reach the moon.",
-            "alt": "TODO"
+            "alt": "The tip of a rocky outcropping on a hill with the moon just above it."
         },
         {
             "src": "desert-2.jpg",
             "description": "More desert. There's really a lot of it.",
-            "alt": "TODO"
+            "alt": "A view of the desert from very high up that extends to the horizon."
         },
         {
             "src": "petra.jpg",
             "description": "Then Petra kind of out of nowhere. I don't actually have that many pictures of it because there were too many people in most of the shots.",
-            "alt": "TODO"
+            "alt": "Carved pillars and designs in a mountainside."
         },
         {
             "src": "sunset.jpg",
             "description": "Very nice sunset clouds.",
-            "alt": "TODO"
+            "alt": "A dark, cloudy sky with bright patches from the setting sun."
         },
         {
             "src": "camel.jpg",
             "description": "A camel that I'm about to ride.",
-            "alt": "TODO"
+            "alt": "A sitting, saddled camel."
         }
     ]
 }

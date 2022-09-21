@@ -6,37 +6,37 @@
         {
             "src": "canyon-1.jpg",
             "description": "The canyon. A lot of it looks like this, but I liked the outcropping in the foreground.",
-            "alt": "TODO"
+            "alt": "A very large canyon wall in the far background with a small rocky formation in the foreground."
         },
         {
             "src": "canyon-2.jpg",
             "description": "More canyon. It's very deep and long and wide.",
-            "alt": "TODO"
+            "alt": "A wide view of the canyon leading off into the distance."
         },
         {
             "src": "bug.jpg",
             "description": "Some flying insect that I spent quite a while trying to get in focus because I refuse to use auto-focus for no real reason other than it's a fun game.",
-            "alt": "TODO"
+            "alt": "A small flying insect in focus in the center and the rest of the background very blurred."
         },
         {
             "src": "canyon-3.jpg",
             "description": "The canyon again.",
-            "alt": "TODO"
+            "alt": "The canyon wall in the background with a rocky outcropping in the foreground."
         },
         {
             "src": "raven-flying.jpg",
             "description": "A raven flying over the canyon. If you look at my other photos you'll see a trend of birds in flight.",
-            "alt": "TODO"
+            "alt": "A flying raven in the foreground with the canyon filling the background."
         },
         {
             "src": "raven-tree.jpg",
             "description": "A raven looking much more majestic sitting in a tree than they do hopping around on the ground eating cheetos that people dropped.",
-            "alt": "TODO"
+            "alt": "A raven sitting in a tree looking into the distance with sky behind it."
         },
         {
             "src": "canyon-4.jpg",
             "description": "One more canyon shot, but this time with the river.",
-            "alt": "TODO"
+            "alt": "The canyon extending into the distance with a river running along the bottom."
         }
     ]
 }

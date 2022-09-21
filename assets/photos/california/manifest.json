@@ -6,27 +6,27 @@
         {
             "src": "wavy-shadow.jpg",
             "description": "A cool wavy shadow on some rocks.",
-            "alt": "TODO"
+            "alt": "A shadow along the base of a small valley between wavy rocks."
         },
         {
             "src": "wavy-rocks.jpg",
             "description": "Some more wavy rocks. I guess it's probably wind that does that.",
-            "alt": "TODO"
+            "alt": "A wide view of many wavy rocks in the foreground with desert and mountains in the background."
         },
         {
             "src": "raven.jpg",
             "description": "A raven staring at me.",
-            "alt": "TODO"
+            "alt": "A raven sitting on a rock looking into the camera."
         },
         {
             "src": "bumpy.jpg",
             "description": "Some very bumpy rocks/mud/salt. I like how flat it seems from a distance.",
-            "alt": "TODO"
+            "alt": "Densely packed bumpy rocks spreading off into the distance in a flat field that leads into mountains."
         },
         {
             "src": "snow-tracks.jpg",
             "description": "Some tracks in the snow. I don't remember where exactly this was, but I think it was at a higher elevation than the rest of the trip.",
-            "alt": "TODO"
+            "alt": "Tracks in the snow winding towards the camera."
         }
     ]
 }

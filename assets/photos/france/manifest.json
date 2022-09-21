@@ -5,48 +5,48 @@
     "photos": [
         {
             "src": "eiffel.jpg",
-            "description": "The lower half of the Eiffel tower and an orange balloon. I like this picture a lot.",
-            "alt": "TODO"
+            "description": "The lower half of the Eiffel Tower and an orange balloon. I like this picture a lot.",
+            "alt": "The lower half of the Eiffel Tower taking most of the frame and an orange balloon in the bottom right."
         },
         {
             "src": "bird-statue.jpg",
             "description": "Some pigeons on a bird statue.",
-            "alt": "TODO"
+            "alt": "Two pigeons sitting on top of a statue of an eagle on a wall."
         },
         {
             "src": "notre-dame.jpg",
             "description": "Notre Dame, carefully angled to avoid as much of the throng below as I could.",
-            "alt": "TODO"
+            "alt": "The upper portion of Notre Dame."
         },
         {
             "src": "pigeons.jpg",
             "description": "Deux pigeons on the wing.",
-            "alt": "TODO"
+            "alt": "Two flying pigeons with clouds and sky in the background."
         },
         {
             "src": "versaille.jpg",
             "description": "Versaille, again carefully framed to appear less zoo-like.",
-            "alt": "TODO"
+            "alt": "The front of Versaille in the bottom of the frame with sky filling the top."
         },
         {
             "src": "fountains.jpg",
             "description": "Some fountains in the gardens of Versaille.",
-            "alt": "TODO"
+            "alt": "A series of synchronized fountains spraying water over a pond."
         },
         {
             "src": "stained-glass.jpg",
             "description": "Stained glass and a cool statue silhouette in Notre Dame.",
-            "alt": "TODO"
+            "alt": "Light coming through colorful stained glass behind the black silhouette of a statue."
         },
         {
             "src": "rainbow-reflection.jpg",
             "description": "A rainbow reflected in a glass door. I have a couple of it near the Eiffel tower too, but it was gray and rainy so they're not that great.",
-            "alt": "TODO"
+            "alt": "A reflection of a rainbow in a glass door."
         },
         {
             "src": "beach.jpg",
             "description": "A pier and beach and lighthouse somewhere in the south of France.",
-            "alt": "TODO"
+            "alt": "A sunny beach with a long pier in the background leading to a small lighthouse."
         }
     ]
 }

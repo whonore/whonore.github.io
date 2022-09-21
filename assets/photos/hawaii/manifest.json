@@ -6,27 +6,27 @@
         {
             "src": "palm.jpg",
             "description": "A palm and a sunrise. Jet lag and time zones meant we were awake at 4 AM, so we went for a hike from our hotel to Diamond Head.",
-            "alt": "TODO"
+            "alt": "A tall palm three with the rising sun in the background."
         },
         {
             "src": "sunrise.jpg",
             "description": "More sunrise hiking.",
-            "alt": "TODO"
+            "alt": "Mountains in the distance past the ocean during sunrise."
         },
         {
             "src": "chickens.jpg",
             "description": "Some chickens and chicks that were wandering around the parking lot for Manoa falls.",
-            "alt": "TODO"
+            "alt": "A chicken and two chicks looking for food on a forest floor."
         },
         {
             "src": "tree.jpg",
             "description": "Some viney things climbing up a tree.",
-            "alt": "TODO"
+            "alt": "A vertical view of leafy vines growing up a tree."
         },
         {
             "src": "stream.jpg",
             "description": "A mini waterfall.",
-            "alt": "TODO"
+            "alt": "A small stream of water taking a small drop off a rock."
         }
     ]
 }

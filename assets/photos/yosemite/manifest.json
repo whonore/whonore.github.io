@@ -6,27 +6,27 @@
         {
             "src": "sequoia.jpg",
             "description": "A giant sequoia tree. It's pretty big.",
-            "alt": "TODO"
+            "alt": "A very tall and wide tree rising up with other behind it."
         },
         {
             "src": "half-dome-1.jpg",
             "description": "Half Dome. I think \"dome\" is generous, but it is definitely rounded.",
-            "alt": "TODO"
+            "alt": "A large rocky mountain in the distance with a curved slope on top."
         },
         {
             "src": "half-dome-2.jpg",
             "description": "Half Dome again from somewhere else. Notice the many trees.",
-            "alt": "TODO"
+            "alt": "A large rocky mountain in the distance with a curved slope and many dense trees in the valley below."
         },
         {
             "src": "raven.jpg",
             "description": "A raven mid-caw.",
-            "alt": "TODO"
+            "alt": "A raven sitting on a tree branch with its beak open."
         },
         {
             "src": "jet-trail.jpg",
             "description": "A jet trail heading apparently directly into a mountain. Reminds me a bit of an inspirational poster. Lots of space for a quote in the sky.",
-            "alt": "TODO"
+            "alt": "A jet trail angled down towards a cliff and disappearing behind it."
         }
     ]
 }

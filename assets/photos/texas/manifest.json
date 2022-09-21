@@ -6,27 +6,27 @@
         {
             "src": "river.jpg",
             "description": "A stream and some representative landscape.",
-            "alt": "TODO"
+            "alt": "A stream surrounded by mostly flat, dry brush."
         },
         {
             "src": "deer.jpg",
             "description": "A deer. Also a cactus to prove this is a southwestern deer.",
-            "alt": "TODO"
+            "alt": "A deer standing among tall, dry grass."
         },
         {
             "src": "big-rocks.jpg",
             "description": "Some big rocks.",
-            "alt": "TODO"
+            "alt": "Large rocks in the distance."
         },
         {
             "src": "window.jpg",
             "description": "A cool window in the rocks. I think that's not water on the ground, just very slick rock, so you probably shouldn't walk too close.",
-            "alt": "TODO"
+            "alt": "A narrow opening between two large rocks overlooking the ground below."
         },
         {
             "src": "sunset-rock.jpg",
             "description": "A rock on a bigger rock with nice light and shadows.",
-            "alt": "TODO"
+            "alt": "Dark shadows cast on a rock."
         }
     ]
 }
