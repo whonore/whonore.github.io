@@ -44,6 +44,8 @@ install: all
 		cp $$f $$out; \
 	done
 
+# THTML
+
 $(MAP): $(MAPDATA) $(PHOTOS_HTML) scripts/build-map.py
 	@mkdir -p $(@D)
 	scripts/build-map.py - $(MAPWIDTH) $(MAPHEIGHT) $(filter %.zip,$^) \
@@ -56,6 +58,8 @@ $(BUILD_DIR)/src/photos/%.thtml: src/photos/_photos.thtml.tmpl $(MANIFESTS) scri
 $(BUILD_DIR)/%.thtml: %.thtml
 	@mkdir -p $(@D)
 	cp $< $@
+
+# HTML
 
 $(BUILD_DIR)/src/photos/%.html.unmin: $(BUILD_DIR)/src/photos/%.thtml scripts/thtml.py
 	@mkdir -p $(@D)
@@ -81,6 +85,8 @@ $(BUILD_DIR)/%.html: $(BUILD_DIR)/%.html.unmin
           --html-keep-comments \
           --output $@ $<
 
+# CSS
+
 $(BUILD_DIR)/%.css.unmin: %.css
 	@mkdir -p $(@D)
 	postcss $< --output $@ --no-map
@@ -94,11 +100,15 @@ $(BUILD_DIR)/%.css: $(BUILD_DIR)/%.css.unmin
           --html-keep-comments \
           --output $@ $<
 
+# JPG
+
 $(BUILD_DIR)/%.jpg: %.jpg
 	@mkdir -p $(@D)
 	@cp $< $@
 	mogrify -resize $(PHOTO_WIDTH)x$(PHOTO_HEIGHT) -auto-orient $@
 	jpegoptim --max=$(PHOTO_QUALITY) --all-progressive --strip-all --keep-exif $@
+
+# JSON
 
 $(BUILD_DIR)/%.json: %.json
 	@mkdir -p $(@D)
