@@ -19,7 +19,9 @@ PHOTO_WIDTH := 1024
 PHOTO_HEIGHT := 680
 PHOTO_QUALITY := 60
 
-ASSETS := $(MAP) $(PHOTOS) $(MANIFESTS)
+PUBS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.json))
+
+ASSETS := $(MAP) $(PHOTOS) $(MANIFESTS) $(PUBS)
 
 PLACES := $(notdir $(filter-out %.json,$(wildcard assets/photos/*)))
 PHOTOS_THTML := $(addprefix $(BUILD_DIR)/src/photos/,$(addsuffix .thtml,$(PLACES)))
@@ -66,6 +68,10 @@ $(BUILD_DIR)/src/photos/%.html.unmin: $(BUILD_DIR)/src/photos/%.thtml scripts/th
 	scripts/thtml.py $< $@
 
 $(BUILD_DIR)/src/photos.html.unmin: $(BUILD_DIR)/src/photos.thtml $(MAP) $(MANIFESTS) scripts/thtml.py
+	@mkdir -p $(@D)
+	scripts/thtml.py $< $@
+
+$(BUILD_DIR)/src/pubs.html.unmin: $(BUILD_DIR)/src/pubs.thtml $(PUBS) scripts/thtml.py
 	@mkdir -p $(@D)
 	scripts/thtml.py $< $@
 

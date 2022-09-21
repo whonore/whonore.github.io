@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolf Honore -- Publications</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300" />
+    <link rel="link" href="/src/assets/favicon.png" />
+  </head>
+  <body>
+    <div class="console">
+      <header>
+        <div class="typed"><span>wolf.html</span></div>
+        <nav>
+          <a href="/index.html">/home</a>
+          <a href="/src/projects.html">/projects</a>
+          <a href="/src/music.html">/music</a>
+          <a href="/src/photos.html">/photos</a>
+          <a href="#" class="active">/publications</a>
+        </nav>
+      </header>
+      <main>
+        <h1>Publications</h1>
+        <p>I've written some things and sometimes other people thought they were pretty ok.</p>
+        <hr />
+        <section>
+          <h2>Conference Papers</h2>
+          <%%j ../assets/pubs/pubs.json.pubs %>
+            <div class="pub">
+              <cite class="pub-title"><a href="<%ji .url %>"><%ji .title %></a></cite>
+              <br />
+              <ol class="pub-authors">
+                <%%ji .authors %>
+                  <li data-name="<%ji _ %>" class="pub-author"><%ji _ %></li>
+                <%%e %>
+              </ol>
+              <br />
+              <span class="pub-conference"><%ji .conference %></span>, <span class="pub-year"><%ji .year %></span>
+              <br />
+              <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <blockquote cite="<%ji .url %>"><%ji .abstract %></blockquote>
+              </details>
+            </div>
+          <%%e %>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
