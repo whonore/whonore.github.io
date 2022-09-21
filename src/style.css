@@ -33,6 +33,8 @@
   --gallery-max-height-pct: 70vh;
   --gallery-ideal-height: calc(min(var(--console-max-width), 100vw) / var(--gallery-aspect-ratio));
   --gallery-max-height: min(var(--gallery-ideal-height), var(--gallery-max-height-pct));
+  --pub-gap: 1rem;
+  --pub-abstract-indent: 2rem;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -98,6 +100,11 @@ a:hover {
 
 h1::before {
   content: "#\a0";
+}
+
+h2::before {
+  content: "##";
+  padding-right: 1ch;
 }
 
 rt {
@@ -323,6 +330,33 @@ main a:visited {
   max-width: 100%;
   max-height: var(--gallery-max-height);
   border: var(--darkgreen) solid var(--gallery-border-thickness);
+}
+
+/* Publications */
+.pub {
+  margin: 0 0 var(--pub-gap);
+}
+
+.pub:last-of-type {
+  margin-bottom: 0;
+}
+
+.pub-authors,
+.pub-author {
+  display: inline;
+}
+
+.pub-authors .pub-author:not(:last-child)::after {
+  content: ",\a0";
+}
+
+.pub-author[data-name="Wolf Honoré"] {
+  font-weight: bold;
+  color: var(--pink);
+}
+
+.pub-abstract blockquote {
+  padding-left: var(--pub-abstract-indent);
 }
 
 /* Syntax Highlighting */
