@@ -99,7 +99,8 @@ a:hover {
 }
 
 h1::before {
-  content: "#\a0";
+  content: "#";
+  padding-right: 1ch;
 }
 
 h2::before {
@@ -347,7 +348,8 @@ main a:visited {
 }
 
 .pub-authors .pub-author:not(:last-child)::after {
-  content: ",\a0";
+  content: ",";
+  padding-right: 1ch;
 }
 
 .pub-author[data-name="Wolf Honoré"] {
