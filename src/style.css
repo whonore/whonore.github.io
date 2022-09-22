@@ -367,7 +367,7 @@ main a:visited {
 
 /* Gallery */
 .gallery {
-  margin: 1em 0;
+  margin: 1rem 0;
   display: flex;
   flex-flow: row nowrap;
   overflow-x: scroll;
