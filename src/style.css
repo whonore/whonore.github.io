@@ -8,6 +8,12 @@
   --hr-thickness: 0.1rem;
   --checkbox-width: 1.8rem;
   --checkbox-gutter: 0.5rem;
+  --blockquote-indent: 1rem;
+  --blockquote-top-gutter: 0.8rem;
+  --blockquote-thickness: 0.5rem;
+  --details-border-thickness: 0.1rem;
+  --details-gutter: 0.3rem;
+  --details-open-time: 0.07s;
   --console-max-width: 41rem;
   --console-border-thickness: 0.2rem;
   --nav-border-thickness: 0.1rem;
@@ -34,7 +40,6 @@
   --gallery-ideal-height: calc(min(var(--console-max-width), 100vw) / var(--gallery-aspect-ratio));
   --gallery-max-height: min(var(--gallery-ideal-height), var(--gallery-max-height-pct));
   --pub-gap: 1rem;
-  --pub-abstract-indent: 2rem;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -148,6 +153,58 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   content: "[x]";
+}
+
+blockquote {
+  padding-top: var(--blockquote-top-gutter);
+  padding-left: var(--blockquote-indent);
+  border-left: var(--blue) solid var(--blockquote-thickness);
+}
+
+blockquote::first-letter {
+  font-size: 175%;
+  font-weight: bold;
+  letter-spacing: 0.1ch;
+  line-height: 1;
+  color: var(--black);
+  background-color: var(--ice);
+}
+
+details {
+  border: var(--details-border-thickness) solid var(--purple);
+  border-right: 0;
+  border-top: 0;
+  padding-left: var(--details-gutter);
+}
+
+details[open] {
+  padding-bottom: var(--details-gutter);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary {
+  list-style: none;
+  position: relative;
+}
+
+summary::before {
+  content: ">";
+  display: inline-block;
+  padding-right: 1ch;
+  transform-origin: 0.5ch center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  summary::before {
+    transition: transform var(--details-open-time) ease-in;
+  }
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
 }
 
 /* Console */
@@ -355,10 +412,6 @@ main a:visited {
 .pub-author[data-name="Wolf Honoré"] {
   font-weight: bold;
   color: var(--pink);
-}
-
-.pub-abstract blockquote {
-  padding-left: var(--pub-abstract-indent);
 }
 
 /* Syntax Highlighting */
