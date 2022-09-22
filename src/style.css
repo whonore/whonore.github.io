@@ -282,7 +282,6 @@ nav a.active {
 /* Body */
 main {
   padding: var(--main-padding);
-  counter-reset: line;
 }
 
 main a {
