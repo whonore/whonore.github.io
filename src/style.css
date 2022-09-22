@@ -128,9 +128,9 @@ hr {
   height: 0.5ch;
   width: 100%;
   margin: var(--hr-gutter) 0;
-  border: var(--green) solid var(--hr-thickness);
-  border-left: none;
-  border-right: none;
+  border: var(--hr-thickness) solid var(--green);
+  border-left: 0;
+  border-right: 0;
 }
 
 input[type="checkbox"] {
@@ -329,7 +329,7 @@ main a:visited {
 .gallery img {
   max-width: 100%;
   max-height: var(--gallery-max-height);
-  border: var(--darkgreen) solid var(--gallery-border-thickness);
+  border: var(--gallery-border-thickness) solid var(--darkgreen);
 }
 
 /* Publications */
