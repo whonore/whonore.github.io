@@ -8,20 +8,23 @@ ifeq ($(INSTALL_DIR),)
 $(error INSTALL_DIR cannot be empty)
 endif
 
+ICONS := $(addprefix $(BUILD_DIR)/,favicon.ico favicon-512.png favicon-192.png apple-touch-icon.png)
+ICON_MANIFEST := $(BUILD_DIR)/manifest.webmanifest
+
 MAP := $(BUILD_DIR)/assets/generated/map.svg
 MAPDATA := $(wildcard assets/ne_*.zip)
 MAPWIDTH := 1600
 MAPHEIGHT := 800
 
 PHOTOS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/photos/*/*.jpg))
-MANIFESTS := $(addprefix $(BUILD_DIR)/,assets/photos/manifest.json $(wildcard assets/*/*/manifest.json))
+PHOTO_MANIFESTS := $(addprefix $(BUILD_DIR)/,assets/photos/manifest.json $(wildcard assets/*/*/manifest.json))
 PHOTO_WIDTH := 1024
 PHOTO_HEIGHT := 680
 PHOTO_QUALITY := 60
 
 PUBS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.json))
 
-ASSETS := $(MAP) $(PHOTOS) $(MANIFESTS) $(PUBS)
+ASSETS := $(ICONS) $(ICON_MANIFEST) $(MAP) $(PHOTOS) $(PHOTO_MANIFESTS) $(PUBS)
 
 PLACES := $(notdir $(filter-out %.json,$(wildcard assets/photos/*)))
 PHOTOS_THTML := $(addprefix $(BUILD_DIR)/src/photos/,$(addsuffix .thtml,$(PLACES)))
@@ -35,12 +38,24 @@ HTML := $(GEN_HTML) $(COPY_HTML)
 
 CSS := $(addprefix $(BUILD_DIR)/,$(wildcard src/*.css))
 
+IGNORE_INSTALL := assets/generated
+
 .PHONY: all install
 
 all: $(ASSETS) $(HTML) $(CSS)
 
 install: all
-	for f in $$(find $(BUILD_DIR) -type f -name '*.html' -o -name '*.css' -o -name '*.jpg'); do \
+	for f in $$(find $(BUILD_DIR) \
+		-path $(addprefix $(BUILD_DIR)/,$(IGNORE_INSTALL)) -prune \
+		-o -type f \( \
+		-name '*.html' \
+		-o -name '*.css' \
+		-o -name '*.jpg' \
+		-o -name '*.png' \
+		-o -name '*.ico' \
+		-o -name '*.webmanifest' \
+		\) -print \
+		); do \
 		out=$${f/#$(BUILD_DIR)/$(INSTALL_DIR)}; \
 		mkdir -p $$(dirname $$out); \
 		cp $$f $$out; \
@@ -53,7 +68,7 @@ $(MAP): $(MAPDATA) $(PHOTOS_HTML) scripts/build-map.py
 	scripts/build-map.py - $(MAPWIDTH) $(MAPHEIGHT) $(filter %.zip,$^) \
 		| svgcleaner --remove-title=no --remove-unresolved-classes=no -c - > $@
 
-$(BUILD_DIR)/src/photos/%.thtml: src/photos/_photos.thtml.tmpl $(MANIFESTS) scripts/build-photos.py
+$(BUILD_DIR)/src/photos/%.thtml: src/photos/_photos.thtml.tmpl $(PHOTO_MANIFESTS) scripts/build-photos.py
 	@mkdir -p $(@D)
 	scripts/build-photos.py $(notdir $(basename $@)) $(BUILD_DIR)
 
@@ -67,7 +82,7 @@ $(BUILD_DIR)/src/photos/%.html.unmin: $(BUILD_DIR)/src/photos/%.thtml scripts/th
 	@mkdir -p $(@D)
 	scripts/thtml.py $< $@
 
-$(BUILD_DIR)/src/photos.html.unmin: $(BUILD_DIR)/src/photos.thtml $(MAP) $(MANIFESTS) scripts/thtml.py
+$(BUILD_DIR)/src/photos.html.unmin: $(BUILD_DIR)/src/photos.thtml $(MAP) $(PHOTO_MANIFESTS) scripts/thtml.py
 	@mkdir -p $(@D)
 	scripts/thtml.py $< $@
 
@@ -114,8 +129,32 @@ $(BUILD_DIR)/%.jpg: %.jpg
 	mogrify -resize $(PHOTO_WIDTH)x$(PHOTO_HEIGHT) -auto-orient $@
 	jpegoptim --max=$(PHOTO_QUALITY) --all-progressive --strip-all --keep-exif $@
 
+# ICO
+
+$(BUILD_DIR)/favicon.ico: $(BUILD_DIR)/assets/generated/favicon-32.png $(BUILD_DIR)/assets/generated/favicon-16.png
+	@mkdir -p $(@D)
+	convert $^ $@
+
+# PNG
+
+$(BUILD_DIR)/assets/generated/favicon-%.png: assets/icons/favicon.png
+	@mkdir -p $(@D)
+	convert $< -sample $*x$* $@
+
+$(BUILD_DIR)/favicon-%.png: $(BUILD_DIR)/assets/generated/favicon-%.png
+	@mkdir -p $(@D)
+	cp $< $@
+
+$(BUILD_DIR)/apple-touch-icon.png: $(BUILD_DIR)/assets/generated/favicon-180.png
+	@mkdir -p $(@D)
+	cp $< $@
+
 # JSON
 
 $(BUILD_DIR)/%.json: %.json
+	@mkdir -p $(@D)
+	cp $< $@
+
+$(BUILD_DIR)/%.webmanifest: %.webmanifest
 	@mkdir -p $(@D)
 	cp $< $@
