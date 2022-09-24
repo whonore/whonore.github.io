@@ -41,6 +41,9 @@
   --gallery-ideal-height: calc(min(var(--console-max-width), 100vw) / var(--gallery-aspect-ratio));
   --gallery-max-height: min(var(--gallery-ideal-height), var(--gallery-max-height-pct));
   --pub-gap: 1rem;
+  --file-height: 1.4rem;
+  --file-width: 2ch;
+  --file-border-thickness: 0.07rem;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -401,7 +404,6 @@ main a:visited {
   margin-bottom: 0;
 }
 
-.pub-authors,
 .pub-author {
   display: inline;
 }
@@ -414,6 +416,46 @@ main a:visited {
 .pub-author[data-name="Wolf Honoré"] {
   font-weight: bold;
   color: var(--pink);
+}
+
+.pub-abstract p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.pub-media li[data-type] {
+  position: relative;
+  line-height: 1.6;
+}
+
+.pub-media li[data-type]::before {
+  content: "";
+  display: inline-block;
+  width: var(--file-width);
+  height: var(--file-height);
+  background-color: var(--darkblue);
+  padding-left: 0.5ch;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 25%, 100% 100%, 0% 100%);
+}
+
+.pub-media li[data-type]::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: calc(-1 * var(--file-border-thickness));
+  top: calc(-1 * var(--file-border-thickness));
+  background-color: var(--darkgreen);
+  width: calc(var(--file-width) + 2 * var(--file-border-thickness));
+  height: calc(var(--file-height) + 2 * var(--file-border-thickness));
+  z-index: -1;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 25%, 100% 100%, 0% 100%);
+}
+
+.pub-media li[data-type="slides"]::before {
+  content: "P";
+}
+
+.pub-media li[data-type="video"]::before {
+  content: "\25b8";
 }
 
 /* Syntax Highlighting */

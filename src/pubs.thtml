@@ -37,12 +37,80 @@
                   <li data-name="<%ji _ %>" class="pub-author"><%ji _ %></li>
                 <%%e %>
               </ol>
-              <br />
               <span class="pub-conference"><%ji .conference %></span>, <span class="pub-year"><%ji .year %></span>
               <br />
+              <%%je .media %><ul class="pub-media"><%%e %>
+              <%%jo .media %>
+                <li data-type="<%ji .type %>">
+                  <a href="/assets/pubs/<%ji .file %>"><%ji .name %></a>
+                </li>
+              <%%e %>
+              <%%je .media %>
+                </ul>
+              <%%e %>
               <details class="pub-abstract">
                 <summary>Abstract</summary>
-                <blockquote cite="<%ji .url %>"><%ji .abstract %></blockquote>
+                <blockquote cite="<%ji .url %>">
+                  <%%ji .abstract %><p><%ji _ %></p><%%e %>
+                </blockquote>
+              </details>
+            </div>
+          <%%e %>
+        </section>
+        <hr />
+        <section>
+          <h2>Talks</h2>
+          <%%j ../assets/pubs/pubs.json.talks %>
+            <div class="pub">
+              <cite class="pub-title"><%ji .title %></cite>
+              <br />
+              <ol class="pub-authors">
+                <%%ji .authors %>
+                  <li data-name="<%ji _ %>" class="pub-author"><%ji _ %></li>
+                <%%e %>
+              </ol>
+              <span class="pub-conference"><%ji .conference %></span>, <span class="pub-year"><%ji .year %></span>
+              <br />
+              <%%je .media %><ul class="pub-media"><%%e %>
+              <%%jo .media %>
+                <li data-type="<%ji .type %>">
+                  <a href="/assets/pubs/<%ji .file %>"><%ji .name %></a>
+                </li>
+              <%%e %>
+              <%%je .media %>
+                </ul>
+              <%%e %>
+            </div>
+          <%%e %>
+        </section>
+        <hr />
+        <section>
+          <h2>Thesis</h2>
+          <%%j ../assets/pubs/pubs.json.thesis %>
+            <div class="pub">
+              <cite class="pub-title"><a href="<%ji .url %>"><%ji .title %></a></cite>
+              <br />
+              <ol class="pub-authors">
+                <%%ji .authors %>
+                  <li data-name="<%ji _ %>" class="pub-author"><%ji _ %></li>
+                <%%e %>
+              </ol>
+              <span class="pub-conference"><%ji .conference %></span>, <span class="pub-year"><%ji .year %></span>
+              <br />
+              <%%je .media %><ul class="pub-media"><%%e %>
+              <%%jo .media %>
+                <li data-type="<%ji .type %>">
+                  <a href="/assets/pubs/<%ji .file %>"><%ji .name %></a>
+                </li>
+              <%%e %>
+              <%%je .media %>
+                </ul>
+              <%%e %>
+              <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <blockquote cite="<%ji .url %>">
+                  <%%ji .abstract %><p><%ji _ %></p><%%e %>
+                </blockquote>
               </details>
             </div>
           <%%e %>

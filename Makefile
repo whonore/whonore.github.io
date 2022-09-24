@@ -23,8 +23,9 @@ PHOTO_HEIGHT := 680
 PHOTO_QUALITY := 60
 
 PUBS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.json))
+PUB_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.pdf) $(wildcard assets/pubs/*.mp4))
 
-ASSETS := $(ICONS) $(ICON_MANIFEST) $(MAP) $(PHOTOS) $(PHOTO_MANIFESTS) $(PUBS)
+ASSETS := $(ICONS) $(ICON_MANIFEST) $(MAP) $(PHOTOS) $(PHOTO_MANIFESTS) $(PUBS) $(PUB_MEDIA)
 
 PLACES := $(notdir $(filter-out %.json,$(wildcard assets/photos/*)))
 PHOTOS_THTML := $(addprefix $(BUILD_DIR)/src/photos/,$(addsuffix .thtml,$(PLACES)))
@@ -53,6 +54,8 @@ install: all
 		-o -name '*.jpg' \
 		-o -name '*.png' \
 		-o -name '*.ico' \
+		-o -name '*.mp4' \
+		-o -name '*.pdf' \
 		-o -name '*.webmanifest' \
 		\) -print \
 		); do \
@@ -146,6 +149,18 @@ $(BUILD_DIR)/favicon-%.png: $(BUILD_DIR)/assets/generated/favicon-%.png
 	cp $< $@
 
 $(BUILD_DIR)/apple-touch-icon.png: $(BUILD_DIR)/assets/generated/favicon-180.png
+	@mkdir -p $(@D)
+	cp $< $@
+
+# PDF
+
+$(BUILD_DIR)/%.pdf: %.pdf
+	@mkdir -p $(@D)
+	cp $< $@
+
+# MP4
+
+$(BUILD_DIR)/%.mp4: %.mp4
 	@mkdir -p $(@D)
 	cp $< $@
 
