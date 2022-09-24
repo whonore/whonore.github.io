@@ -10,7 +10,7 @@ from typing import Any, Generator, Iterator, Mapping
 
 
 def debug(msg: str) -> None:
-    if bool(int(os.getenv("DEBUG", '0'))):
+    if bool(int(os.getenv("DEBUG", "0"))):
         print(msg, file=sys.stderr)
 
 
