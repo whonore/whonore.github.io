@@ -20,11 +20,11 @@ class Span(ABC):
         ...
 
     @staticmethod
-    def read_field(data: Any, field: str) -> Any:
+    def read_field(data: Any, field: str, required: bool = True) -> Any:
         if field == "_":
             return data
         assert isinstance(data, Mapping), f"{data} {field}"
-        return data[field]
+        return data[field] if required else data.get(field)
 
 
 class Text(Span):
@@ -87,23 +87,36 @@ class JsonItem(Span):
 
 
 class JsonBlock(Span):
-    def __init__(self, span: str, inner: list[Span], base: Path) -> None:
+    def __init__(
+        self,
+        span: str,
+        inner: list[Span],
+        base: Path,
+        required: bool = True,
+        loop: bool = True,
+    ) -> None:
         file, field = span.strip().rsplit(".", 1)
         self.file = base / file
         self.field = field
         self.inner = inner
+        self.required = required
+        self.loop = loop
 
     def eval(self) -> str:
         debug(f"EVAL: {self!r}")
         with open(self.file, "r", encoding="utf-8") as f:
             data = json.load(f)
-            items = Span.read_field(data, self.field)
+            items = Span.read_field(data, self.field, required=self.required)
+            if items is None:
+                return ""
         txt = []
         for item in items:
             for span in self.inner:
-                if isinstance(span, (JsonItem, JsonBlockItem)):
+                if self.loop and isinstance(span, (JsonItem, JsonBlockItem)):
                     span.apply(item)
                 txt.append(span.eval())
+            if not self.loop:
+                break
         return "".join(txt)
 
     def __repr__(self) -> str:
@@ -111,10 +124,18 @@ class JsonBlock(Span):
 
 
 class JsonBlockItem(Span):
-    def __init__(self, span: str, inner: list[Span]) -> None:
+    def __init__(
+        self,
+        span: str,
+        inner: list[Span],
+        required: bool = True,
+        loop: bool = True,
+    ) -> None:
         self.field = span.strip().lstrip(".")
         self.data: Mapping[str, Any] | None = None
         self.inner = inner
+        self.required = required
+        self.loop = loop
 
     def apply(self, data: Mapping[str, Any]) -> None:
         self.data = data
@@ -123,13 +144,17 @@ class JsonBlockItem(Span):
         debug(f"EVAL: {self!r}")
         if self.data is None:
             raise ValueError("Must call .apply() before .eval() for a JsonBlockItem")
-        items = Span.read_field(self.data, self.field)
+        items = Span.read_field(self.data, self.field, required=self.required)
+        if items is None:
+            return ""
         txt = []
         for item in items:
             for span in self.inner:
-                if isinstance(span, (JsonItem, JsonBlockItem)):
+                if self.loop and isinstance(span, (JsonItem, JsonBlockItem)):
                     span.apply(item)
                 txt.append(span.eval())
+            if not self.loop:
+                break
         return "".join(txt)
 
     def __repr__(self) -> str:
@@ -183,14 +208,19 @@ class Template:
                     spans.append(Json(span, self.tmpl_file.parent))
                 elif kind == "ji":
                     spans.append(JsonItem(span))
-                elif kind == "%j":
+                elif kind.startswith("%j"):
                     assert 0 < blockdepth and curdepth < blockdepth
                     inner = self._build_spans(txt_spans, curdepth=blockdepth)
-                    spans.append(JsonBlock(span, inner, self.tmpl_file.parent))
-                elif kind == "%ji":
-                    assert 0 < blockdepth and curdepth < blockdepth
-                    inner = self._build_spans(txt_spans, curdepth=blockdepth)
-                    spans.append(JsonBlockItem(span, inner))
+                    if kind == "%j":
+                        spans.append(JsonBlock(span, inner, self.tmpl_file.parent))
+                    elif kind == "%ji":
+                        spans.append(JsonBlockItem(span, inner))
+                    elif kind == "%je":
+                        spans.append(
+                            JsonBlockItem(span, inner, required=False, loop=False)
+                        )
+                    elif kind == "%jo":
+                        spans.append(JsonBlockItem(span, inner, required=False))
                 elif kind == "":
                     spans.append(Text(span))
                 elif kind == "%e":
