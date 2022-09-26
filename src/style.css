@@ -1,6 +1,8 @@
 /* Global */
 :root {
   --font-base: "Fira Code", "Courier New", monospace;
+  --focus-thickness: 0.1rem;
+  --focus-blur: calc(2 * var(--focus-thickness));
   --gutter-width: 1rem;
   --gutter-height: 2rem;
   --li-gutter: 0.3rem;
@@ -29,6 +31,7 @@
   --map-width: 60rem;
   --map-thickness: 0.1rem;
   --map-zoom-time: 0.2s;
+  --map-color: #008000;
   --link-arrow-size: 0.4rem;
   --link-arrow-thickness: 0.1rem;
   --link-arrow-scale: 1.5;
@@ -101,12 +104,18 @@ body {
   }
 }
 
+:is(a, button, input, textarea, summary):focus-visible {
+  outline: 0;
+  box-shadow: 0 0 var(--focus-blur) var(--focus-thickness) var(--darkpink);
+}
+
 a {
   color: var(--teal);
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
   background-color: var(--darkblue);
 }
 
@@ -309,7 +318,7 @@ main a::after {
     transform-origin: right top;
   }
 
-  main a:hover::after {
+  main a:is(:hover, :focus-visible)::after {
     --link-arrow-thickness: var(--link-arrow-scale-thickness);
 
     transform: scale(var(--link-arrow-scale));
@@ -350,13 +359,17 @@ main a:visited {
 }
 
 .map path {
-  stroke: green;
+  stroke: var(--map-color);
   stroke-width: var(--map-thickness);
   fill: transparent;
 }
 
 .map path.active {
   fill: var(--teal);
+}
+
+.map a:is(:hover, :focus-visible) path.active {
+  fill: var(--darkblue);
 }
 
 #map-zoom:checked ~ .map svg {
