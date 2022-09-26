@@ -75,6 +75,7 @@
   vertical-align: baseline;
   background-color: transparent;
   box-sizing: border-box;
+  text-size-adjust: none;
 }
 
 /* General */
