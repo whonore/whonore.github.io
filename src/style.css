@@ -111,6 +111,7 @@ body {
 :is(a, button, input, textarea, summary):focus-visible {
   outline: 0;
   box-shadow: 0 0 var(--focus-blur) var(--focus-thickness) var(--darkpink);
+  box-decoration-break: clone;
 }
 
 a {
