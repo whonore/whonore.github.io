@@ -13,6 +13,10 @@
   --blockquote-indent: 1rem;
   --blockquote-top-gutter: 0.8rem;
   --blockquote-thickness: 0.5rem;
+  --dropcap-margin-top: 0.15rem;
+  --dropcap-margin-right: 0.1rem;
+  --dropcap-padding: 0.1rem;
+  --dropcap-size: 330%;
   --details-border-thickness: 0.1rem;
   --details-gutter: 0.3rem;
   --details-open-time: 0.07s;
@@ -177,10 +181,12 @@ blockquote {
   border-left: var(--blue) solid var(--blockquote-thickness);
 }
 
-blockquote::first-letter {
-  font-size: 175%;
+blockquote p:first-of-type::first-letter {
+  float: left;
+  margin: var(--dropcap-margin-top) var(--dropcap-margin-right) 0 0;
+  padding: var(--dropcap-padding) 0;
+  font-size: var(--dropcap-size);
   font-weight: bold;
-  letter-spacing: 0.1ch;
   line-height: 1;
   color: var(--black);
   background-color: var(--ice);
