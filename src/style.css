@@ -210,7 +210,6 @@ summary::-webkit-details-marker {
 
 summary {
   list-style: none;
-  position: relative;
 }
 
 summary::before {
@@ -305,13 +304,15 @@ main {
 }
 
 main a {
-  position: relative;
   padding-right: var(--link-arrow-size);
 }
 
 main a::after {
   content: "";
   display: inline-block;
+  /* NOTE: this is fine even though the parent isn't positioned as long as it
+   * doesn't use `top`, `left`, etc. The positioning here is just to remove it
+   * from the normal flow. */
   position: absolute;
   width: var(--link-arrow-size);
   height: var(--link-arrow-size);
