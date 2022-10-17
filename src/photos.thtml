@@ -18,7 +18,7 @@
           <a href="/index.html">/home</a>
           <a href="/src/projects.html">/projects</a>
           <a href="/src/music.html">/music</a>
-          <a href="#" class="active">/photos</a>
+          <a href="#" aria-current="page">/photos</a>
           <a href="/src/pubs.html">/publications</a>
         </nav>
       </header>

@@ -258,7 +258,7 @@ nav a {
   padding: var(--nav-gutter-height) var(--nav-gutter-width);
 }
 
-nav a.active {
+nav a[aria-current] {
   background-color: var(--darkblue);
   font-weight: bold;
 }
