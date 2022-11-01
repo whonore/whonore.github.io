@@ -1,5 +1,5 @@
 {
-  description = "Build a country imagemap";
+  description = "Build my website";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs";
   inputs.gitignore = {
