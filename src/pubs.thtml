@@ -112,6 +112,12 @@
                   <%%ji .abstract %><p><%ji _ %></p><%%e %>
                 </blockquote>
               </details>
+              <details class="pub-notes">
+                <summary>Notes</summary>
+                <ul>
+                  <%%ji .notes %><li><%ji _ %></li><%%e %>
+                </ul>
+              </details>
             </div>
           <%%e %>
         </section>
