@@ -25,7 +25,13 @@ PHOTO_QUALITY := 60
 PUBS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.json))
 PUB_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.pdf) $(wildcard assets/pubs/*.mp4))
 
-ASSETS := $(ICONS) $(ICON_MANIFEST) $(MAP) $(PHOTOS) $(PHOTO_MANIFESTS) $(PUBS) $(PUB_MEDIA)
+MUSIC := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.json))
+MUSIC_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.m4a assets/music/*.png))
+
+ASSETS := $(ICONS) $(ICON_MANIFEST) \
+	  $(MAP) $(PHOTOS) $(PHOTO_MANIFESTS) \
+	  $(PUBS) $(PUB_MEDIA) \
+	  $(MUSIC) $(MUSIC_MEDIA)
 
 PLACES := $(notdir $(filter-out %.json,$(wildcard assets/photos/*)))
 PHOTOS_THTML := $(addprefix $(BUILD_DIR)/src/photos/,$(addsuffix .thtml,$(PLACES)))
@@ -55,6 +61,7 @@ install: all
 		-o -name '*.png' \
 		-o -name '*.ico' \
 		-o -name '*.mp4' \
+		-o -name '*.m4a' \
 		-o -name '*.pdf' \
 		-o -name '*.webmanifest' \
 		\) -print \
@@ -90,6 +97,10 @@ $(BUILD_DIR)/src/photos.html.unmin: $(BUILD_DIR)/src/photos.thtml $(MAP) $(PHOTO
 	scripts/thtml.py $< $@
 
 $(BUILD_DIR)/src/pubs.html.unmin: $(BUILD_DIR)/src/pubs.thtml $(PUBS) scripts/thtml.py
+	@mkdir -p $(@D)
+	scripts/thtml.py $< $@
+
+$(BUILD_DIR)/src/music.html.unmin: $(BUILD_DIR)/src/music.thtml $(MUSIC) scripts/thtml.py
 	@mkdir -p $(@D)
 	scripts/thtml.py $< $@
 
@@ -161,6 +172,12 @@ $(BUILD_DIR)/%.pdf: %.pdf
 # MP4
 
 $(BUILD_DIR)/%.mp4: %.mp4
+	@mkdir -p $(@D)
+	cp $< $@
+
+# M4A
+
+$(BUILD_DIR)/%.m4a: %.m4a
 	@mkdir -p $(@D)
 	cp $< $@
 

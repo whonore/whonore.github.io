@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolf Honore -- Music</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <div class="console">
+      <header>
+        <div class="typed"><span>wolf.html</span></div>
+        <nav>
+          <a href="/index.html">/home</a>
+          <a href="/src/projects.html">/projects</a>
+          <a href="#" aria-current="page">/music</a>
+          <a href="/src/photos.html">/photos</a>
+          <a href="/src/pubs.html">/publications</a>
+        </nav>
+      </header>
+      <main>
+        <h1>Music</h1>
+        <p>
+          Music is nice so I consume and produce it.
+          I mostly play bass, but have become pretty ok on drums too.
+          Guitar, I know some chords and how to noodle.
+          Keyboards and mandolin, I own.
+          Singing, nope.
+        </p>
+        <figure class="body-img">
+          <img
+            src="/assets/music/instruments.jpg"
+            alt="A six-string bass, a four-string bass, and a mandolin on stands in front of an electronic drum kit. A MIDI keyboard rests on the drum throne."
+          />
+          <figcaption>
+            The band, circa November 2022.
+          </figcaption>
+        </figure>
+        <p>
+          Here's some things I recorded.
+          All rights reserved except the ones that aren't mine.
+          Please don't steal, I know a lawyer.
+        </p>
+        <hr />
+        <%%j ../assets/music/music.json.music %>
+          <section>
+            <h2><%ji .name %></h2>
+            <%%ji .songs %>
+              <section class="music-song">
+                <p class="music-title">Title: <%ji .title %></p>
+                <div class="music-credits">
+                  <p>Credits (Recorded <%ji .month %>, <%ji .year %>):</p>
+                  <ul>
+                    <%%ji .credits %>
+                      <li><%ji .name%>: <%ji .credits %>
+                    <%%e %>
+                  </ul>
+                </div>
+                <audio controls preload="metadata">
+                  <source src="/assets/music/<%ji .audio %>" type="audio/x-m4a" />
+                  Your browser does not support this audio file.
+                </audio>
+                <p class="music-description">
+                  <%ji .description %>
+                </p>
+              </section>
+            <%%e %>
+          </section>
+          <%js <hr /> %>
+        <%%e %>
+      </main>
+    </div>
+  </body>
+</html>
