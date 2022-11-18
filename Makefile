@@ -26,7 +26,7 @@ PUBS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.json))
 PUB_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.pdf) $(wildcard assets/pubs/*.mp4))
 
 MUSIC := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.json))
-MUSIC_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.m4a assets/music/*.png))
+MUSIC_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.m4a assets/music/*.jpg))
 
 ASSETS := $(ICONS) $(ICON_MANIFEST) \
 	  $(MAP) $(PHOTOS) $(PHOTO_MANIFESTS) \
