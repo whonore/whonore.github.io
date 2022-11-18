@@ -86,6 +86,22 @@ class JsonItem(Span):
         return f"JsonItem({self.field})"
 
 
+class JsonSeparator(Span):
+    def __init__(self, span: str) -> None:
+        self.sep = span
+        self.last = False
+
+    def end(self) -> None:
+        self.last = True
+
+    def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
+        return self.sep if not self.last else ""
+
+    def __repr__(self) -> str:
+        return "JsonSeparator({self.sep}, {self.last})"
+
+
 class JsonBlock(Span):
     def __init__(
         self,
@@ -110,10 +126,14 @@ class JsonBlock(Span):
             if items is None:
                 return ""
         txt = []
-        for item in items:
+        nitems = len(items)
+        for idx, item in enumerate(items):
+            last = idx == nitems - 1
             for span in self.inner:
                 if self.loop and isinstance(span, (JsonItem, JsonBlockItem)):
                     span.apply(item)
+                if last and isinstance(span, JsonSeparator):
+                    span.end()
                 txt.append(span.eval())
             if not self.loop:
                 break
@@ -148,10 +168,14 @@ class JsonBlockItem(Span):
         if items is None:
             return ""
         txt = []
-        for item in items:
+        nitems = len(items)
+        for idx, item in enumerate(items):
+            last = idx == nitems - 1
             for span in self.inner:
                 if self.loop and isinstance(span, (JsonItem, JsonBlockItem)):
                     span.apply(item)
+                if last and isinstance(span, JsonSeparator):
+                    span.end()
                 txt.append(span.eval())
             if not self.loop:
                 break
@@ -208,6 +232,8 @@ class Template:
                     spans.append(Json(span, self.tmpl_file.parent))
                 elif kind == "ji":
                     spans.append(JsonItem(span))
+                elif kind == "js":
+                    spans.append(JsonSeparator(span))
                 elif kind.startswith("%j"):
                     assert 0 < blockdepth and curdepth < blockdepth
                     inner = self._build_spans(txt_spans, curdepth=blockdepth)
