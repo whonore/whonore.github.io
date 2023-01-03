@@ -21,11 +21,7 @@
       py-packages = python-packages:
         with python-packages;
           [pyshp]
-          ++ (
-            if dev
-            then [black flake8 isort mypy pathspec]
-            else []
-          );
+          ++ (pkgs.lib.optional dev [black flake8 isort mypy pathspec]);
       python = pkgs.python3.withPackages py-packages;
     in [python pkgs.imagemagick pkgs.jpegoptim pkgs.minify pkgs.postcss-cli pkgs.svgcleaner];
     env = system:
