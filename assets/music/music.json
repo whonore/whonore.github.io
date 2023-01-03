@@ -4,6 +4,23 @@
             "name": "Collaborations",
             "songs": [
                 {
+                    "title": "Eckos",
+                    "credits": [
+                        {
+                            "name": "Hølf Wonoré",
+                            "credits": "writing, bass, drums, mixing"
+                        },
+                        {
+                            "name": "Honald Reißer",
+                            "credits": "writing, keyboards"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "November",
+                    "audio": "eckos.m4a",
+                    "description": "Just a fun set of minor chords resolving to major with drum fills in between."
+                },
+                {
                     "title": "Tungsten",
                     "credits": [
                         {
@@ -70,29 +87,26 @@
                     "month": "March",
                     "audio": "cling-clang.m4a",
                     "description": "Some mess of polyrhythms. The bass is playing slow groups of 5, the 6-string bass high part is doing triplets, the bells are 8th notes I think."
-                },
-                {
-                    "title": "Eckos",
-                    "credits": [
-                        {
-                            "name": "Hølf Wonoré",
-                            "credits": "writing, bass, drums, mixing"
-                        },
-                        {
-                            "name": "Honald Reißer",
-                            "credits": "writing, keyboards"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "November",
-                    "audio": "eckos.m4a",
-                    "description": "Just a fun set of minor chords resolving to major with drum fills in between."
                 }
             ]
         },
         {
             "name": "Solo Originals",
             "songs": [
+                {
+                    "title": "'Leven",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "writing, keyboard (laptop), mixing"
+                        }
+
+                    ],
+                    "year": 2019,
+                    "month": "July",
+                    "audio": "leven.m4a",
+                    "description": "Made fully in Garage Band since I didn't have access to any real instruments. 11/4 time signatures, completely unrelated sections, dissonant harmonies, a gong, cowbell, unsettling panning noises, what's not to like?"
+                },
                 {
                     "title": "Lazer Phazer Man",
                     "credits": [
@@ -110,43 +124,12 @@
                     "month": "June",
                     "audio": "lpm.m4a",
                     "description": "A theme song for a smart watch game that never came to be. I think the idea was for an infinite side-scrolling shooter/platformer with only one button to jump. Too far ahead of its time. The song progresses through a Cmin7b5 chord and changes modes every modulation. No idea why, but it definitely keeps you on your toes."
-                },
-                {
-                    "title": "'Leven",
-                    "credits": [
-                        {
-                            "name": "Wolf Honoré",
-                            "credits": "writing, keyboard (laptop), mixing"
-                        }
-
-                    ],
-                    "year": 2019,
-                    "month": "July",
-                    "audio": "leven.m4a",
-                    "description": "Made fully in Garage Band since I didn't have access to any real instruments. 11/4 time signatures, completely unrelated sections, dissonant harmonies, a gong, cowbell, unsettling panning noises, what's not to like?"
                 }
             ]
         },
         {
             "name": "Solo Covers",
             "songs": [
-                {
-                    "title": "Killing in the Name",
-                    "credits": [
-                        {
-                            "name": "Wolf Honoré",
-                            "credits": "guitars, bass, drums, mixing"
-                        },
-                        {
-                            "name": "Rage Against the Machine",
-                            "credits": "writing"
-                        }
-                    ],
-                    "year": 2022,
-                    "month": "March",
-                    "audio": "killing-name.m4a",
-                    "description": "A pretty faithful cover except for the guitar solo. The drum bit near the end is fun. I don't really miss Zack's vocals."
-                },
                 {
                     "title": "Blackest Eyes",
                     "credits": [
@@ -163,6 +146,23 @@
                     "month": "April",
                     "audio": "blackest-eyes.m4a",
                     "description": "The drums were by far the hardest part. I'm not totally happy with them, but it's close enough to be recognizable. Figuring out the different guitar and keyboard sounds was fun. The second verse with the piano and synth arpeggios is really nice."
+                },
+                {
+                    "title": "Killing in the Name",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "guitars, bass, drums, mixing"
+                        },
+                        {
+                            "name": "Rage Against the Machine",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": 2022,
+                    "month": "March",
+                    "audio": "killing-name.m4a",
+                    "description": "A pretty faithful cover except for the guitar solo. The drum bit near the end is fun. I don't really miss Zack's vocals."
                 }
             ]
         }
