@@ -50,8 +50,10 @@
           <section>
             <h2><%ji .name %></h2>
             <%%ji .songs %>
-              <section class="music-song">
-                <p class="music-title">Title: <%ji .title %></p>
+              <section class="music-song" id="<%ji .id %>">
+                <p class="music-title">
+                  Title: <a href="#<%ji .id %>"><%ji .title %></a>
+                </p>
                 <div class="music-credits">
                   <p>Credits (Recorded <%ji .month %>, <%ji .year %>):</p>
                   <ul>

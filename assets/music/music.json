@@ -4,6 +4,7 @@
             "name": "Collaborations",
             "songs": [
                 {
+                    "id": "eckos",
                     "title": "Eckos",
                     "credits": [
                         {
@@ -21,6 +22,7 @@
                     "description": "Just a fun set of minor chords resolving to major with drum fills in between."
                 },
                 {
+                    "id": "tungsten",
                     "title": "Tungsten",
                     "credits": [
                         {
@@ -38,6 +40,7 @@
                     "description": "An attempt at a mini prog-metal epic. Lyrics were mostly improvised and changed every take. My double bass drum skills are weak."
                 },
                 {
+                    "id": "can_you_carry_this_funk_its_too_heavy",
                     "title": "Can you Carry this Funk? (It's too Heavy)",
                     "credits": [
                         {
@@ -55,6 +58,7 @@
                     "description": "Prepare your ears. Obnoxious clipping and distortion is The Vision&#8482;."
                 },
                 {
+                    "id": "run_the_pandas_have_hunger_in_their_eyes",
                     "title": "Run! (The Pandas Have Hunger in Their Eyes)",
                     "credits": [
                         {
@@ -72,6 +76,7 @@
                     "description": "A little bit Pink Floyd-ish. Same guitar as on Tungsten. Logic Pro can get a good range of sounds out of a mid-tier Telecaster. I blame the title on Sufjan Steven's Michigan and Illinois albums."
                 },
                 {
+                    "id": "cling_clang",
                     "title": "Cling Clang",
                     "credits": [
                         {
@@ -94,6 +99,7 @@
             "name": "Solo Originals",
             "songs": [
                 {
+                    "id": "leven",
                     "title": "'Leven",
                     "credits": [
                         {
@@ -108,6 +114,7 @@
                     "description": "Made fully in Garage Band since I didn't have access to any real instruments. 11/4 time signatures, completely unrelated sections, dissonant harmonies, a gong, cowbell, unsettling panning noises, what's not to like?"
                 },
                 {
+                    "id": "lazer_phazer_man",
                     "title": "Lazer Phazer Man",
                     "credits": [
                         {
@@ -131,6 +138,7 @@
             "name": "Solo Covers",
             "songs": [
                 {
+                    "id": "blackest_eyes",
                     "title": "Blackest Eyes",
                     "credits": [
                         {
@@ -148,6 +156,7 @@
                     "description": "The drums were by far the hardest part. I'm not totally happy with them, but it's close enough to be recognizable. Figuring out the different guitar and keyboard sounds was fun. The second verse with the piano and synth arpeggios is really nice."
                 },
                 {
+                    "id": "killing_in_the_name",
                     "title": "Killing in the Name",
                     "credits": [
                         {
