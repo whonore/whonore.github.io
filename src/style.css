@@ -140,6 +140,11 @@ h2::before {
   padding-right: 1ch;
 }
 
+h3::before {
+  content: "###";
+  padding-right: 1ch;
+}
+
 p:not(:last-of-type) {
   margin-bottom: 1rem;
 }
@@ -509,10 +514,6 @@ main a:visited {
   margin-bottom: var(--music-song-gutter);
   padding-bottom: var(--music-song-gutter);
   border-bottom: var(--music-song-separator) solid var(--green);
-}
-
-p.music-title {
-  margin-bottom: 0;
 }
 
 audio {
