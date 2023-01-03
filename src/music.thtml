@@ -56,7 +56,7 @@
                   <p>Credits (Recorded <%ji .month %>, <%ji .year %>):</p>
                   <ul>
                     <%%ji .credits %>
-                      <li><%ji .name%>: <%ji .credits %>
+                      <li><%ji .name%>: <%ji .credits %></li>
                     <%%e %>
                   </ul>
                 </div>
