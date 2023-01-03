@@ -352,6 +352,22 @@ main a:visited {
   color: var(--palepink);
 }
 
+main a[href^="/assets/photos"] {
+  padding-right: 0;
+}
+
+main a[href^="/assets/photos"]::after {
+  content: none;
+}
+
+main a[href^="/assets/photos"]:hover::after {
+  content: none;
+}
+
+a[href^="/assets/photos"]:is(:hover,:focus-visible) {
+  background-color: inherit;
+}
+
 .interview dd {
   padding-left: var(--interview-indent);
 }

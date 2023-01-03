@@ -4,122 +4,122 @@
     "path": "antarctica",
     "photos": [
         {
-            "src": "plane.jpg",
+            "src": "plane",
             "description": "A plane landing at the Ushuaia airport.",
             "alt": "A plane landing over the water with mountains in the background."
         },
         {
-            "src": "glacier.jpg",
+            "src": "glacier",
             "description": "A glacier with layers of volcanic ash.",
             "alt": "A glacier with layers of black volcanic ash."
         },
         {
-            "src": "leopard-seal.jpg",
+            "src": "leopard-seal",
             "description": "A leopard seal yawning on an ice floe. Taken from about 100ft away in an inflatable Zodiac, which they are apparently known to pop.",
             "alt": "A yawning leopard seal lying on its side on an ice floe."
         },
         {
-            "src": "orca-minke.jpg",
+            "src": "orca-minke",
             "description": "An orca and a Minke whale. This was one of two fairly large pods of orcas we saw.",
             "alt": "An orca swimming towards a Minke whale, both partially breaching the surface of the ocean."
         },
         {
-            "src": "porpoising.jpg",
+            "src": "porpoising",
             "description": "Some porpoising Adélie penguins.",
             "alt": "A group of penguins leaping out of the water and diving back in."
         },
         {
-            "src": "continent.jpg",
+            "src": "continent",
             "description": "The antarctic continent. Taken after hiking up a hill and it was actually pretty warm with the sun out (~40°F).",
             "alt": "A wide landscape with mostly very bright white ice and snow."
         },
         {
-            "src": "weddell.jpg",
+            "src": "weddell",
             "description": "A Weddell seal trying to nap.",
             "alt": "A Weddell seal lying on its side with its eyes closed."
         },
         {
-            "src": "two-adelie.jpg",
+            "src": "two-adelie",
             "description": "Two Adélie penguins considering sliding down the hill.",
             "alt": "Two penguins on a hill looking to the side."
         },
         {
-            "src": "following-chick.jpg",
+            "src": "following-chick",
             "description": "A Gentoo penguin chick following its parent. There were thousands of these things in the colony and they smelled awful.",
             "alt": "A penguin chick following behind an adult penguin. Many other penguins in the background."
         },
         {
-            "src": "diving.jpg",
+            "src": "diving",
             "description": "Adélie penguins diving into the water from an iceberg.",
             "alt": "A penguin diving off an iceberg into the water with others watching."
         },
         {
-            "src": "chattering.jpg",
+            "src": "chattering",
             "description": "Two Adélie penguins chattering at each other. Taken with a very cool, very heavy 600mm telephoto lens that I was able to borrow from National Geographic for the duration of the trip.",
             "alt": "Two penguins facing each other with their beaks open."
         },
         {
-            "src": "side-eye.jpg",
+            "src": "side-eye",
             "description": "Some Adélie penguins lining up very nicely for their portraits.",
             "alt": "A penguin head and torso leaning in from the left with a few other penguins in a line down the center at increasing distances."
         },
         {
-            "src": "humpback.jpg",
+            "src": "humpback",
             "description": "A humpback breaching out of the water. There was actually another one doing this simultaneously out of frame to the right, but I didn't get it.",
             "alt": "A humpback whale breaching out of the ocean."
         },
         {
-            "src": "rocketing.jpg",
+            "src": "rocketing",
             "description": "An Adélie penguin demonstrating how they get up on the icebergs. They don't jump high enough and slip off pretty often.",
             "alt": "A penguin jumping up onto an iceberg from the ocean with a water jet trail behind it. Several other penguins are climbing up the iceberg as well."
         },
         {
-            "src": "adelie-colony.jpg",
+            "src": "adelie-colony",
             "description": "A colony of over 1.5 million Adélies on Paulet island.",
             "alt": "Many penguins standing in close proximity on a rocky island."
         },
         {
-            "src": "evil-eye.jpg",
+            "src": "evil-eye",
             "description": "An Adélie staring me down out of the crowd.",
             "alt": "Many penguins out of focus in the foreground with a single focused penguin in the center staring directly into the camera."
         },
         {
-            "src": "orca.jpg",
+            "src": "orca",
             "description": "A spy-hopping orca. This was the second pod that the crew woke us up at 3:45 AM to see.",
             "alt": "An orca head peeking out of the ocean."
         },
         {
-            "src": "sunrise.jpg",
+            "src": "sunrise",
             "description": "The sun \"rising\" over a ridge. Since it was summer the sun never fully set below the horizon, so this blueish light is about as dark as it got.",
             "alt": "The sun starting to appear over a snow-covered ridge."
         },
         {
-            "src": "reflection.jpg",
+            "src": "reflection",
             "description": "A mountain reflected in the water.",
             "alt": "A snow-covered mountain reflected in very still water."
         },
         {
-            "src": "sea-ice.jpg",
+            "src": "sea-ice",
             "description": "A bunch of very picturesque sea ice. The ship had broken through it only about 20 minutes earlier, but it reforms very quickly.",
             "alt": "A snow-covered mountain with fog around it in the background and sheets of sea ice packed densely in the foreground."
         },
         {
-            "src": "strolling.jpg",
+            "src": "strolling",
             "description": "A Gentoo going for a stroll.",
             "alt": "A penguin walking from right to left with mountains in the background."
         },
         {
-            "src": "humpback-tail.jpg",
+            "src": "humpback-tail",
             "description": "A diving humpback's tail.",
             "alt": "A humpback's tail dripping with water as it dives and mountains in the background."
         },
         {
-            "src": "preening.jpg",
+            "src": "preening",
             "description": "A preening Gentoo.",
             "alt": "A penguin with its head tilted down against its wing."
         },
         {
-            "src": "highway.jpg",
+            "src": "highway",
             "description": "A Gentoo waddling towards me down one of the highways that they dig out by walking over the same path.",
             "alt": "A penguin walking towards the camera down a narrow groove in the snow."
         }

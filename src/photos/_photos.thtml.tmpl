@@ -28,14 +28,19 @@
         <div class="gallery">
           <%%j $MANIFEST.photos %>
             <figure>
-              <img src="/assets/photos/<%j $MANIFEST.path %>/<%ji .src %>" alt="<%ji .alt %>" />
+              <a href="/assets/photos/<%j $MANIFEST.path %>/<%ji .src %>-full.jpg">
+                <img src="/assets/photos/<%j $MANIFEST.path %>/<%ji .src %>.jpg" alt="<%ji .alt %>" />
+              </a>
               <figcaption>
                 <%ji .description %>
               </figcaption>
             </figure>
           <%%e %>
         </div>
-        <p class="note">Scroll/swipe to see more.</p>
+        <p class="note">
+          Scroll/swipe to see more.
+          Click/press an image for a full resolution version.
+        </p>
       </main>
     </div>
   </body>

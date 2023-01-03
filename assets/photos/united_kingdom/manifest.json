@@ -4,27 +4,27 @@
     "path": "united_kingdom",
     "photos": [
         {
-            "src": "tower-bridge.jpg",
+            "src": "tower-bridge",
             "description": "Underneath Tower Bridge. Apparently not falling down.",
             "alt": "Looking up at the underside of the pedestrian walkways on Tower Bridge."
         },
         {
-            "src": "cow.jpg",
+            "src": "cow",
             "description": "A very hairy cow. I'd like a better picture, but the only time we saw them closer it was very dark.",
             "alt": "A hairy cow grazing in a field."
         },
         {
-            "src": "loch.jpg",
+            "src": "loch",
             "description": "A loch.",
             "alt": "A lake surrounded by mild grassy hills."
         },
         {
-            "src": "chicken.jpg",
+            "src": "chicken",
             "description": "Another international chicken sighting.",
             "alt": "A colorful rooster in the grass."
         },
         {
-            "src": "hadrians-wall.jpg",
+            "src": "hadrians-wall",
             "description": "Hadrian's wall in a field of sheep (not pictured). Pretty good framing I think.",
             "alt": "A knee-high stone wall leading directly away from the camera over a small grassy hill."
         }

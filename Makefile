@@ -17,6 +17,7 @@ MAPWIDTH := 1600
 MAPHEIGHT := 800
 
 PHOTOS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/photos/*/*.jpg))
+PHOTOS_FULL := $(addsuffix -full.jpg,$(basename $(PHOTOS)))
 PHOTO_MANIFESTS := $(addprefix $(BUILD_DIR)/,assets/photos/manifest.json $(wildcard assets/*/*/manifest.json))
 PHOTO_WIDTH := 1024
 PHOTO_HEIGHT := 680
@@ -29,7 +30,7 @@ MUSIC := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.json))
 MUSIC_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.m4a assets/music/*.jpg))
 
 ASSETS := $(ICONS) $(ICON_MANIFEST) \
-	  $(MAP) $(PHOTOS) $(PHOTO_MANIFESTS) \
+	  $(MAP) $(PHOTOS) $(PHOTOS_FULL) $(PHOTO_MANIFESTS) \
 	  $(PUBS) $(PUB_MEDIA) \
 	  $(MUSIC) $(MUSIC_MEDIA)
 
@@ -136,6 +137,10 @@ $(BUILD_DIR)/%.css: $(BUILD_DIR)/%.css.unmin
           --output $@ $<
 
 # JPG
+
+$(BUILD_DIR)/%-full.jpg: %.jpg
+	@mkdir -p $(@D)
+	cp $< $@
 
 $(BUILD_DIR)/%.jpg: %.jpg
 	@mkdir -p $(@D)

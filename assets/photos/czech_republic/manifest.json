@@ -4,32 +4,32 @@
     "path": "czech_republic",
     "photos": [
         {
-            "src": "storefronts.jpg",
+            "src": "storefronts",
             "description": "Some storefronts. Nice colors.",
             "alt": "Differently colored storefronts along a street."
         },
         {
-            "src": "clock.jpg",
+            "src": "clock",
             "description": "The Prague Astronomical Clock, one of the oldest functional clocks in the world.",
             "alt": "An ornate clock with multiple rings and dials."
         },
         {
-            "src": "ossuary-1.jpg",
+            "src": "ossuary-1",
             "description": "A bunch of skull candles and other assorted bones in the Sedlec Ossuary.",
             "alt": "A chandelier made of human bones with candles resting on skulls."
         },
         {
-            "src": "ossuary-2.jpg",
+            "src": "ossuary-2",
             "description": "More bones. It was very dark so the camera was struggling.",
             "alt": "Skulls and bones arranged decoratively with metal accents."
         },
         {
-            "src": "castle.jpg",
+            "src": "castle",
             "description": "Karlštejn Castle, built by Charles IV in the 14th century.",
             "alt": "A large castle on a hill above a small town."
         },
         {
-            "src": "cat.jpg",
+            "src": "cat",
             "description": "A sleepy Czech cat somewhere outside the castle.",
             "alt": "A close up view of a cat sleeping on the sidewalk."
         }

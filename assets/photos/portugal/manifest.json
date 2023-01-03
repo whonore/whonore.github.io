@@ -4,27 +4,27 @@
     "path": "portugal",
     "photos": [
         {
-            "src": "cascais-morning.jpg",
+            "src": "cascais-morning",
             "description": "Cascais during a morning walk.",
             "alt": "A town across a small bay in the morning."
         },
         {
-            "src": "pink-sky.jpg",
+            "src": "pink-sky",
             "description": "A pretty pink sunrise. Those three lights on the building are a nice accent too.",
             "alt": "A cloudy sky colored by the sunrise and a large house with lights in the front."
         },
         {
-            "src": "street.jpg",
+            "src": "street",
             "description": "A street with more of that early morning glow.",
             "alt": "A narrow street, lined with trees, reflecting the sunrise."
         },
         {
-            "src": "orange-glow.jpg",
+            "src": "orange-glow",
             "description": "Another morning shot with a mysterious orange glow.",
             "alt": "A gray sky and a stone building on the left with a glow coming from out of frame."
         },
         {
-            "src": "cascais-day.jpg",
+            "src": "cascais-day",
             "description": "Cascais during the day.",
             "alt": "A town across the bay in bright daylight."
         }

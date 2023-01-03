@@ -4,27 +4,27 @@
     "path": "texas",
     "photos": [
         {
-            "src": "river.jpg",
+            "src": "river",
             "description": "A stream and some representative landscape.",
             "alt": "A stream surrounded by mostly flat, dry brush."
         },
         {
-            "src": "deer.jpg",
+            "src": "deer",
             "description": "A deer. Also a cactus to prove this is a southwestern deer.",
             "alt": "A deer standing among tall, dry grass."
         },
         {
-            "src": "big-rocks.jpg",
+            "src": "big-rocks",
             "description": "Some big rocks.",
             "alt": "Large rocks in the distance."
         },
         {
-            "src": "window.jpg",
+            "src": "window",
             "description": "A cool window in the rocks. I think that's not water on the ground, just very slick rock, so you probably shouldn't walk too close.",
             "alt": "A narrow opening between two large rocks overlooking the ground below."
         },
         {
-            "src": "sunset-rock.jpg",
+            "src": "sunset-rock",
             "description": "A rock on a bigger rock with nice light and shadows.",
             "alt": "Dark shadows cast on a rock."
         }

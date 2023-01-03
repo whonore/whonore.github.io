@@ -4,27 +4,27 @@
     "path": "california",
     "photos": [
         {
-            "src": "wavy-shadow.jpg",
+            "src": "wavy-shadow",
             "description": "A cool wavy shadow on some rocks.",
             "alt": "A shadow along the base of a small valley between wavy rocks."
         },
         {
-            "src": "wavy-rocks.jpg",
+            "src": "wavy-rocks",
             "description": "Some more wavy rocks. I guess it's probably wind that does that.",
             "alt": "A wide view of many wavy rocks in the foreground with desert and mountains in the background."
         },
         {
-            "src": "raven.jpg",
+            "src": "raven",
             "description": "A raven staring at me.",
             "alt": "A raven sitting on a rock looking into the camera."
         },
         {
-            "src": "bumpy.jpg",
+            "src": "bumpy",
             "description": "Some very bumpy rocks/mud/salt. I like how flat it seems from a distance.",
             "alt": "Densely packed bumpy rocks spreading off into the distance in a flat field that leads into mountains."
         },
         {
-            "src": "snow-tracks.jpg",
+            "src": "snow-tracks",
             "description": "Some tracks in the snow. I don't remember where exactly this was, but I think it was at a higher elevation than the rest of the trip.",
             "alt": "Tracks in the snow winding towards the camera."
         }

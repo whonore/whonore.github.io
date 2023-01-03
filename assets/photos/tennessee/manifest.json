@@ -4,32 +4,32 @@
     "path": "tennessee",
     "photos": [
         {
-            "src": "roots.jpg",
+            "src": "roots",
             "description": "Some tree roots. I like the kind of shiny/slimy-looking texture.",
             "alt": "Tangled, shiny tree roots."
         },
         {
-            "src": "spider.jpg",
+            "src": "spider",
             "description": "A spider that my camera struggled to find enough light to capture.",
             "alt": "A small spider in a web against a black background."
         },
         {
-            "src": "fog.jpg",
+            "src": "fog",
             "description": "A bunch of fog, hence the \"smoky\" part.",
             "alt": "A mountain rising out of dense fog."
         },
         {
-            "src": "forested-mountain.jpg",
+            "src": "forested-mountain",
             "description": "Many trees on some mountains and more fog.",
             "alt": "A densely forested mountain with patches of fog."
         },
         {
-            "src": "droplets.jpg",
+            "src": "droplets",
             "description": "Water droplets dripping from above part-way up Mount LeConte. Lens flare too for extra style.",
             "alt": "Water droplets falling from a cliff above."
         },
         {
-            "src": "leconte.jpg",
+            "src": "leconte",
             "description": "A view from the top of Mount LeConte. I'm not sure what those flowers (?) are in the foreground, but I like the texture they add.",
             "alt": "A high view of a forested mountain with colorful flowers in the foreground."
         }

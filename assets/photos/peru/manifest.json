@@ -4,42 +4,42 @@
     "path": "peru",
     "photos": [
         {
-            "src": "bird.jpg",
+            "src": "bird",
             "description": "A bird. I'm not that excited about birds specifically, but I like animal photography and they just tend to be what you see the most of.",
             "alt": "A bird flying above a mountain in a cloudy sky."
         },
         {
-            "src": "salkantay-1.jpg",
+            "src": "salkantay-1",
             "description": "Salkantay. I like the framing with the valley.",
             "alt": "A snow-covered mountain in the distance in the valley between green hills. "
         },
         {
-            "src": "salkantay-2.jpg",
+            "src": "salkantay-2",
             "description": "I think Salktantay again from the other side, but maybe it's some other mountain.",
             "alt": "A snow-covered mountain in the distance behind a green field."
         },
         {
-            "src": "chicken.jpg",
+            "src": "chicken",
             "description": "A cool feathery red rooster.",
             "alt": "A colorful rooster with spiky feathers on its head."
         },
         {
-            "src": "bear.jpg",
+            "src": "bear",
             "description": "A spectacled bear eating watermelon/staring pensively. I think this was some sort of nature preserve. There's a fence in the extreme foreground, but I mostly managed to hide it in this shot.",
             "alt": "A bear leaning forward over a watermelon that it's holding in its paws."
         },
         {
-            "src": "machu-picchu.jpg",
+            "src": "machu-picchu",
             "description": "Machu Picchu from the spot where everyone photographs it.",
             "alt": "A high view of a grassy, tiered, ancient city made of stone."
         },
         {
-            "src": "alpaca.jpg",
+            "src": "alpaca",
             "description": "Tiered grazing alpaca.",
             "alt": "Alpaca grazing on a tiered grassy hill."
         },
         {
-            "src": "cusco.jpg",
+            "src": "cusco",
             "description": "Cusco.",
             "alt": "A dense and bright city on a grassy hill."
         }
