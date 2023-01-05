@@ -5,7 +5,6 @@
   --focus-blur: calc(2 * var(--focus-thickness));
   --gutter-width: 1rem;
   --gutter-height: 2rem;
-  --li-gutter: 0.3rem;
   --hr-gutter: 0.5rem;
   --hr-thickness: 0.1rem;
   --checkbox-width: 1.8rem;
@@ -157,9 +156,19 @@ li {
   list-style: none;
 }
 
+ul li {
+  position: relative;
+  /* Indent the whole list item */
+  margin-left: 2ch;
+}
+
 ul li::before {
   content: "-";
-  padding-right: var(--li-gutter);
+  position: relative;
+  /* Compensate for the list indentation */
+  left: -2ch;
+  margin-right: -2ch;
+  padding-right: 1ch;
 }
 
 ul li[data-icon]::before {
@@ -520,7 +529,7 @@ a[href^="/assets/photos"]:is(:hover,:focus-visible) {
   content: "";
   display: inline-block;
   position: absolute;
-  left: calc(-1 * var(--file-border-thickness));
+  left: calc(-2ch + -1 * var(--file-border-thickness));
   top: calc(-1 * var(--file-border-thickness));
   background-color: var(--darkgreen);
   width: calc(var(--file-width) + 2 * var(--file-border-thickness));
