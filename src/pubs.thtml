@@ -29,7 +29,7 @@
         <section class="no-border">
           <h2>Conference Papers</h2>
           <%%j ../assets/pubs/pubs.json.pubs %>
-            <div class="pub">
+            <section class="pub">
               <cite><a href="<%ji .url %>"><%ji .title %></a></cite>
               <br />
               <ol class="pub-authors">
@@ -54,14 +54,14 @@
                   <%%ji .abstract %><p><%ji _ %></p><%%e %>
                 </blockquote>
               </details>
-            </div>
+            </section>
           <%%e %>
         </section>
         <hr />
         <section class="no-border">
           <h2>Talks</h2>
           <%%j ../assets/pubs/pubs.json.talks %>
-            <div class="pub">
+            <section class="pub">
               <cite><%ji .title %></cite>
               <br />
               <ol class="pub-authors">
@@ -80,14 +80,14 @@
               <%%je .media %>
                 </ul>
               <%%e %>
-            </div>
+            </section>
           <%%e %>
         </section>
         <hr />
         <section class="no-border">
           <h2>Thesis</h2>
           <%%j ../assets/pubs/pubs.json.thesis %>
-            <div class="pub">
+            <section class="pub">
               <cite><a href="<%ji .url %>"><%ji .title %></a></cite>
               <br />
               <ol class="pub-authors">
@@ -118,7 +118,7 @@
                   <%%ji .notes %><li><%ji _ %></li><%%e %>
                 </ul>
               </details>
-            </div>
+            </section>
           <%%e %>
         </section>
       </main>
