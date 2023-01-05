@@ -501,16 +501,16 @@ a[href^="/assets/photos"]:is(:hover,:focus-visible) {
   margin-bottom: 0;
 }
 
-.pub-author {
+.pub-authors li {
   display: inline;
 }
 
-.pub-authors .pub-author:not(:last-child)::after {
+.pub-authors li:not(:last-child)::after {
   content: ",";
   padding-right: 1ch;
 }
 
-.pub-author[data-name="Wolf Honoré"] {
+.pub-authors li[data-name="Wolf Honoré"] {
   font-weight: bold;
   color: var(--pink);
 }
