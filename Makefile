@@ -31,8 +31,8 @@ MUSIC_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.m4a assets/mu
 
 PROJECTS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/projects/*.json))
 PROJECT_THUMBS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/projects/thumbs/*.jpg))
-THUMB_WIDTH := 200
-THUMB_HEIGHT := 200
+THUMB_WIDTH := 400
+THUMB_HEIGHT := 400
 THUMB_QUALITY := 60
 
 ASSETS := $(ICONS) $(ICON_MANIFEST) \
