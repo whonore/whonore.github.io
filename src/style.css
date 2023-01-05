@@ -56,6 +56,9 @@
   --file-border-thickness: 0.07rem;
   --music-player-margin: 0.2rem;
   --music-border-thickness: 0.1rem;
+  --project-thumb-gap: 1rem;
+  --project-thumb-size: 50%;
+  --project-caption-size: 45%;
   --black: #000000;
   --red: #ff0000;
   --darkred: #870000;
@@ -554,6 +557,24 @@ audio {
   background-color: var(--darkblue);
   margin: var(--music-player-margin) 0;
   border: var(--music-border-thickness) solid var(--darkgreen);
+}
+
+/* Projects */
+.project figure {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  gap: var(--project-thumb-gap);
+}
+
+.project img {
+  width: var(--project-thumb-size);
+}
+
+.project figcaption {
+  max-width: var(--project-caption-size);
 }
 
 /* Syntax Highlighting */

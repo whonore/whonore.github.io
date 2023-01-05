@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolf Honore -- Projects</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <div class="console">
+      <header>
+        <div class="typed"><span>wolf.html</span></div>
+        <nav>
+          <a href="/index.html">/home</a>
+          <a href="#" aria-current="page">/projects</a>
+          <a href="/src/music.html">/music</a>
+          <a href="/src/photos.html">/photos</a>
+          <a href="/src/pubs.html">/publications</a>
+        </nav>
+      </header>
+      <main>
+        <h1>Projects</h1>
+        <p>
+          I've spent a lot time making stuff of varying levels of quality and
+          utility, but these ones are mostly pretty good.
+        </p>
+        <hr />
+        <%%j ../assets/projects/projects.json.projects %>
+          <section class="project">
+            <h2><a href="/src/projects/<%ji _ %>.html"><%jf ../assets/projects/ _ .title %></a></h2>
+            <figure>
+              <img
+                src="/assets/projects/thumbs/<%ji _ %>.jpg"
+                alt="<%jf ../assets/projects/ _ .thumb-alt %>"
+              />
+              <figcaption><%jf ../assets/projects/ _ .short %></figcaption>
+            </figure>
+          </section>
+        <%%e %>
+      </main>
+    </div>
+  </body>
+</html>

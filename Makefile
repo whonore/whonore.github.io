@@ -29,16 +29,23 @@ PUB_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/pubs/*.pdf) $(wildcard 
 MUSIC := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.json))
 MUSIC_MEDIA := $(addprefix $(BUILD_DIR)/,$(wildcard assets/music/*.m4a assets/music/*.jpg))
 
+PROJECTS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/projects/*.json))
+PROJECT_THUMBS := $(addprefix $(BUILD_DIR)/,$(wildcard assets/projects/thumbs/*.jpg))
+THUMB_WIDTH := 200
+THUMB_HEIGHT := 200
+THUMB_QUALITY := 60
+
 ASSETS := $(ICONS) $(ICON_MANIFEST) \
 	  $(MAP) $(PHOTOS) $(PHOTOS_FULL) $(PHOTO_MANIFESTS) \
 	  $(PUBS) $(PUB_MEDIA) \
-	  $(MUSIC) $(MUSIC_MEDIA)
+	  $(MUSIC) $(MUSIC_MEDIA) \
+	  $(PROJECTS) $(PROJECT_THUMBS)
 
 PLACES := $(notdir $(filter-out %.json,$(wildcard assets/photos/*)))
 PHOTOS_THTML := $(addprefix $(BUILD_DIR)/src/photos/,$(addsuffix .thtml,$(PLACES)))
 PHOTOS_HTML := $(patsubst %.thtml,%.html,$(PHOTOS_THTML))
 
-THTML := $(addprefix $(BUILD_DIR)/,$(patsubst %.thtml,%.html,$(wildcard src/*.thtml)))
+THTML := $(addprefix $(BUILD_DIR)/,$(patsubst %.thtml,%.html,$(wildcard src/*.thtml src/projects/*.thtml)))
 
 GEN_HTML := $(THTML) $(PHOTOS_THTML)
 COPY_HTML := $(addprefix $(BUILD_DIR)/,$(wildcard *.html src/*.html))
@@ -105,6 +112,14 @@ $(BUILD_DIR)/src/music.html.unmin: $(BUILD_DIR)/src/music.thtml $(MUSIC) scripts
 	@mkdir -p $(@D)
 	scripts/thtml.py $< $@
 
+$(BUILD_DIR)/src/projects.html.unmin: $(BUILD_DIR)/src/projects.thtml $(PROJECTS) scripts/thtml.py
+	@mkdir -p $(@D)
+	scripts/thtml.py $< $@
+
+$(BUILD_DIR)/src/projects/%.html.unmin: $(BUILD_DIR)/src/projects/%.thtml $(PROJECTS) scripts/thtml.py
+	@mkdir -p $(@D)
+	scripts/thtml.py $< $@
+
 $(BUILD_DIR)/%.html.unmin: %.thtml scripts/thtml.py
 	@mkdir -p $(@D)
 	scripts/thtml.py $< $@
@@ -141,6 +156,12 @@ $(BUILD_DIR)/%.css: $(BUILD_DIR)/%.css.unmin
 $(BUILD_DIR)/%-full.jpg: %.jpg
 	@mkdir -p $(@D)
 	cp $< $@
+
+$(BUILD_DIR)/assets/projects/thumbs/%.jpg: assets/projects/thumbs/%.jpg
+	@mkdir -p $(@D)
+	@cp $< $@
+	mogrify -resize $(THUMB_WIDTH)x$(THUMB_HEIGHT) -auto-orient $@
+	jpegoptim --max=$(THUMB_QUALITY) --all-progressive --strip-all --keep-exif $@
 
 $(BUILD_DIR)/%.jpg: %.jpg
 	@mkdir -p $(@D)
