@@ -26,7 +26,7 @@
         <h1>Publications</h1>
         <p>I've written some things and sometimes other people thought they were pretty ok.</p>
         <hr />
-        <section>
+        <section class="no-border">
           <h2>Conference Papers</h2>
           <%%j ../assets/pubs/pubs.json.pubs %>
             <div class="pub">
@@ -58,7 +58,7 @@
           <%%e %>
         </section>
         <hr />
-        <section>
+        <section class="no-border">
           <h2>Talks</h2>
           <%%j ../assets/pubs/pubs.json.talks %>
             <div class="pub">
@@ -84,7 +84,7 @@
           <%%e %>
         </section>
         <hr />
-        <section>
+        <section class="no-border">
           <h2>Thesis</h2>
           <%%j ../assets/pubs/pubs.json.thesis %>
             <div class="pub">

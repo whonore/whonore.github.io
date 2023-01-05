@@ -20,6 +20,8 @@
   --details-border-thickness: 0.1rem;
   --details-gutter: 0.3rem;
   --details-open-time: 0.07s;
+  --section-gutter: 0.5rem;
+  --section-separator: 0.1rem;
   --console-max-width: 41rem;
   --console-border-thickness: 0.2rem;
   --nav-border-thickness: 0.1rem;
@@ -53,8 +55,6 @@
   --file-height: 1.4rem;
   --file-width: 2ch;
   --file-border-thickness: 0.07rem;
-  --music-song-gutter: 0.5rem;
-  --music-song-separator: 0.1rem;
   --music-player-margin: 0.2rem;
   --music-border-thickness: 0.1rem;
   --black: #000000;
@@ -242,6 +242,22 @@ summary::before {
 
 details[open] > summary::before {
   transform: rotate(90deg);
+}
+
+section {
+  margin-top: var(--section-gutter);
+}
+
+section:not(:last-of-type) {
+  margin-bottom: var(--section-gutter);
+  padding-bottom: var(--section-gutter);
+  border-bottom: var(--section-separator) solid var(--green);
+}
+
+section.no-border {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: none;
 }
 
 /* Console */
@@ -522,16 +538,6 @@ a[href^="/assets/photos"]:is(:hover,:focus-visible) {
 }
 
 /* Music */
-.music-song {
-  margin-top: var(--music-song-gutter);
-}
-
-.music-song:not(:last-of-type) {
-  margin-bottom: var(--music-song-gutter);
-  padding-bottom: var(--music-song-gutter);
-  border-bottom: var(--music-song-separator) solid var(--green);
-}
-
 audio {
   display: block;
   background-color: var(--darkblue);

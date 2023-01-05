@@ -47,7 +47,7 @@
         </p>
         <hr />
         <%%j ../assets/music/music.json.music %>
-          <section>
+          <section class="no-border">
             <h2><%ji .name %></h2>
             <%%ji .songs %>
               <section class="music-song" id="<%ji .id %>">
