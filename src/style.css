@@ -21,6 +21,7 @@
   --details-open-time: 0.07s;
   --section-gutter: 0.5rem;
   --section-separator: 0.1rem;
+  --img-border-thickness: 0.1rem;
   --console-max-width: 41rem;
   --console-border-thickness: 0.2rem;
   --nav-border-thickness: 0.1rem;
@@ -44,7 +45,6 @@
   --link-arrow-scale: 1.5;
   --link-arrow-scale-time: 0.1s;
   --link-arrow-scale-thickness: calc(var(--link-arrow-thickness) / var(--link-arrow-scale));
-  --gallery-border-thickness: 0.1rem;
   --gallery-gap: 1rem;
   --gallery-aspect-ratio: 1.5;
   --gallery-max-height-pct: 70vh;
@@ -269,6 +269,10 @@ section.no-border {
   border: none;
 }
 
+img {
+  border: var(--img-border-thickness) solid var(--darkgreen);
+}
+
 /* Console */
 .console {
   max-width: var(--console-max-width);
@@ -408,7 +412,6 @@ a[href^="/assets/photos"]:is(:hover,:focus-visible) {
 
 .body-img img {
   max-width: 100%;
-  border: var(--gallery-border-thickness) solid var(--darkgreen);
 }
 
 .body-img figcaption {
@@ -484,7 +487,6 @@ a[href^="/assets/photos"]:is(:hover,:focus-visible) {
 .gallery img {
   max-width: 100%;
   max-height: var(--gallery-max-height);
-  border: var(--gallery-border-thickness) solid var(--darkgreen);
 }
 
 /* Publications */
