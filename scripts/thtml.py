@@ -86,6 +86,31 @@ class JsonItem(Span):
         return f"JsonItem({self.field})"
 
 
+class JsonFileItem(Span):
+    def __init__(self, span: str, base: Path) -> None:
+        file_base, file_field, field = span.strip().split(" ")
+        self.base = base / file_base
+        self.file_field = file_field.lstrip(".")
+        self.field = field.lstrip(".")
+        self.file: Path | None = None
+
+    def apply(self, data: Mapping[str, Any]) -> None:
+        self.file = (self.base / Span.read_field(data, self.file_field)).with_suffix(
+            ".json"
+        )
+
+    def eval(self) -> str:
+        debug(f"EVAL: {self!r}")
+        if self.file is None:
+            raise ValueError("Must call .apply() before .eval() for a JsonFileItem")
+        with open(self.file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return str(Span.read_field(data, self.field))
+
+    def __repr__(self) -> str:
+        return f"JsonFileItem({self.base}, {self.file_field}, {self.field})"
+
+
 class JsonSeparator(Span):
     def __init__(self, span: str) -> None:
         self.sep = span
@@ -130,7 +155,10 @@ class JsonBlock(Span):
         for idx, item in enumerate(items):
             last = idx == nitems - 1
             for span in self.inner:
-                if self.loop and isinstance(span, (JsonItem, JsonBlockItem)):
+                if self.loop and isinstance(
+                    span,
+                    (JsonItem, JsonFileItem, JsonBlockItem),
+                ):
                     span.apply(item)
                 if last and isinstance(span, JsonSeparator):
                     span.end()
@@ -172,7 +200,10 @@ class JsonBlockItem(Span):
         for idx, item in enumerate(items):
             last = idx == nitems - 1
             for span in self.inner:
-                if self.loop and isinstance(span, (JsonItem, JsonBlockItem)):
+                if self.loop and isinstance(
+                    span,
+                    (JsonItem, JsonFileItem, JsonBlockItem),
+                ):
                     span.apply(item)
                 if last and isinstance(span, JsonSeparator):
                     span.end()
@@ -232,6 +263,8 @@ class Template:
                     spans.append(Json(span, self.tmpl_file.parent))
                 elif kind == "ji":
                     spans.append(JsonItem(span))
+                elif kind == "jf":
+                    spans.append(JsonFileItem(span, self.tmpl_file.parent))
                 elif kind == "js":
                     spans.append(JsonSeparator(span))
                 elif kind.startswith("%j"):
