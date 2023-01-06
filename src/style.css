@@ -581,12 +581,24 @@ audio {
 }
 
 /* Syntax Highlighting */
-pre.syntax {
+.syntax {
   background-color: var(--darkgrey);
   margin: var(--code-block-margin) 0;
   padding: 0 var(--code-block-padding);
   border: var(--code-block-thickness) solid var(--blue);
   overflow-x: auto;
+}
+
+code {
+  color: var(--grey);
+  background-color: var(--darkgrey);
+  border: 0.05rem solid var(--blue);
+  border-radius: 0.1rem;
+}
+
+.syntax code {
+  color: inherit;
+  border: 0;
 }
 
 code .kwd {
