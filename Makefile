@@ -159,14 +159,12 @@ $(BUILD_DIR)/%-full.jpg: %.jpg
 
 $(BUILD_DIR)/assets/projects/thumbs/%.jpg: assets/projects/thumbs/%.jpg
 	@mkdir -p $(@D)
-	@cp $< $@
-	mogrify -resize $(THUMB_WIDTH)x$(THUMB_HEIGHT) -auto-orient $@
+	convert -resize $(THUMB_WIDTH)x$(THUMB_HEIGHT) -auto-orient $< $@
 	jpegoptim --max=$(THUMB_QUALITY) --all-progressive --strip-all --keep-exif $@
 
 $(BUILD_DIR)/%.jpg: %.jpg
 	@mkdir -p $(@D)
-	@cp $< $@
-	mogrify -resize $(PHOTO_WIDTH)x$(PHOTO_HEIGHT) -auto-orient $@
+	convert -resize $(PHOTO_WIDTH)x$(PHOTO_HEIGHT) -auto-orient $< $@
 	jpegoptim --max=$(PHOTO_QUALITY) --all-progressive --strip-all --keep-exif $@
 
 # ICO
