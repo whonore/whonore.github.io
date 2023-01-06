@@ -70,16 +70,16 @@
                 <code>&lt;section&gt;</code> for each object in the
                 <var>songs</var> array using the <var>title</var> and
                 <var>audio</var> fields.
-                <pre><code>
-&lt;%%j music.json.songs %&gt;
-  &lt;section&gt;
-    &lt;h3&gt;&lt;%ji .title %&gt;&lt;/h3&gt;
-    &lt;audio&gt;
-      &lt;source src=&quot;/assets/music/&lt;%ji .audio %&gt;&quot; /&gt;
-    &lt;/audio&gt;
-  &lt;/section&gt;
-&lt;%%e %&gt;
-                </code></pre>
+                <pre class="syntax"><code><!-- JOIN
+-->&lt;<span class="kwd">%%j</span> <span class="ident">music.json.songs</span> <span class="kwd">%</span>&gt;
+  &lt;<span class="kwd">section</span>&gt;
+    &lt;<span class="kwd">h3</span>&gt;&lt;<span class="kwd">%ji</span> <span class="ident">.title</span> <span class="kwd">%</span>&gt;&lt;/<span class="kwd">h3</span>&gt;
+    &lt;<span class="kwd">audio</span>&gt;
+      &lt;<span class="kwd">source</span> <span class="oper">src</span>=&quot;/assets/music/&lt;%<span class="kwd">ji</span> <span class="ident">.audio</span> <span class="kwd">%</span>&gt;&quot; /&gt;
+    &lt;/<span class="kwd">audio</span>&gt;
+  &lt;/<span class="kwd">section</span>&gt;
+&lt;<span class="kwd">%%e</span> <span class="kwd">%</span>&gt;<!-- JOIN
+             --></code></pre>
               </li>
               <li><!-- JOIN
               -->The world map on the <a href="/src/photos.html">photos</a> page

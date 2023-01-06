@@ -60,8 +60,8 @@
           </dd>
           <dt>Quick, can you prove &radic;2 is irrational?</dt>
           <dd>
-            <pre class="coq-syntax"><code>
-<span class="kwd">From</span> Coq <span class="kwd">Require Import</span> ssrbool ssreflect Lia QArith.
+            <pre class="syntax"><code><!-- JOIN
+--><span class="kwd">From</span> Coq <span class="kwd">Require Import</span> ssrbool ssreflect Lia QArith.
 
 <span class="kwd">Lemma</span> <span class="ident">Qred_int</span> x <span class="oper">:</span> Qred <span class="oper">(</span>x <span class="oper">#</span> <span class="number">1</span><span class="oper">)</span> <span class="oper">=</span> x <span class="oper">#</span> <span class="number">1</span>.
 <span class="kwd">Proof</span>. <span class="tactic">by</span> <span class="tactic">case:</span> x <span class="tactic">=&gt;</span> <span class="tactic">//</span>; <span class="tactic">case</span>. <span class="kwd">Qed</span>.
@@ -89,8 +89,8 @@
   <span class="tactic">have</span> /Z.even_spec[? Hq]: Z.even q' <span class="tactic">by</span> <span class="tactic">apply</span> even_sqr_even;
     <span class="tactic">rewrite</span> Heq' Z.even_mul orb_true_r.
   <span class="tactic">rewrite</span> Hk Hq Z.gcd_mul_mono_l; <span class="tactic">lia</span>.
-<span class="kwd">Qed</span>.
-            </code></pre>
+<span class="kwd">Qed</span>.<!-- JOIN
+         --></code></pre>
           </dd>
         </dl>
       </main>
