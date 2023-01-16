@@ -138,6 +138,24 @@
             "name": "Solo Covers",
             "songs": [
                 {
+                    "id": "disappear",
+                    "title": "This is How I Disappear",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "guitars, bass, drums, mixing"
+                        },
+                        {
+                            "name": "My Chemical Romance",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": 2023,
+                    "month": "January",
+                    "audio": "disappear.m4a",
+                    "description": "First song using my new guitar. Some small timing issues, and the mix is kind of muddy because I don't actually know what I'm doing and two distorted guitars take up a lot of sonic space. Overall, pretty happy with it though. The opening drum fills came out pretty well."
+                },
+                {
                     "id": "blackest_eyes",
                     "title": "Blackest Eyes",
                     "credits": [
