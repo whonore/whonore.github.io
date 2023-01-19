@@ -131,6 +131,7 @@ $(BUILD)/%.html.unmin: %.html
 	cp $< $@
 
 $(BUILD)/%.html: $(BUILD)/%.html.unmin
+	@mkdir -p $(@D)
 	minify --type html $(MINIFY_FLAGS) --output $@ $<
 
 # CSS
