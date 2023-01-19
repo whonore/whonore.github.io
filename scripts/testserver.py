@@ -26,10 +26,8 @@ class GitIgnoreFilter(DefaultFilter):
         super().__init__()
         with open(gitignore, "r", encoding="utf-8") as f:
             self.gitignore = PathSpec.from_lines("gitwildmatch", f)
-            print(self.gitignore)
 
     def __call__(self, change: Change, path: str) -> bool:
-        print(change, path)
         return super().__call__(change, path) and (
             not self.gitignore.match_file(Path(path).resolve().relative_to(ROOT))
         )
