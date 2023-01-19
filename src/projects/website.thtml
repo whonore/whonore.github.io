@@ -115,10 +115,10 @@
                 that's just
                 <a href="https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler"><var>SimpleHTTPRequestHandler</var></a>
                 with some extra HTTP headers to prevent caching.
-                It also runs a custom file watcher to handle automatic
-                rebuilding whenever the source files change.
-                It's a bit overkill for a static site, but it makes it easier
-                to test on other devices, like my phone.
+                It also runs a file watcher to handle automatic rebuilding
+                whenever the source files change. It's a bit overkill for a
+                static site, but it makes it easier to test on other devices,
+                like my phone.
               </li>
               <li><!-- JOIN
               -->Finally, the site is deployed by a GitHub Action that builds

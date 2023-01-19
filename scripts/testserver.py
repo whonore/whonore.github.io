@@ -6,13 +6,33 @@ import argparse
 import contextlib
 import os
 import socket
+import sys
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer, test
+from pathlib import Path
 from threading import Thread
 from typing import Any
 
-from rebuilder import watch
+from pathspec import PathSpec
+from watchfiles import Change, DefaultFilter, run_process
+
+DIR = Path(__file__).parent
+ROOT = DIR.parent
 
 WATCH = ["index.html", "src/", "assets/"]
+
+
+class GitIgnoreFilter(DefaultFilter):
+    def __init__(self, gitignore: Path) -> None:
+        super().__init__()
+        with open(gitignore, "r", encoding="utf-8") as f:
+            self.gitignore = PathSpec.from_lines("gitwildmatch", f)
+            print(self.gitignore)
+
+    def __call__(self, change: Change, path: str) -> bool:
+        print(change, path)
+        return super().__call__(change, path) and (
+            not self.gitignore.match_file(Path(path).resolve().relative_to(ROOT))
+        )
 
 
 class CacheBusterHandler(SimpleHTTPRequestHandler):
@@ -84,10 +104,27 @@ if __name__ == "__main__":
             )
 
     if args.watch:
+
+        def log_changes(changes: set[tuple[Change, str]]) -> None:
+            for change, path in changes:
+                msg = (
+                    "ADDED"
+                    if change == Change.added
+                    else "DELETED"
+                    if change == Change.deleted
+                    else "MODIFIED"
+                )
+                print(f"{msg}: {path}", file=sys.stderr)
+
         Thread(
-            target=watch,
+            target=run_process,
             args=WATCH,
-            kwargs={"production": args.production},
+            kwargs={
+                "target": "make -j" if not args.production else "make install -j",
+                "target_type": "command",
+                "watch_filter": GitIgnoreFilter(ROOT / ".gitignore"),
+                "callback": log_changes,
+            },
             daemon=True,
         ).start()
 
@@ -96,5 +133,5 @@ if __name__ == "__main__":
         ServerClass=DualStackServer,
         port=args.port,
         bind=args.bind,
-        protocol='HTTP/1.1',
+        protocol="HTTP/1.1",
     )
