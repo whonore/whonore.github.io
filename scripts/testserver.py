@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# pylint: disable
+# pylint: skip-file
 # flake8: noqa
 # type: ignore
 import argparse
@@ -19,6 +19,18 @@ DIR = Path(__file__).parent
 ROOT = DIR.parent
 
 WATCH = ["index.html", "src/", "assets/"]
+
+
+def log_changes(changes: set[tuple[Change, str]]) -> None:
+    for change, path in changes:
+        msg = (
+            "ADDED"
+            if change == Change.added
+            else "DELETED"
+            if change == Change.deleted
+            else "MODIFIED"
+        )
+        print(f"{msg}: {path}", file=sys.stderr)
 
 
 class GitIgnoreFilter(DefaultFilter):
@@ -62,7 +74,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-d",
         "--directory",
-        default=os.getcwd(),
+        default=os.getcwd() + "/build",
         help="serve this directory (default: current directory)",
     )
     parser.add_argument(
@@ -70,12 +82,6 @@ if __name__ == "__main__":
         "--production",
         action="store_true",
         help="build the production version (default: %(default)s)",
-    )
-    parser.add_argument(
-        "-w",
-        "--watch",
-        action="store_true",
-        help="automatically rebuild (default: %(default)s)",
     )
     parser.add_argument(
         "port",
@@ -101,30 +107,17 @@ if __name__ == "__main__":
                 directory=args.directory,
             )
 
-    if args.watch:
-
-        def log_changes(changes: set[tuple[Change, str]]) -> None:
-            for change, path in changes:
-                msg = (
-                    "ADDED"
-                    if change == Change.added
-                    else "DELETED"
-                    if change == Change.deleted
-                    else "MODIFIED"
-                )
-                print(f"{msg}: {path}", file=sys.stderr)
-
-        Thread(
-            target=run_process,
-            args=WATCH,
-            kwargs={
-                "target": "make -j" if not args.production else "make install -j",
-                "target_type": "command",
-                "watch_filter": GitIgnoreFilter(ROOT / ".gitignore"),
-                "callback": log_changes,
-            },
-            daemon=True,
-        ).start()
+    Thread(
+        target=run_process,
+        args=WATCH,
+        kwargs={
+            "target": "make -j" if not args.production else "make install -j",
+            "target_type": "command",
+            "watch_filter": GitIgnoreFilter(ROOT / ".gitignore"),
+            "callback": log_changes,
+        },
+        daemon=True,
+    ).start()
 
     test(
         HandlerClass=CacheBusterHandler,
