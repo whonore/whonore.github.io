@@ -1,7 +1,9 @@
 {
     "title": "Cascais, Portugal",
     "description": "In January 2019 I went to Cascais to attend POPL.",
-    "path": "portugal",
+    "path": "cascais",
+    "region": "Portugal",
+    "coords": [-9.416667, 38.7],
     "photos": [
         {
             "src": "cascais-morning",

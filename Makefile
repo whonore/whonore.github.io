@@ -63,8 +63,13 @@ MINIFY_FLAGS := --html-keep-whitespace \
 		--html-keep-end-tags \
 		--html-keep-document-tags \
 		--html-keep-comments
-SVGCLEAN_FLAGS := --remove-title=no \
-		  --remove-unresolved-classes=no
+SVGCLEAN_FLAGS := --remove-invisible-elements=no \
+		  --remove-nonsvg-attributes=no \
+		  --remove-title=no \
+		  --remove-unreferenced-ids=no \
+		  --remove-unresolved-classes=no \
+		  --remove-unused-defs=no \
+		  --trim-ids=no
 POSTCSS_FLAGS := --no-map
 
 .PHONY: all install

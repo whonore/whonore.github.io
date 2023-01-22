@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import itertools
+import json
 import math
 import sys
 from pathlib import Path
-from typing import Any, Iterable, NamedTuple, Optional, Sequence, TextIO, TypeVar, cast
+from typing import Any, Final, Iterable, NamedTuple, Sequence, TextIO, TypeVar, cast
 
 import shapefile  # type: ignore # pylint: disable=import-error
 
@@ -56,11 +57,26 @@ def partition(xs: Sequence[T], idxs: Iterable[int]) -> list[list[T]]:
     ]
 
 
-def photo_link(name: str) -> Optional[Path]:
-    canonical = name.lower().replace(" ", "_")
-    photos = ROOT / "assets/photos" / canonical
-    html = (ROOT / "src/photos" / canonical).with_suffix(".html").relative_to(ROOT)
-    return html if photos.exists() else None
+def manifests() -> list[dict[str, Any]]:
+    photos = ROOT / "assets/photos"
+    return [
+        json.loads(manifest.read_text()) for manifest in photos.glob("*/manifest.json")
+    ]
+
+
+def regions() -> set[str]:
+    return {data["region"] for data in manifests()}
+
+
+def pointers() -> list[tuple[str, Coord, Path]]:
+    return [
+        (
+            data['title'],
+            data["coords"],
+            (ROOT / "src/photos" / data["path"]).with_suffix(".html").relative_to(ROOT),
+        )
+        for data in manifests()
+    ]
 
 
 class Region(NamedTuple):
@@ -74,6 +90,9 @@ class Poly(NamedTuple):
 
 
 class Svg:
+    POINTER_RATIO: Final[float] = 1.5
+    POINTER_WIDTH: float = 0.015
+
     def __init__(self, w: int, h: int) -> None:
         self.width = w
         self.height = h
@@ -93,23 +112,60 @@ class Svg:
         self.shapes += shapes
 
     def write(self, f: TextIO) -> None:
-        f.write(
-            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.width} {self.height}">\n'
+        pwidth = self.width * self.POINTER_WIDTH
+        pheight = pwidth * self.POINTER_RATIO
+        ppath = " ".join(
+            (
+                "M 0 0",
+                f"l -{pwidth / 2} -{2 * pheight / 3}",
+                f"q {pwidth / 2} -{pheight / 3} {pwidth} 0",
+                f"l -{pwidth / 2} {2 * pheight / 3}",
+                "Z",
+            )
         )
+        f.write(
+            "\n".join(
+                (
+                    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.width} {self.height}">',
+                    "  <defs>",
+                    f'    <path id="map-pointer" d="{ppath}" />',
+                    '     <pattern id="map-stripe" patternUnits="userSpaceOnUse" width="10" height="10">',
+                    '       <line x1="-10" y1="0" x2="0" y2="10" />',
+                    '       <line x1="0" y1="0" x2="10" y2="10" />',
+                    '       <line x1="10" y1="0" x2="20" y2="10" />',
+                    "     </pattern>",
+                    "  </defs>\n",
+                )
+            )
+        )
+
+        visited = regions()
         for shape in self.shapes:
             attrs = {
                 "points": " ".join(
                     ",".join(map(Svg._float_to_str, xy)) for xy in shape.points
                 ),
             }
-            photos = photo_link(shape.name)
-            if photos is not None:
-                attrs["class"] = "active"
-                f.write(f'  <a xlink:href="/{photos}">')
+            if shape.name in visited:
+                attrs["class"] = "map-visited"
             attrstr = " ".join(f'{attr}="{val}"' for attr, val in attrs.items())
             f.write(f"  <polygon {attrstr}><title>{shape.name}</title></polygon>\n")
-            if photos is not None:
-                f.write("  </a>")
+
+        for name, (lon, lat), path in pointers():
+            x, y = map(
+                Svg._float_to_str,
+                (lon_to_x(lon, self.width), lat_to_y(lat, self.height)),
+            )
+            f.write(
+                "\n".join(
+                    (
+                        f'  <a href="/{path}">',
+                        f'  <title>{name}</title>',
+                        f'  <use href="#map-pointer" x="{x}" y="{y}" />',
+                        "  </a>\n",
+                    )
+                )
+            )
         f.write("</svg>\n")
 
     @staticmethod

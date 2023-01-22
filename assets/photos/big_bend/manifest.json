@@ -1,7 +1,9 @@
 {
     "title": "Big Bend National Park",
     "description": "In April 2012 my school took a class trip to Big Bend.",
-    "path": "texas",
+    "path": "big_bend",
+    "region": "Texas",
+    "coords": [-103.25, 29.25],
     "photos": [
         {
             "src": "river",

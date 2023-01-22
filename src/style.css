@@ -451,11 +451,17 @@ a[href^="/assets/photos"]:is(:hover,:focus-visible) {
   fill: transparent;
 }
 
-.map path.active {
+.map .map-visited {
+  fill: url("#map-stripe");
+}
+
+#map-pointer {
+  stroke: var(--map-color);
+  stroke-width: var(--map-thickness);
   fill: var(--teal);
 }
 
-.map a:is(:hover, :focus-visible) path.active {
+#map-pointer:is(:hover, :focus-visible) {
   fill: var(--darkblue);
 }
 

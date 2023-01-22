@@ -11,7 +11,7 @@
             "icon": "🇦🇷"
         },
         {
-            "path": "portugal",
+            "path": "cascais",
             "name": "Cascais",
             "icon": "🇵🇹"
         },
@@ -32,7 +32,7 @@
         },
         {
             "path": "czech_republic",
-            "name": "Prague",
+            "name": "Czech Republic",
             "icon": "🇨🇿"
         },
         {
@@ -46,23 +46,23 @@
             "icon": "🇺🇸"
         },
         {
-            "path": "texas",
+            "path": "big_bend",
             "name": "Big Bend National Park",
             "icon": "🇺🇸"
         },
         {
-            "path": "california",
+            "path": "death_valley",
             "name": "Death Valley National Park",
             "icon": "🇺🇸"
         },
         {
-            "path": "arizona",
+            "path": "grand_canyon",
             "name": "Grand Canyon National Park",
             "icon": "🇺🇸"
         },
         {
-            "path": "tennessee",
-            "name": "Smoky Mountain National Park",
+            "path": "smoky_mountains",
+            "name": "Great Smoky Mountain National Park",
             "icon": "🇺🇸"
         },
         {

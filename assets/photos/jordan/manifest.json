@@ -2,6 +2,8 @@
     "title": "Jordan",
     "description": "In December 2009 my family took a trip to Jordan with a guide that we met on the Peru trip to hike/camp through the desert for a week to Petra.",
     "path": "jordan",
+    "region": "Jordan",
+    "coords": [35.441944, 30.328611],
     "photos": [
         {
             "src": "pillars",
