@@ -11,6 +11,11 @@
             "icon": "🇦🇷"
         },
         {
+            "path": "barcelona",
+            "name": "Barcelona",
+            "icon":"🇪🇸"
+        },
+        {
             "path": "cascais",
             "name": "Cascais",
             "icon": "🇵🇹"
