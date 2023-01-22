@@ -1,6 +1,6 @@
 {
     "title": "Grand Canyon National Park",
-    "description": "In May 2016 my wife and I took a post-graduation roadtrip to the Grand Canyon.",
+    "description": "In May 2016, my wife and I took a post-graduation roadtrip to the Grand Canyon.",
     "path": "grand_canyon",
     "region": "Arizona",
     "coords": [-112.6, 36.3],
@@ -27,7 +27,7 @@
         },
         {
             "src": "raven-flying",
-            "description": "A raven flying over the canyon. If you look at my other photos you'll see a trend of birds in flight.",
+            "description": "A raven flying over the canyon. If you look at my other photos, you'll see a trend of birds in flight.",
             "alt": "A flying raven in the foreground with the canyon filling the background."
         },
         {

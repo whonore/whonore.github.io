@@ -1,6 +1,6 @@
 {
     "title": "Antarctica",
-    "description": "In January 2022 my wife and I went on our (delayed by 1.5 years) honeymoon to Antarctica with National Geographic/Lindblad Expeditions. We started from the southernmost point of Argentina and spent 2 weeks cruising around the edge of the Antarctic peninsula with a few shore excursions.",
+    "description": "In January 2022, my wife and I went on our (delayed by 1.5 years) honeymoon to Antarctica with National Geographic/Lindblad Expeditions. We started from the southernmost point of Argentina and spent 2 weeks cruising around the edge of the Antarctic peninsula with a few shore excursions.",
     "path": "antarctica",
     "region": "Antarctica",
     "coords": [-65, -69.5],
@@ -92,7 +92,7 @@
         },
         {
             "src": "sunrise",
-            "description": "The sun \"rising\" over a ridge. Since it was summer the sun never fully set below the horizon, so this blueish light is about as dark as it got.",
+            "description": "The sun \"rising\" over a ridge. Since it was summer, the sun never fully set below the horizon, so this blueish light is about as dark as it got.",
             "alt": "The sun starting to appear over a snow-covered ridge."
         },
         {
@@ -122,7 +122,7 @@
         },
         {
             "src": "highway",
-            "description": "A Gentoo waddling towards me down one of the highways that they dig out by walking over the same path.",
+            "description": "A Gentoo waddling towards me down one of the \"highways\" that they dig out by walking over the same path.",
             "alt": "A penguin walking towards the camera down a narrow groove in the snow."
         }
     ]
