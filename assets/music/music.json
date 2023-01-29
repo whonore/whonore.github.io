@@ -138,6 +138,24 @@
             "name": "Solo Covers",
             "songs": [
                 {
+                    "id": "jackie",
+                    "title": "Jackie Chan Adventures Theme Song",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "guitars, bass, drums, various MIDI instruments, mixing"
+                        },
+                        {
+                            "name": "Jim Latham",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": 2023,
+                    "month": "January",
+                    "audio": "jackie.m4a",
+                    "description": "I never realized before how much is going on in this song. That 16th note funk rhythm guitar thing is harder than it sounds."
+                },
+                {
                     "id": "disappear",
                     "title": "This is How I Disappear",
                     "credits": [
