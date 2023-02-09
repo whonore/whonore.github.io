@@ -16,8 +16,6 @@ Lon = float
 Coord = tuple[Lon, Lat]
 Point = tuple[float, float]
 
-POINT_DECIMALS = 2
-
 
 def scale(
     v: float,
@@ -142,9 +140,7 @@ class Svg:
         visited = regions()
         for shape in self.shapes:
             attrs = {
-                "points": " ".join(
-                    ",".join(map(Svg._float_to_str, xy)) for xy in shape.points
-                ),
+                "points": " ".join(",".join(map(str, xy)) for xy in shape.points),
             }
             if shape.name in visited:
                 attrs["class"] = "map-visited"
@@ -152,10 +148,7 @@ class Svg:
             f.write(f"  <polygon {attrstr}><title>{shape.name}</title></polygon>\n")
 
         for name, (lon, lat), path in pointers():
-            x, y = map(
-                Svg._float_to_str,
-                (lon_to_x(lon, self.width), lat_to_y(lat, self.height)),
-            )
+            x, y = map(str, (lon_to_x(lon, self.width), lat_to_y(lat, self.height)))
             f.write(
                 "\n".join(
                     (
@@ -167,11 +160,6 @@ class Svg:
                 )
             )
         f.write("</svg>\n")
-
-    @staticmethod
-    def _float_to_str(x: float) -> str:
-        x = round(x, POINT_DECIMALS)
-        return str(int(x) if x == int(x) else x)
 
 
 def parse_regions(shpf: str) -> list[Region]:

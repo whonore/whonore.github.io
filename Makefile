@@ -69,7 +69,10 @@ SVGCLEAN_FLAGS := --remove-invisible-elements=no \
 		  --remove-unreferenced-ids=no \
 		  --remove-unresolved-classes=no \
 		  --remove-unused-defs=no \
-		  --trim-ids=no
+		  --trim-ids=no \
+		  --coordinates-precision=2 \
+		  --paths-coordinates-precision=2 \
+		  --properties-precision=2
 POSTCSS_FLAGS := --no-map
 
 .PHONY: all install
