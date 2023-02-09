@@ -71,7 +71,7 @@ def regions() -> set[str]:
 def pointers() -> list[tuple[str, Coord, Path]]:
     return [
         (
-            data['title'],
+            data["title"],
             data["coords"],
             (ROOT / "src/photos" / data["path"]).with_suffix(".html").relative_to(ROOT),
         )
@@ -160,7 +160,7 @@ class Svg:
                 "\n".join(
                     (
                         f'  <a href="/{path}">',
-                        f'  <title>{name}</title>',
+                        f"  <title>{name}</title>",
                         f'  <use href="#map-pointer" x="{x}" y="{y}" />',
                         "  </a>\n",
                     )
