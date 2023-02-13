@@ -99,6 +99,21 @@
             "name": "Solo Originals",
             "songs": [
                 {
+                    "id": "leonine",
+                    "title": "Leonine",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "writing, bass, drums, mixing"
+                        }
+
+                    ],
+                    "year": 2023,
+                    "month": "February",
+                    "audio": "leonine.m4a",
+                    "description": "I've been playing around with this melody for a couple years and just trying different ideas on the G and C strings over the open D drone. This is just a few of those ideas strung together into a more coherent structure. There's obviously a strong Leo Kottke influence."
+                },
+                {
                     "id": "leven",
                     "title": "'Leven",
                     "credits": [
