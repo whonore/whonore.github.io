@@ -26,6 +26,11 @@
             "icon": "🇫🇷"
         },
         {
+            "path": "italy",
+            "name": "Italy",
+            "icon": "🇮🇹"
+        },
+        {
             "path": "jordan",
             "name": "Jordan",
             "icon": "🇯🇴"

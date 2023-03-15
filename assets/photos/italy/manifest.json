@@ -1,0 +1,99 @@
+{
+    "title": "Italy",
+    "description": "In March 2023, my wife and I visited Italy, starting with Florence and then ending in Venice.",
+    "path": "italy",
+    "region": "Italy",
+    "coords": [[11.256944, 43.773056]],
+    "photos": [
+        {
+            "src": "shop-roofs",
+            "description": "The roofs of the shops on the Ponte Vecchio. Surprisingly green for a roof.",
+            "alt": "Shingle roofs and balconies with plants growing from the cracks."
+        },
+        {
+            "src": "lamp-moon",
+            "description": "Florence has these lamps all over and I spent a while finding one that lined up with the moon this way.",
+            "alt": "A lamp with four arms each with a white orb. The moon sits between the arms."
+        },
+        {
+            "src": "florence-dome",
+            "description": "The Cathedral of Saint Mary of the Flower (Il Duomo). It's so much bigger than everything else.",
+            "alt": "An overview of a city with a giant domed cathedral rising above the surrounding buildings.."
+        },
+        {
+            "src": "florence-cathedral",
+            "description": "The cathedral façade doesn't disappoint either. I wish I had a better frontal photo, but the square was extremely busy basically any time it was light.",
+            "alt": "A cathedral and bell tower with ornate white, pink, and green marble façades."
+        },
+        {
+            "src": "stained-lights",
+            "description": "I didn't get any especially good shots of the stained glass itself, but these colorful shadows are nice.",
+            "alt": "Colorful lights from a stained glass window scattered on some steps."
+        },
+        {
+            "src": "moss-dome",
+            "description": "The view out a window during the climb to the top of the cathedral dome. I really like the warping effect the focal depth has on the bars.",
+            "alt": "A view out a barred window of a mossy roof with a city below."
+        },
+        {
+            "src": "steps",
+            "description": "The stairs going down from the top of the dome. There are something like 450 steps in total.",
+            "alt": "A narrow descending spiral staircase."
+        },
+        {
+            "src": "fountain",
+            "description": "The Boboli Gardens where this fountain is have some of the only real greenery in Florence.",
+            "alt": "Water droplets dripping into and splashing in a fountain in a garden."
+        },
+        {
+            "src": "bird-fountain",
+            "description": "A different fountain, but this time with a statue and a bird.",
+            "alt": "A large fountain with a statue of Neptune in the background and a bird standing on a ledge in the foreground."
+        },
+        {
+            "src": "lemons",
+            "description": "Between the flowers and the lemons and oranges, Cinque Terre National Park certainly thought it was spring.",
+            "alt": "A branch with several lemons hangs in front of a yellow house in the background in on a forested hill."
+        },
+        {
+            "src": "sunbeams",
+            "description": "It was cloudy and threatening rain, which made for some very cool lighting effects over the water.",
+            "alt": "A cloudy sky over the sea with rays of light making a bright spot on the water."
+        },
+        {
+            "src": "ocean-bird",
+            "description": "Not the noblest looking bird, but it's trying its best.",
+            "alt": "A bird sitting on a rock silhouetted in front of the sea."
+        },
+        {
+            "src": "alley",
+            "description": "Despite being a somewhat impractical city, Venice is very pretty.",
+            "alt": "A narrow canal lined with buildings and a bridge in the distance."
+        },
+        {
+            "src": "chandelier",
+            "description": "The Fenice Opera House was too dark for most photos, but these chandeliers provided enough light for some moody ambience.",
+            "alt": "A lit chandelier in the background shining on the crystals of one in the foreground."
+        },
+        {
+            "src": "basilica",
+            "description": "The Piazza San Marco has the most ornate Basilica I've seen and also hundreds of seagulls.",
+            "alt": "A square with a large clock tower on the right, a cathedral with several domes, spires, gold mosaics, and stained glass windows in the center, and a seagull flying above it."
+        },
+        {
+            "src": "sun-pillar",
+            "description": "A view of the other side of the square. More seagulls.",
+            "alt": "A large pillar in the center blocking the sun with a large open square on either side."
+        },
+        {
+            "src": "shadows",
+            "description": "The sun providing some dramatic lighting inside St. Mark's Basilica. Unfortunately, it was mostly still too dark for the interior decorations to photograph well.",
+            "alt": "Light being cast onto archways with very dark shadows behind."
+        },
+        {
+            "src": "santa-maria",
+            "description": "A view of Santa Maria della Salute as the sun starts to set. Also a pigeon.",
+            "alt": "A large church across a wide canal with a pigeon sitting on a lamppost on the right."
+        }
+    ]
+}
