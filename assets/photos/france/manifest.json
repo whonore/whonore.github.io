@@ -3,7 +3,7 @@
     "description": "In August 2011, my family took a trip to France. Mostly Paris, but we also went to the southern coast.",
     "path": "france",
     "region": "France",
-    "coords": [2.352222, 48.856613],
+    "coords": [[2.352222, 48.856613]],
     "photos": [
         {
             "src": "eiffel",

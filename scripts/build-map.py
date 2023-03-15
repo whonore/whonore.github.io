@@ -66,7 +66,7 @@ def regions() -> set[str]:
     return {data["region"] for data in manifests()}
 
 
-def pointers() -> list[tuple[str, Coord, Path]]:
+def pointers() -> list[tuple[str, list[Coord], Path]]:
     return [
         (
             data["title"],
@@ -147,18 +147,19 @@ class Svg:
             attrstr = " ".join(f'{attr}="{val}"' for attr, val in attrs.items())
             f.write(f"  <polygon {attrstr}><title>{shape.name}</title></polygon>\n")
 
-        for name, (lon, lat), path in pointers():
-            x, y = map(str, (lon_to_x(lon, self.width), lat_to_y(lat, self.height)))
-            f.write(
-                "\n".join(
-                    (
-                        f'  <a href="/{path}">',
-                        f"  <title>{name}</title>",
-                        f'  <use href="#map-pointer" x="{x}" y="{y}" />',
-                        "  </a>\n",
+        for name, coords, path in pointers():
+            for lon, lat in coords:
+                x, y = map(str, (lon_to_x(lon, self.width), lat_to_y(lat, self.height)))
+                f.write(
+                    "\n".join(
+                        (
+                            f'  <a href="/{path}">',
+                            f"  <title>{name}</title>",
+                            f'  <use href="#map-pointer" x="{x}" y="{y}" />',
+                            "  </a>\n",
+                        )
                     )
                 )
-            )
         f.write("</svg>\n")
 
 

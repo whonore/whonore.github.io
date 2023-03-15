@@ -3,7 +3,7 @@
     "description": "In November 2009, my school took a class trip to Yosemite.",
     "path": "yosemite",
     "region": "California",
-    "coords": [-119.5375, 37.7425],
+    "coords": [[-119.5375, 37.7425]],
     "photos": [
         {
             "src": "sequoia",

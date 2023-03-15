@@ -3,7 +3,7 @@
     "description": "In December 2011, my family took a trip to Patagonia, the southernmost region of Argentina.",
     "path": "argentina",
     "region": "Argentina",
-    "coords": [-68.303056, -54.801944],
+    "coords": [[-68.303056, -54.801944]],
     "photos": [
         {
             "src": "magellanic-penguins",

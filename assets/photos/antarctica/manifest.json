@@ -3,7 +3,7 @@
     "description": "In January 2022, my wife and I went on our (delayed by 1.5 years) honeymoon to Antarctica with National Geographic/Lindblad Expeditions. We started from the southernmost point of Argentina and spent 2 weeks cruising around the edge of the Antarctic peninsula with a few shore excursions.",
     "path": "antarctica",
     "region": "Antarctica",
-    "coords": [-65, -69.5],
+    "coords": [[-65, -69.5]],
     "photos": [
         {
             "src": "plane",

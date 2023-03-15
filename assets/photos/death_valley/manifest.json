@@ -3,7 +3,7 @@
     "description": "In December 2012, my family took a trip to Death Valley.",
     "path": "death_valley",
     "region": "California",
-    "coords": [-116.825833, 36.241944],
+    "coords": [[-116.825833, 36.241944]],
     "photos": [
         {
             "src": "wavy-shadow",

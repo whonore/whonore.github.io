@@ -3,7 +3,7 @@
     "description": "In May 2016, my wife and I took a post-graduation roadtrip to the Grand Canyon.",
     "path": "grand_canyon",
     "region": "Arizona",
-    "coords": [-112.6, 36.3],
+    "coords": [[-112.6, 36.3]],
     "photos": [
         {
             "src": "canyon-1",

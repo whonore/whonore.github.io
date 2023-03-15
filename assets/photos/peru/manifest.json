@@ -3,7 +3,7 @@
     "description": "In December 2008, my family went on a National Geographic Expedition that led us on a week of hiking to Machu Picchu.",
     "path": "peru",
     "region": "Peru",
-    "coords": [-72.545556, -13.163333],
+    "coords": [[-72.545556, -13.163333]],
     "photos": [
         {
             "src": "bird",

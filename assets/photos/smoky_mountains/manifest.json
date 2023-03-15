@@ -3,7 +3,7 @@
     "description": "In October 2018, my wife and I went to the Smoky Mountains.",
     "path": "smoky_mountains",
     "region": "Tennessee",
-    "coords": [-83.516667, 35.6],
+    "coords": [[-83.516667, 35.6]],
     "photos": [
         {
             "src": "roots",
