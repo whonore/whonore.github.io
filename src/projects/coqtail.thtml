@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolf Honore -- Projects -- Coqtail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <div class="console">
+      <header>
+        <div class="typed"><span>wolf.html</span></div>
+        <nav>
+          <a href="/index.html">/home</a>
+          <a href="/src/projects.html">/projects</a>
+          <a href="/src/music.html">/music</a>
+          <a href="/src/photos.html">/photos</a>
+          <a href="/src/pubs.html">/publications</a>
+        </nav>
+      </header>
+      <main>
+        <h1><a href="<%j ../../assets/projects/coqtail.json.link %>"><%j ../../assets/projects/coqtail.json.title %></a></h1>
+        <p><%j ../../assets/projects/coqtail.json.short %></p>
+        <hr />
+        <section>
+          <h2>What/why?</h2>
+          <p>
+            Coq proofs are developed interactively.
+            You write the property you want to prove and Coq tells you the
+            current goal state, which includes hypotheses and variables that
+            are in scope as well as any unproved conclusions.
+            Then you tell it what the next proof step is, it updates the state,
+            and you repeat until the proof is done.
+          </p>
+          <p>
+            If, like me, you are sufficiently indoctrinated into the Cult of
+            Vim that you can't go more than a few lines in another editor
+            without accidentally leaving <kbd>i</kbd>s and <kbd>:w</kbd>s
+            everywhere, then you need something to glue together Vim and Coq so
+            they can talk.
+            That's what Coqtail does.
+          </p>
+          <figure class="body-img">
+            <img
+              src="/assets/projects/casts/coqtail-demo.gif"
+              alt="A demonstration of using Coqtail to complete a proof. The cursor jumps to the start of a proof and steps forward and backwards a few times. Then the cursor moves to the end and tries to complete the proof. An error message is returned. A command is used to search for relevant lemmas. The lemma is applied and the proof is completed."
+            />
+            <figcaption>
+              This simple demo shows how basic proof navigation works (jump to
+              line, move forward/back one line) as well as how queries
+              (searching for lemmas, checking a term's type) can guide proof
+              development.
+            </figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>How?</h2>
+          <p>
+            Coqtail broadly divides into three parts: a backend implemented in
+            Python that handles communication with Coq, a Vimscript frontend
+            that deals with stuff like buffers and windows and highlighting to
+            make it look nice, and a mix of Vimscript and Python that plugs the
+            two together.
+          </p>
+          <section>
+            <h3>The Backend</h3>
+            <p>
+              Coq provides a few ways of talking to it, but Coqtail uses the
+              <a href="https://github.com/coq/coq/blob/master/dev/doc/xml-protocol.md">XML protocol</a>.
+              Whenever the user does something like ask to check some lines of
+              a proof, check a variable's type, step back to a previous proof
+              state, etc., Coqtail sends an XML message with the appropriate
+              command to a Coq server, which is responsible for actually doing
+              the verification and maintaining relevant state.
+              The server also sometimes sends messages back, like when the goal
+              changes, or if there was an error in the proof you asked it to
+              check.
+            </p>
+            <p>
+              In order to support different versions of Coq, which sometimes
+              support slightly different versions of the XML protocol, the
+              actual XML serialization/deserialization is handled by an
+              <var>XMLInterface</var> class.
+              One level of abstraction above that, the <var>Coqtop</var> class
+              manages some Coq-related state and actually talks to the Coq
+              server by spawning processes, sending and receiving messages,
+              etc.
+            </p>
+          </section>
+          <section>
+            <h3>The Frontend</h3>
+            <p>
+              In order to interact with the backend, Coqtail provides a bunch
+              of commands and mappings.
+              Some of these are common IDE operations ("jump to a definition"),
+              but many are Coq specific ("advance the proof state by one
+              sentence").
+              There's also some code to open additional windows to mimic to
+              typical 3-panel layout that other Coq IDEs use: code, current
+              goal, and messages.
+              Finally, there's the syntax highlighting and indentation scripts,
+              both of which are Unholy Masses of Edge-Cases and Best Efforts,
+              but Mostly Work and are Doing Their Best to tame Coq's ridiculous
+              grammar with regular expressions.
+            </p>
+          </section>
+          <section>
+            <h3>The Midend?</h3>
+            <p>
+              So how do you make your Vim talk to your Python?
+              Answer: with a whole other client-server architecture and
+              communication protocol.
+              The <var>CoqtailServer</var> and <var>CoqtailHandler</var>
+              classes listen for JSON, which Vim knows how to speak, and pass
+              the messages along to the <var>Coqtail</var> class, which puts
+              things in terms that the <var>Coqtop</var> class can understand.
+              The <var>Coqtail</var> class also does a bunch bookkeeping for
+              things like "what are the most recent contents of the buffer" (so
+              we can tell when and how the file changed) and "what was the last
+              line in the file that Coq checked" (so we know where to start
+              when moving forward or backwards).
+            </p>
+            <p>
+              Through some magic and quite a bit of pain and suffering, this
+              separation between layers allows most of Coq's thinking to happen
+              asynchronously, so you can still move your cursor around or look
+              at other files while you evaluate <code>Nat.pow 2 1000</code>.
+              You can even sometimes interrupt it without totally confusing
+              either Coq or Coqtail about where it is.
+              All this and more should be much improved in...
+            </p>
+          </section>
+          <section>
+            <h3>The Future</h3>
+            <p>
+              <a href="https://github.com/ejgallego/coq-lsp">coq-lsp</a> is an experimental
+              Coq server that uses the Language Server Protocol (LSP) instead of XML.
+              It also uses a different Coq document manager, which, among other
+              things, makes it easier and more efficient to check an entire
+              file at once instead of line-by-line.
+              What this means for Coqtail is that almost all of the current mid
+              and backends can be thrown away in favor of using an existing
+              LSP-capable Vim plugin.
+              In principle, most of the frontend can stay the same and the only
+              new code that's needed are some simple handlers for a few custom
+              Coq-specific LSP commands.
+            </p>
+            <p>
+              I have implemented a promising proof of concept on the
+              <a href="https://github.com/whonore/Coqtail/tree/coq-lsp">coq-lsp branch</a>,
+              but it needs more work before it's fully ready.
+            </p>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

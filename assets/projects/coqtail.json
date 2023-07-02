@@ -1,0 +1,6 @@
+{
+    "title": "Coqtail",
+    "link": "https://github.com/whonore/coqtail",
+    "short": "A Vim/NeoVim plugin for interactive Coq proofs.",
+    "thumb-alt": "A screenshot of a Coq file open in Vim. There are three panels. The leftmost shows the Coq source code with highlighting indicating how much of the file has been evaluated. On the right are two windows stacked vertically showing the current proof goal on top and informational messages on the bottom."
+}
