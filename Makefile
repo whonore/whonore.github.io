@@ -33,6 +33,7 @@ MUSIC_MEDIA := $(addprefix $(BUILD)/,$(wildcard assets/music/*.m4a assets/music/
 
 PROJECTS := $(addprefix $(BUILD)/,$(wildcard assets/projects/*.json))
 PROJECT_THUMBS := $(addprefix $(BUILD)/,$(wildcard assets/projects/thumbs/*.jpg))
+PROJECT_CASTS := $(addprefix $(BUILD)/,$(patsubst %.cast,%.gif,$(wildcard assets/projects/casts/*.cast)))
 THUMB_WIDTH := 400
 THUMB_HEIGHT := 400
 THUMB_QUALITY := 60
@@ -41,7 +42,7 @@ ASSETS := $(ICONS) $(ICON_MANIFEST) \
 	  $(MAP) $(PHOTOS) $(PHOTOS_FULL) $(PHOTO_MANIFESTS) \
 	  $(PUBS) $(PUB_MEDIA) \
 	  $(MUSIC) $(MUSIC_MEDIA) \
-	  $(PROJECTS) $(PROJECT_THUMBS)
+	  $(PROJECTS) $(PROJECT_THUMBS) $(PROJECT_CASTS)
 
 PLACES := $(notdir $(filter-out %.json,$(wildcard assets/photos/*)))
 PHOTOS_THTML := $(addprefix $(BUILD)/src/photos/,$(addsuffix .thtml,$(PLACES)))
@@ -55,7 +56,7 @@ HTML := $(GEN_HTML) $(COPY_HTML)
 
 CSS := $(addprefix $(BUILD)/,$(wildcard src/*.css))
 
-INSTALL_EXTS := html css jpg png ico mp4 m4a pdf webmanifest
+INSTALL_EXTS := html css jpg png gif ico mp4 m4a pdf webmanifest
 INSTALL_PAT := $(addprefix -o -name '*.,$(addsuffix ',$(INSTALL_EXTS)))
 IGNORE_INSTALL := assets/generated
 
@@ -74,6 +75,8 @@ SVGCLEAN_FLAGS := --remove-invisible-elements=no \
 		  --paths-coordinates-precision=2 \
 		  --properties-precision=2
 POSTCSS_FLAGS := --no-map
+AGG_FLAGS := --font-size 14 \
+	     --line-height 1.4
 
 .PHONY: all install
 
@@ -191,6 +194,16 @@ $(BUILD)/favicon-%.png: $(BUILD)/assets/generated/favicon-%.png
 $(BUILD)/apple-touch-icon.png: $(BUILD)/assets/generated/favicon-180.png
 	@mkdir -p $(@D)
 	cp $< $@
+
+# GIF
+
+$(BUILD)/%.gif: %.cast
+	@mkdir -p $(@D)
+	agg $(AGG_FLAGS) $< $@
+	mogrify \
+		-strip -interlace Plane -layers optimize \
+		-auto-orient \
+		$@
 
 # PDF
 

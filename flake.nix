@@ -29,7 +29,14 @@
             [pyshp]
             ++ (pkgs.lib.optionals dev [black flake8 isort mypy pathspec watchfiles']);
         python = pkgs.python3.withPackages py-packages;
-      in [python pkgs.imagemagick pkgs.minify pkgs.postcss-cli pkgs.svgcleaner];
+      in [
+        python
+        pkgs.asciinema-agg
+        pkgs.imagemagick
+        pkgs.minify
+        pkgs.postcss-cli
+        pkgs.svgcleaner
+      ];
 
       env = pkgs.mkShell {packages = build-pkgs {dev = true;};};
       website = pkgs.stdenv.mkDerivation {
