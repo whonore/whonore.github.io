@@ -30,7 +30,7 @@
   --nav-gap: 1rem;
   --main-padding: 0.5rem;
   --interview-indent: 3rem;
-  --body-img-width: 75%;
+  --body-img-width: 90%;
   --body-img-gutter: 1rem;
   --typed-steps: 9;
   --typed-width: 9ch;
@@ -596,6 +596,13 @@ audio {
 }
 
 code {
+  color: var(--grey);
+  background-color: var(--darkgrey);
+  border: 0.05rem solid var(--blue);
+  border-radius: 0.1rem;
+}
+
+kbd {
   color: var(--grey);
   background-color: var(--darkgrey);
   border: 0.05rem solid var(--blue);
