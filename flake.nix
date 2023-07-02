@@ -32,6 +32,7 @@
       in [
         python
         pkgs.asciinema-agg
+        pkgs.fira-code
         pkgs.imagemagick
         pkgs.minify
         pkgs.postcss-cli
@@ -50,6 +51,7 @@
 
         enableParallelBuilding = true;
         buildInputs = build-pkgs {};
+        buildFlags = ["FONTS=${pkgs.fira-code}/share"];
 
         installFlags = ["INSTALL=${placeholder "out"}"];
       };

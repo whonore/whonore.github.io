@@ -2,6 +2,7 @@ SHELL := /bin/bash
 
 BUILD ?= build
 INSTALL ?= www
+FONTS ?= ~/.nix-profile/share/fonts
 
 ifeq ($(BUILD),)
 $(error BUILD cannot be empty)
@@ -76,7 +77,9 @@ SVGCLEAN_FLAGS := --remove-invisible-elements=no \
 		  --properties-precision=2
 POSTCSS_FLAGS := --no-map
 AGG_FLAGS := --font-size 14 \
-	     --line-height 1.4
+	     --line-height 1.4 \
+	     --font-dir $(FONTS) \
+	     --font-family "Fira Code Light"
 
 .PHONY: all install
 
