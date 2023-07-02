@@ -1,7 +1,7 @@
 {
     "music": [
         {
-            "name": "Collaborations",
+            "name": "Collaborations (Original)",
             "songs": [
                 {
                     "id": "eckos",
@@ -96,7 +96,34 @@
             ]
         },
         {
-            "name": "Solo Originals",
+            "name": "Collaborations (Cover)",
+            "songs": [
+                {
+                    "id": "little-wing",
+                    "title": "Little Wing",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "bass, drums, MIDI bell thing, mixing"
+                        },
+                        {
+                            "name": "Gerard Honoré",
+                            "credits": "guitars, vocals"
+                        },
+                        {
+                            "name": "Jimi Hendrix",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "September",
+                    "audio": "little-wing.m4a",
+                    "description": "I think the guitar tone and the drum fills came out pretty well. This is my first real attempt at mixing vocals and I think they came out ok, but they don't stand out as much as I'd like."
+                }
+            ]
+        },
+        {
+            "name": "Solo (Original)",
             "songs": [
                 {
                     "id": "leonine",
@@ -150,7 +177,7 @@
             ]
         },
         {
-            "name": "Solo Covers",
+            "name": "Solo (Cover)",
             "songs": [
                 {
                     "id": "jackie",
