@@ -8,55 +8,59 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    gitignore,
-  }:
-    flake-utils.lib.eachDefaultSystem (system: let
-      inherit (gitignore.lib) gitignoreSource;
-      pkgs = nixpkgs.legacyPackages.${system};
-      build-pkgs = {dev ? false}: let
-        watchfiles' = pkgs.python3Packages.watchfiles.overrideAttrs (old: {
-          buildInputs =
-            old.buildInputs
-            ++ pkgs.lib.optionals (builtins.match ".*darwin.*" system != null)
-            [pkgs.libiconv pkgs.darwin.apple_sdk.frameworks.CoreServices];
-        });
-        py-packages = python-packages:
-          with python-packages;
-            [pyshp]
-            ++ (pkgs.lib.optionals dev [black flake8 isort mypy pathspec watchfiles']);
-        python = pkgs.python3.withPackages py-packages;
-      in [
-        python
-        pkgs.asciinema-agg
-        pkgs.fira-code
-        pkgs.imagemagick
-        pkgs.minify
-        pkgs.postcss-cli
-        pkgs.svgcleaner
-      ];
+  outputs = { self, nixpkgs, flake-utils, gitignore, }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        inherit (gitignore.lib) gitignoreSource;
+        pkgs = nixpkgs.legacyPackages.${system};
+        build-pkgs = { dev ? false }:
+          let
+            watchfiles' = pkgs.python3Packages.watchfiles.overrideAttrs (old: {
+              buildInputs = old.buildInputs ++ pkgs.lib.optionals
+                (builtins.match ".*darwin.*" system != null) [
+                  pkgs.libiconv
+                  pkgs.darwin.apple_sdk.frameworks.CoreServices
+                ];
+            });
+            py-packages = python-packages:
+              with python-packages;
+              [ pyshp ] ++ (pkgs.lib.optionals dev [
+                black
+                flake8
+                isort
+                mypy
+                pathspec
+                watchfiles'
+              ]);
+            python = pkgs.python3.withPackages py-packages;
+          in [
+            python
+            pkgs.asciinema-agg
+            pkgs.fira-code
+            pkgs.imagemagick
+            pkgs.minify
+            pkgs.postcss-cli
+            pkgs.svgcleaner
+          ];
 
-      env = pkgs.mkShell {packages = build-pkgs {dev = true;};};
-      website = pkgs.stdenv.mkDerivation {
-        pname = "website";
-        version = "0.0.0";
-        src = gitignoreSource ./.;
+        env = pkgs.mkShell { packages = build-pkgs { dev = true; }; };
+        website = pkgs.stdenv.mkDerivation {
+          pname = "website";
+          version = "0.0.0";
+          src = gitignoreSource ./.;
 
-        dontConfigure = true;
+          dontConfigure = true;
 
-        postPatch = "patchShebangs scripts";
+          postPatch = "patchShebangs scripts";
 
-        enableParallelBuilding = true;
-        buildInputs = build-pkgs {};
-        buildFlags = ["FONTS=${pkgs.fira-code}/share"];
+          enableParallelBuilding = true;
+          buildInputs = build-pkgs { };
+          buildFlags = [ "FONTS=${pkgs.fira-code}/share" ];
 
-        installFlags = ["INSTALL=${placeholder "out"}"];
-      };
-    in {
-      packages.default = website;
-      devShells.default = env;
-    });
+          installFlags = [ "INSTALL=${placeholder "out"}" ];
+        };
+      in {
+        packages.default = website;
+        devShells.default = env;
+      });
 }
