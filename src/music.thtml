@@ -27,11 +27,14 @@
       <main>
         <h1>Music</h1>
         <p>
-          Music is nice so I consume and produce it.
+          These are some things I've recorded.
+          I like to do covers where I try to play every instrument, minus vocals,
+          but I have a few original things too.
           I mostly play bass, but have become pretty ok on drums too.
           Guitar, I know some chords and how to noodle.
           Keyboards and mandolin, I own.
-          Singing, nope.
+          I use Logic Pro for recording and I'm slowly trying to learn to mix
+          through trial and error.
         </p>
         <figure class="body-img">
           <img
@@ -42,8 +45,7 @@
             The band, circa January 2023.
           </figcaption>
         </figure>
-        <p>
-          Here's some things I recorded.
+        <p class="note">
           All rights reserved except the ones that aren't mine.
           Please don't steal, I know a lawyer.
         </p>

@@ -25,6 +25,13 @@
         </nav>
       </header>
       <main>
+        <h1>Photos</h1>
+        <p>
+          Since around 2009 I've enjoyed taking photos whenever I travel
+          somewhere, especially nature/landscape.
+          The camera I use is a Nikon D40, mostly with a 18-135mm lens.
+        </p>
+        <hr />
         <input id="map-zoom" type="checkbox" name="map-zoom" /><!-- JOIN
         --><label for="map-zoom">Zoom in/out.</label>
         <figure class="map">

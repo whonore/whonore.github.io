@@ -73,7 +73,7 @@
                     "year": "2022",
                     "month": "March",
                     "audio": "pandas.m4a",
-                    "description": "A little bit Pink Floyd-ish. Same guitar as on Tungsten. Logic Pro can get a good range of sounds out of a mid-tier Telecaster. I blame the title on listening to Sufjan Steven's Michigan and Illinois albums too much."
+                    "description": "A little bit Pink Floyd-ish. Same guitar as on Tungsten. Logic Pro can get a good range of sounds out of a mid-tier Telecaster. I blame the long non-sensical title on listening to Sufjan Steven's Michigan and Illinois albums too much at the time."
                 },
                 {
                     "id": "cling_clang",
@@ -118,7 +118,7 @@
                     "year": "2022",
                     "month": "September",
                     "audio": "little-wing.m4a",
-                    "description": "I think the guitar tone and the drum fills came out pretty well. This is my first real attempt at mixing vocals and I think they came out ok, but they don't stand out as much as I'd like."
+                    "description": "I think the guitar tone and the drum fills came out pretty well. This is my first real attempt at mixing vocals and they came out ok, but they don't stand out as much as I'd like."
                 }
             ]
         },
@@ -138,7 +138,7 @@
                     "year": 2023,
                     "month": "August",
                     "audio": "goldbach-conjecture.m4a",
-                    "description": "Pulsing synthy 7th chords + a lopsided drum beat + scalar noodling on a 6-string bass with chorus and octaver effects = instant some flavor of jazz. The name doesn't mean anything, I just like the idea of naming songs after famous math properties. It seems appropriately pretentious for jazzy/proggy instrumentals."
+                    "description": "Pulsing synthy 7th chords + a lopsided drum beat + scalar noodling on a 6-string bass with chorus and octaver effects = my impression of Evan Marien. The name doesn't mean anything, I just like the idea of naming songs after famous math properties. It seems appropriately pretentious for jazzy/proggy instrumentals."
                 },
                 {
                     "id": "leonine",
@@ -153,7 +153,7 @@
                     "year": 2023,
                     "month": "February",
                     "audio": "leonine.m4a",
-                    "description": "I've been playing around with this melody for a couple years and just trying different ideas on the G and C strings over the open D drone. This is just a few of those ideas strung together into a more coherent structure. There's obviously a strong Leo Kottke influence."
+                    "description": "I've been playing around with this melody for a couple years and just trying different ideas on the G and C strings over the open D drone. This is just a few of those ideas strung together into a more coherent structure. The name is an acknowledgement of the Leo Kottke influence."
                 },
                 {
                     "id": "leven",
@@ -187,7 +187,7 @@
                     "year": 2014,
                     "month": "June",
                     "audio": "lpm.m4a",
-                    "description": "A theme song for a smart watch game that never came to be. I think the idea was for an infinite side-scrolling shooter/platformer with only one button to jump. Too far ahead of its time. The song progresses through a Cø7 chord and changes modes every modulation. No idea why, but it definitely keeps you on your toes."
+                    "description": "A theme song for a smart watch game that never came to be. I think the idea was for an infinite side-scrolling shooter/platformer with only one button to jump. Too far ahead of its time. The song progresses through a Cø7 chord and changes modes every modulation. I'm not sure why I did that, but it definitely keeps you on your toes."
                 }
             ]
         },
@@ -228,7 +228,7 @@
                     "year": 2023,
                     "month": "January",
                     "audio": "disappear.m4a",
-                    "description": "First song using my new guitar. Some small timing issues, and the mix is kind of muddy because I don't actually know what I'm doing and two distorted guitars take up a lot of sonic space. Overall, pretty happy with it though. The opening drum fills came out pretty well."
+                    "description": "First song using my new guitar. Some small timing issues, and the mix is kind of muddy because I don't actually know what I'm doing and two distorted guitars take up a lot of sonic space. Overall, I'm pretty happy with it though, especially the opening drum fills."
                 },
                 {
                     "id": "blackest_eyes",

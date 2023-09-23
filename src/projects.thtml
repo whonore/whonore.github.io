@@ -28,7 +28,9 @@
         <h1>Projects</h1>
         <p>
           I've spent a lot time making stuff of varying levels of quality and
-          utility, but these ones are mostly pretty good.
+          utility.
+          Here are some of the more interesting ones that I've gotten around to
+          documenting.
         </p>
         <hr />
         <%%j ../assets/projects/projects.json.projects %>

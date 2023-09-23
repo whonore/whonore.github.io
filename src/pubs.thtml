@@ -26,7 +26,10 @@
       </header>
       <main>
         <h1>Publications</h1>
-        <p>I've written some things and sometimes other people thought they were pretty ok.</p>
+        <p>
+          If you're interested in what I spent 6 years doing during my PhD, you
+          should read some of these.
+        </p>
         <hr />
         <section class="no-border">
           <h2>Conference Papers</h2>
