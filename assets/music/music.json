@@ -141,6 +141,25 @@
                     "description": "Pulsing synthy 7th chords + a lopsided drum beat + scalar noodling on a 6-string bass with chorus and octaver effects = my impression of Evan Marien. The name doesn't mean anything, I just like the idea of naming songs after famous math properties. It seems appropriately pretentious for jazzy/proggy instrumentals."
                 },
                 {
+                    "id": "yyzztop",
+                    "title": "YYZZ Top",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "arrangement, guitar, bass, drums, mixing"
+                        },
+                        {
+                            "name": "Rush",
+                            "credits": "writing"
+                        }
+
+                    ],
+                    "year": 2023,
+                    "month": "May",
+                    "audio": "yyzztop.m4a",
+                    "description": "I joined a country/blues band that also enjoys Rush, and I came up with this arrangement to amuse myself."
+                },
+                {
                     "id": "leonine",
                     "title": "Leonine",
                     "credits": [
