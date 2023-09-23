@@ -1,6 +1,10 @@
 {
     "projects": [
         "coqtail",
-        "website"
+        "website",
+        "clocks",
+        "petal",
+        "asciime",
+        "sopl"
     ]
 }

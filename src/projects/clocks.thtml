@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolf Honore -- Projects -- Clocks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <div class="console">
+      <header>
+        <div class="typed"><span>wolf.html</span></div>
+        <nav>
+          <a href="/index.html">/home</a>
+          <a href="/src/projects.html">/projects</a>
+          <a href="/src/music.html">/music</a>
+          <a href="/src/photos.html">/photos</a>
+          <a href="/src/pubs.html">/publications</a>
+        </nav>
+      </header>
+      <main>
+        <h1><a href="<%j ../../assets/projects/clocks.json.link %>"><%j ../../assets/projects/clocks.json.title %></a></h1>
+        <p><%j ../../assets/projects/clocks.json.short %></p>
+        <hr />
+        <p>More information to come when I get around to writing it.</p>
+      </main>
+    </div>
+  </body>
+</html>
