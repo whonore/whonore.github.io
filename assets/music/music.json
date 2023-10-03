@@ -99,6 +99,28 @@
             "name": "Collaborations (Cover)",
             "songs": [
                 {
+                    "id": "nothing-easy",
+                    "title": "Nothing is Easy",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "rhythm guitars, \"flute\" (guitar), bass, drums, mixing"
+                        },
+                        {
+                            "name": "Gerard Honoré",
+                            "credits": "lead/rhythm guitars, vocals"
+                        },
+                        {
+                            "name": "Jethro Tull",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "December",
+                    "audio": "nothing-easy.m4a",
+                    "description": "There are more guitar parts in this song than I initially realized. The drums have a bouncy, fairly loose feel, which is fun, but it makes it harder to record the other parts against them."
+                },
+                {
                     "id": "little-wing",
                     "title": "Little Wing",
                     "credits": [
