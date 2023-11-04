@@ -236,6 +236,24 @@
             "name": "Solo (Cover)",
             "songs": [
                 {
+                    "id": "overture1928",
+                    "title": "Scene Two: I. Overture 1928",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "guitars, bass, drums, keyboards, mixing"
+                        },
+                        {
+                            "name": "Dream Theater",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": 2023,
+                    "month": "September",
+                    "audio": "overture1928.m4a",
+                    "description": "By far the most complex song I've done so far and my first keyboard solo. I could probably learn to do the bass and drums all the way through, but the guitar and keyboard parts were only possible one riff at a time."
+                },
+                {
                     "id": "jackie",
                     "title": "Jackie Chan Adventures Theme Song",
                     "credits": [
