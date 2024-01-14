@@ -99,6 +99,28 @@
             "name": "Collaborations (Cover)",
             "songs": [
                 {
+                    "id": "all-this-time",
+                    "title": "All This Time",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "guitars, bass, drums, keyboards, mandolin, melodica, mixing"
+                        },
+                        {
+                            "name": "Gerard Honoré",
+                            "credits": "vocals"
+                        },
+                        {
+                            "name": "Sting",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": "2023",
+                    "month": "March",
+                    "audio": "all-this-time.m4a",
+                    "description": "Of the covers I've done so far, I'm happiest with how this one came out. I also got to use pretty much every instrument I own (at the time), which is fun."
+                },
+                {
                     "id": "nothing-easy",
                     "title": "Nothing is Easy",
                     "credits": [
