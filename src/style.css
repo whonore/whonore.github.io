@@ -517,6 +517,7 @@ a[href^="/assets/photos"]:is(:hover,:focus-visible) {
 .pub-authors li:not(:last-child)::after {
   content: ",";
   padding-right: 1ch;
+  color: var(--ice);
 }
 
 .pub-authors li[data-name="Wolf Honoré"] {
