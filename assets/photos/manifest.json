@@ -21,6 +21,16 @@
             "icon": "🇵🇹"
         },
         {
+            "path": "costa_rica",
+            "name": "Costa Rica",
+            "icon": "🇨🇷"
+        },
+        {
+            "path": "czech_republic",
+            "name": "Czech Republic",
+            "icon": "🇨🇿"
+        },
+        {
             "path": "france",
             "name": "France",
             "icon": "🇫🇷"
@@ -39,11 +49,6 @@
             "path": "peru",
             "name": "Peru",
             "icon": "🇵🇪"
-        },
-        {
-            "path": "czech_republic",
-            "name": "Czech Republic",
-            "icon": "🇨🇿"
         },
         {
             "path": "united_kingdom",

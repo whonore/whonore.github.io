@@ -1,0 +1,99 @@
+{
+    "title": "Costa Rica",
+    "description": "In June 2024, my wife and I visited Costa Rica. We spent the first part in the highlands near the cloud forest and then went down to the Pacific coast. Unfortunately, my camera stopped working a couple days in, so I had to use my phone for the later photos.",
+    "path": "costa_rica",
+    "region": "Costa Rica",
+    "coords": [[-84.083333, 9.933333]],
+    "photos": [
+        {
+            "src": "hills",
+            "description": "The view from where we stayed in the San Luis valley the first few days.",
+            "alt": "A view of trees and green hills in the distance."
+        },
+        {
+            "src": "bird-tree",
+            "description": "This is the first trip where I got to use my 55-300mm lens and it was very nice for all the wildlife way up in the trees. Cool warping happening in the background trees.",
+            "alt": "Two yellow and blue birds sitting on a tree."
+        },
+        {
+            "src": "baby-birds",
+            "description": "This nest was on a balcony right outside our bedroom window. I could see them breathing. Cute but also kind of gross.",
+            "alt": "A close view of a nest with three baby birds inside."
+        },
+        {
+            "src": "orange-butterfly",
+            "description": "Lots of butterflies in Costa Rica of various hues.",
+            "alt": "An orange and black butterfly sitting on a leaf."
+        },
+        {
+            "src": "green-lizard",
+            "description": "I really like the very shallow depth of field you can get with long focal lengths, especially when there are things to blur in the foreground and the background.",
+            "alt": "A close up of a green lizard peeking around a log."
+        },
+        {
+            "src": "guan",
+            "description": "A silhouetted guan, which is sort of a tree goose.",
+            "alt": "A silhouette of a tree with a large bird sitting on a horizontal branch."
+        },
+        {
+            "src": "blue-butterfly",
+            "description": "The jungle is pretty dark, so the fairly slow shutter speed made this blur effect as the butterfly opened its wings. It's cool how still the rest of its body is.",
+            "alt": "A blue butterfly sitting on a leaf with its wings blurred as they open."
+        },
+        {
+            "src": "gray-lizard",
+            "description": "A basilisk, which can run on water. This one was just sitting on a rock though.",
+            "alt": "A brown lizard sitting on a rock."
+        },
+        {
+            "src": "flying-hummingbird",
+            "description": "Similar effect to the butterfly wings. I wish the focus was a little bit sharper, but it looks ok when it's small or at a distance.",
+            "alt": "A blue hummingbird hovering with its wings blurred."
+        },
+        {
+            "src": "close-hummingbird",
+            "description": "Really nice detail on the feathers. This was at an area with feeders so there were a bunch of hummingbirds willing to pose for me.",
+            "alt": "A close up of a hummingbird at a feeder with iridescent green, purple, and blue feathers."
+        },
+        {
+            "src": "green-hummingbird",
+            "description": "Another good view of how shiny they are. With how fast they move and at this zoom level, I pretty much had to pre-focus on a spot and wait for something to fly into it. So I watched this branch for a while.",
+            "alt": "A bright green and black hummingbird sitting on a branch."
+        },
+        {
+            "src": "berry-close",
+            "description": "These are berry close.",
+            "alt": "A close up of a cluster of bright red berries."
+        },
+        {
+            "src": "steam",
+            "description": "This is what happens when you have very wet wood sitting in the hot sun.",
+            "alt": "Steam rising from a tree trunk."
+        },
+        {
+            "src": "quetzal",
+            "description": "A quetzal, which are apparently pretty rare to see. Of course, my camera decided to stop working an hour before, so this is an iPhone 11 through binoculars.",
+            "alt": "A blue and red bird sitting on a branch, viewed through binoculars."
+        },
+        {
+            "src": "iguana",
+            "description": "Lots of iguanas hanging out where we stayed in the lowlands. This is the phone + binoculars again. I could have just walked closer, but I kind of like the vignette and the slight distortions around the edges.",
+            "alt": "An iguana sitting on a post, viewed through binoculars."
+        },
+        {
+            "src": "monkeys",
+            "description": "A whole troop of capuchins crossed this bridge. The one in front dropped down to let the one behind jump over it.",
+            "alt": "Two monkeys crossing a rope bridge between two trees. One is lying flat and the other is on all fours."
+        },
+        {
+            "src": "moth",
+            "description": "Costa Rica has some big bugs, which I'm mostly not a fan of, but this moth was alright.",
+            "alt": "A black and green moth resting on a tile floor."
+        },
+        {
+            "src": "hawk",
+            "description": "One more binocular photo. It's pretty hard to line up the camera lens with the binocular lens and then actually point them at the subject, so I could only get things that sat still for a while.",
+            "alt": "A hawk on top of a tree viewed through binoculars."
+        }
+    ]
+}
