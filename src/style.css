@@ -571,20 +571,16 @@ audio {
 
 /* Projects */
 .project figure {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
   gap: var(--project-thumb-gap);
 }
 
 .project img {
-  width: var(--project-thumb-size);
-}
-
-.project figcaption {
-  max-width: var(--project-caption-size);
+  width: 100%;
 }
 
 /* Syntax Highlighting */
