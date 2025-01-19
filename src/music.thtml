@@ -63,7 +63,12 @@
                   <p>Credits (Recorded <%ji .month %> <%ji .year %>):</p>
                   <ul>
                     <%%ji .credits %>
-                      <li><%ji .name%>: <%ji .credits %></li>
+                      <li><!-- JOIN
+                      --><%%jo .link %><a href="<%ji _ %>"><%%e %><!-- JOIN
+                        --><%ji .name %><!-- JOIN
+                        --><%%je .link %></a><%%e %><!-- JOIN
+                        -->: <%ji .credits %><!-- JOIN
+                      --></li>
                     <%%e %>
                   </ul>
                 </div>

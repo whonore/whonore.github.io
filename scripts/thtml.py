@@ -148,8 +148,10 @@ class JsonBlock(Span):
         with open(self.file, "r", encoding="utf-8") as f:
             data = json.load(f)
             items = Span.read_field(data, self.field, required=self.required)
-            if items is None:
-                return ""
+        if items is None:
+            return ""
+        if not isinstance(items, list):
+            items = [items]
         txt = []
         nitems = len(items)
         for idx, item in enumerate(items):
@@ -195,6 +197,8 @@ class JsonBlockItem(Span):
         items = Span.read_field(self.data, self.field, required=self.required)
         if items is None:
             return ""
+        if not isinstance(items, list):
+            items = [items]
         txt = []
         nitems = len(items)
         for idx, item in enumerate(items):
