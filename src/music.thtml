@@ -60,7 +60,7 @@
               <section class="music-song" id="<%ji .id %>">
                 <h3><a href="#<%ji .id %>"><%ji .title %></a></h3>
                 <div>
-                  <p>Credits (Recorded <%ji .month %>, <%ji .year %>):</p>
+                  <p>Credits (Recorded <%ji .month %> <%ji .year %>):</p>
                   <ul>
                     <%%ji .credits %>
                       <li><%ji .name%>: <%ji .credits %></li>
