@@ -63,8 +63,7 @@ IGNORE_INSTALL := assets/generated
 
 MINIFY_FLAGS := --html-keep-whitespace \
 		--html-keep-end-tags \
-		--html-keep-document-tags \
-		--html-keep-comments
+		--html-keep-document-tags
 SVGCLEAN_FLAGS := --remove-invisible-elements=no \
 		  --remove-nonsvg-attributes=no \
 		  --remove-title=no \
