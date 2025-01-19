@@ -4,6 +4,25 @@
             "name": "Solo (Original)",
             "songs": [
                 {
+                    "id": "axolotl",
+                    "title": "Axolotl",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "writing, guitar, bass, drums, keyboards, mixing"
+                        },
+                        {
+                            "name": "Ronald Heisser",
+                            "credits": "writing, grunts"
+                        }
+
+                    ],
+                    "year": 2024,
+                    "month": "December",
+                    "audio": "axolotl.m4a",
+                    "description": "I came up with the bassline and decided to do the Chameleon thing of looping the rhythm section and having parts come in and out."
+                },
+                {
                     "id": "goldbach_conjecture",
                     "title": "Goldbach Conjecture",
                     "credits": [
@@ -91,6 +110,28 @@
         {
             "name": "Solo (Cover)",
             "songs": [
+                {
+                    "id": "mrsandman",
+                    "title": "Mr. Sandman",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "bass"
+                        },
+                        {
+                            "name": "Pat Ballard",
+                            "credits": "writing"
+                        },
+                        {
+                            "name": "dumbwheee (Musescore)",
+                            "credits": "arrangement"
+                        }
+                    ],
+                    "year": 2024,
+                    "month": "September",
+                    "audio": "mr-sandman.m4a",
+                    "description": "Mostly an exercise in mixing a 6-string bass quartet so it doesn't just sound like a muddy rumble. Maybe I'll do the rest of the song someday."
+                },
                 {
                     "id": "overture1928",
                     "title": "Scene Two: I. Overture 1928",
