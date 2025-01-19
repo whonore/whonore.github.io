@@ -1,172 +1,6 @@
 {
     "music": [
         {
-            "name": "Collaborations (Original)",
-            "songs": [
-                {
-                    "id": "eckos",
-                    "title": "Eckos",
-                    "credits": [
-                        {
-                            "name": "Hølf Wonoré",
-                            "credits": "writing, bass, drums, mixing"
-                        },
-                        {
-                            "name": "Honald Reißer",
-                            "credits": "writing, keyboards"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "November",
-                    "audio": "eckos.m4a",
-                    "description": "Just a fun set of minor chords resolving to major with drum fills in between."
-                },
-                {
-                    "id": "tungsten",
-                    "title": "Tungsten",
-                    "credits": [
-                        {
-                            "name": "Hølf Wonoré",
-                            "credits": "writing, guitar, bass, drums, mixing"
-                        },
-                        {
-                            "name": "Honald Reißer",
-                            "credits": "writing, keyboards, nonsense vocals"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "March",
-                    "audio": "tungsten.m4a",
-                    "description": "An attempt at a mini prog-metal epic. Lyrics were mostly improvised and changed every take. My double bass drum skills are weak."
-                },
-                {
-                    "id": "can_you_carry_this_funk_its_too_heavy",
-                    "title": "Can you Carry this Funk? (It's too Heavy)",
-                    "credits": [
-                        {
-                            "name": "Hølf Wonoré",
-                            "credits": "writing, drums, mixing"
-                        },
-                        {
-                            "name": "Honald Reißer",
-                            "credits": "writing, keyboards"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "March",
-                    "audio": "heavy-funk.m4a",
-                    "description": "Prepare your ears. Obnoxious clipping and distortion is The Vision&#8482;."
-                },
-                {
-                    "id": "run_the_pandas_have_hunger_in_their_eyes",
-                    "title": "Run! (The Pandas Have Hunger in Their Eyes)",
-                    "credits": [
-                        {
-                            "name": "Hølf Wonoré",
-                            "credits": "writing, guitar, drums, mixing"
-                        },
-                        {
-                            "name": "Honald Reißer",
-                            "credits": "writing, keyboards"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "March",
-                    "audio": "pandas.m4a",
-                    "description": "A little bit Pink Floyd-ish. Same guitar as on Tungsten. Logic Pro can get a good range of sounds out of a mid-tier Telecaster. I blame the long non-sensical title on listening to Sufjan Steven's Michigan and Illinois albums too much at the time."
-                },
-                {
-                    "id": "cling_clang",
-                    "title": "Cling Clang",
-                    "credits": [
-                        {
-                            "name": "Hølf Wonoré",
-                            "credits": "writing, basses, mixing"
-                        },
-                        {
-                            "name": "Honald Reißer",
-                            "credits": "writing, keyboards"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "March",
-                    "audio": "cling-clang.m4a",
-                    "description": "Some mess of polyrhythms. The bass is playing slow groups of 5, the 6-string bass high part is doing triplets, the bells are 8th notes I think."
-                }
-            ]
-        },
-        {
-            "name": "Collaborations (Cover)",
-            "songs": [
-                {
-                    "id": "all-this-time",
-                    "title": "All This Time",
-                    "credits": [
-                        {
-                            "name": "Wolf Honoré",
-                            "credits": "guitars, bass, drums, keyboards, mandolin, melodica, mixing"
-                        },
-                        {
-                            "name": "Gerard Honoré",
-                            "credits": "vocals"
-                        },
-                        {
-                            "name": "Sting",
-                            "credits": "writing"
-                        }
-                    ],
-                    "year": "2023",
-                    "month": "March",
-                    "audio": "all-this-time.m4a",
-                    "description": "Of the covers I've done so far, I'm happiest with how this one came out. I also got to use pretty much every instrument I own (at the time), which is fun."
-                },
-                {
-                    "id": "nothing-easy",
-                    "title": "Nothing is Easy",
-                    "credits": [
-                        {
-                            "name": "Wolf Honoré",
-                            "credits": "rhythm guitars, \"flute\" (guitar), bass, drums, mixing"
-                        },
-                        {
-                            "name": "Gerard Honoré",
-                            "credits": "lead/rhythm guitars, vocals"
-                        },
-                        {
-                            "name": "Jethro Tull",
-                            "credits": "writing"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "December",
-                    "audio": "nothing-easy.m4a",
-                    "description": "There are more guitar parts in this song than I initially realized. The drums have a bouncy, fairly loose feel, which is fun, but it makes it harder to record the other parts against them."
-                },
-                {
-                    "id": "little-wing",
-                    "title": "Little Wing",
-                    "credits": [
-                        {
-                            "name": "Wolf Honoré",
-                            "credits": "bass, drums, MIDI bell thing, mixing"
-                        },
-                        {
-                            "name": "Gerard Honoré",
-                            "credits": "guitars, vocals"
-                        },
-                        {
-                            "name": "Jimi Hendrix",
-                            "credits": "writing"
-                        }
-                    ],
-                    "year": "2022",
-                    "month": "September",
-                    "audio": "little-wing.m4a",
-                    "description": "I think the guitar tone and the drum fills came out pretty well. This is my first real attempt at mixing vocals and they came out ok, but they don't stand out as much as I'd like."
-                }
-            ]
-        },
-        {
             "name": "Solo (Original)",
             "songs": [
                 {
@@ -346,6 +180,172 @@
                     "month": "March",
                     "audio": "killing-name.m4a",
                     "description": "A pretty faithful cover except for the guitar solo. The drum bit near the end is fun. I don't really miss Zack's vocals."
+                }
+            ]
+        },
+        {
+            "name": "Collaborations (Original)",
+            "songs": [
+                {
+                    "id": "eckos",
+                    "title": "Eckos",
+                    "credits": [
+                        {
+                            "name": "Hølf Wonoré",
+                            "credits": "writing, bass, drums, mixing"
+                        },
+                        {
+                            "name": "Honald Reißer",
+                            "credits": "writing, keyboards"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "November",
+                    "audio": "eckos.m4a",
+                    "description": "Just a fun set of minor chords resolving to major with drum fills in between."
+                },
+                {
+                    "id": "tungsten",
+                    "title": "Tungsten",
+                    "credits": [
+                        {
+                            "name": "Hølf Wonoré",
+                            "credits": "writing, guitar, bass, drums, mixing"
+                        },
+                        {
+                            "name": "Honald Reißer",
+                            "credits": "writing, keyboards, nonsense vocals"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "March",
+                    "audio": "tungsten.m4a",
+                    "description": "An attempt at a mini prog-metal epic. Lyrics were mostly improvised and changed every take. My double bass drum skills are weak."
+                },
+                {
+                    "id": "can_you_carry_this_funk_its_too_heavy",
+                    "title": "Can you Carry this Funk? (It's too Heavy)",
+                    "credits": [
+                        {
+                            "name": "Hølf Wonoré",
+                            "credits": "writing, drums, mixing"
+                        },
+                        {
+                            "name": "Honald Reißer",
+                            "credits": "writing, keyboards"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "March",
+                    "audio": "heavy-funk.m4a",
+                    "description": "Prepare your ears. Obnoxious clipping and distortion is The Vision&#8482;."
+                },
+                {
+                    "id": "run_the_pandas_have_hunger_in_their_eyes",
+                    "title": "Run! (The Pandas Have Hunger in Their Eyes)",
+                    "credits": [
+                        {
+                            "name": "Hølf Wonoré",
+                            "credits": "writing, guitar, drums, mixing"
+                        },
+                        {
+                            "name": "Honald Reißer",
+                            "credits": "writing, keyboards"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "March",
+                    "audio": "pandas.m4a",
+                    "description": "A little bit Pink Floyd-ish. Same guitar as on Tungsten. Logic Pro can get a good range of sounds out of a mid-tier Telecaster. I blame the long non-sensical title on listening to Sufjan Steven's Michigan and Illinois albums too much at the time."
+                },
+                {
+                    "id": "cling_clang",
+                    "title": "Cling Clang",
+                    "credits": [
+                        {
+                            "name": "Hølf Wonoré",
+                            "credits": "writing, basses, mixing"
+                        },
+                        {
+                            "name": "Honald Reißer",
+                            "credits": "writing, keyboards"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "March",
+                    "audio": "cling-clang.m4a",
+                    "description": "Some mess of polyrhythms. The bass is playing slow groups of 5, the 6-string bass high part is doing triplets, the bells are 8th notes I think."
+                }
+            ]
+        },
+        {
+            "name": "Collaborations (Cover)",
+            "songs": [
+                {
+                    "id": "all-this-time",
+                    "title": "All This Time",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "guitars, bass, drums, keyboards, mandolin, melodica, mixing"
+                        },
+                        {
+                            "name": "Gerard Honoré",
+                            "credits": "vocals"
+                        },
+                        {
+                            "name": "Sting",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": "2023",
+                    "month": "March",
+                    "audio": "all-this-time.m4a",
+                    "description": "Of the covers I've done so far, I'm happiest with how this one came out. I also got to use pretty much every instrument I own (at the time), which is fun."
+                },
+                {
+                    "id": "nothing-easy",
+                    "title": "Nothing is Easy",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "rhythm guitars, \"flute\" (guitar), bass, drums, mixing"
+                        },
+                        {
+                            "name": "Gerard Honoré",
+                            "credits": "lead/rhythm guitars, vocals"
+                        },
+                        {
+                            "name": "Jethro Tull",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "December",
+                    "audio": "nothing-easy.m4a",
+                    "description": "There are more guitar parts in this song than I initially realized. The drums have a bouncy, fairly loose feel, which is fun, but it makes it harder to record the other parts against them."
+                },
+                {
+                    "id": "little-wing",
+                    "title": "Little Wing",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "bass, drums, MIDI bell thing, mixing"
+                        },
+                        {
+                            "name": "Gerard Honoré",
+                            "credits": "guitars, vocals"
+                        },
+                        {
+                            "name": "Jimi Hendrix",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": "2022",
+                    "month": "September",
+                    "audio": "little-wing.m4a",
+                    "description": "I think the guitar tone and the drum fills came out pretty well. This is my first real attempt at mixing vocals and they came out ok, but they don't stand out as much as I'd like."
                 }
             ]
         }
