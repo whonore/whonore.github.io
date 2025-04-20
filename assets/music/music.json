@@ -111,6 +111,28 @@
             "name": "Solo (Cover)",
             "songs": [
                 {
+                    "id": "michelle",
+                    "title": "Michelle",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "bass, arrangement"
+                        },
+                        {
+                            "name": "John Lennon",
+                            "credits": "writing"
+                        },
+                        {
+                            "name": "Paul McCartney",
+                            "credits": "writing"
+                        }
+                    ],
+                    "year": 2025,
+                    "month": "April",
+                    "audio": "michelle.m4a",
+                    "description": "Another 6-string a capella thing but this time I arranged it. I kept the original melody but reharmonized most of the chords."
+                },
+                {
                     "id": "mrsandman",
                     "title": "Mr. Sandman",
                     "credits": [
