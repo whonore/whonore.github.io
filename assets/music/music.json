@@ -251,6 +251,28 @@
             "name": "Collaborations (Original)",
             "songs": [
                 {
+                    "id": "crying_for_the_moon",
+                    "title": "Crying for the Moon",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "bass, drums, mixing"
+                        },
+                        {
+                            "name": "Gerard Honoré",
+                            "credits": "writing, guitars, vocals, keyboards, drum programming"
+                        },
+                        {
+                            "name": "Jim Henderson",
+                            "credits": "tenor saxophone"
+                        }
+                    ],
+                    "year": 2024,
+                    "month": "November",
+                    "audio": "crying-moon.m4a",
+                    "description": "The original demo is much older, but the sax, bass, and drums are all new, along with some guitar stuff here and there."
+                },
+                {
                     "id": "eckos",
                     "title": "Eckos",
                     "credits": [
