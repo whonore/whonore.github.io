@@ -4,6 +4,21 @@
             "name": "Solo (Original)",
             "songs": [
                 {
+                    "id": "principle_of_explosion",
+                    "title": "Principle of Explosion",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "writing, guitars, bass, drums, mixing"
+                        }
+
+                    ],
+                    "year": 2025,
+                    "month": "October",
+                    "audio": "principle-of-explosion.m4a",
+                    "description": "Kind of Foo Fighters-ish. I think it should have vocals, but I haven't found the right melody yet."
+                },
+                {
                     "id": "axolotl",
                     "title": "Axolotl",
                     "credits": [
