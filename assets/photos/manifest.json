@@ -46,6 +46,11 @@
             "icon": "🇯🇴"
         },
         {
+            "path": "new_zealand",
+            "name": "New Zealand",
+            "icon": "🇳🇿"
+        },
+        {
             "path": "peru",
             "name": "Peru",
             "icon": "🇵🇪"

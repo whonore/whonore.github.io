@@ -1,0 +1,104 @@
+{
+    "title": "New Zealand",
+    "description": "In March 2026, my wife and I went to New Zealand's south island. This was the first trip with my new Nikon D7500 since the old one died in Costa Rica.",
+    "path": "new_zealand",
+    "region": "New Zealand",
+    "coords": [[170.4, -43.6]],
+    "photos": [
+        {
+            "src": "pier",
+            "description": "Early morning in Queenstown.",
+            "alt": "A mountain covered in fog across a lake with lamps on a pier in the foreground."
+        },
+        {
+            "src": "tree-bird",
+            "description": "In the hills near Queenstown. The sun was still rising behind some mountains, which is why the foreground is in shadow.",
+            "alt": "A silhouette of a bird on a palm tree with mountains in the background."
+        },
+        {
+            "src": "mountain-bird",
+            "description": "Lots of birds on this trip. This isn't the most exciting but I like the framing.",
+            "alt": "A small brown bird on some rocks with a lake and mountains in the background."
+        },
+        {
+            "src": "mirror",
+            "description": "Mirror lakes on the way to Milford Sound. I couldn't find an angle that got as much of the lake and mountains together as I'd like, but this is ok.",
+            "alt": "A still lake with a reflection of mountains in the background."
+        },
+        {
+            "src": "milford",
+            "description": "Mitre peak in Milford Sound.",
+            "alt": "A lake surrounded by tall mountains."
+        },
+        {
+            "src": "lion-peak",
+            "description": "The Lion in Milford Sound. I needed a wider angle lens.",
+            "alt": "A tall, snow-covered mountain rising above a lake."
+        },
+        {
+            "src": "pigeon",
+            "description": "Big pigeon. Very funny looking.",
+            "alt": "A pigeon staring down from a tree."
+        },
+        {
+            "src": "moon",
+            "description": "Taken while waiting at a crosswalk in Queenstown.",
+            "alt": "A crescent moon next to a mountain."
+        },
+        {
+            "src": "table",
+            "description": "This table apparently hasn't been used in a while.",
+            "alt": "A picnic table with flowers growing between the boards."
+        },
+        {
+            "src": "kaka-silhouette",
+            "description": "A kākā in Orokonui Ecosanctuary. It was foggy and drizzling the whole time, which made for very moody lighting.",
+            "alt": "A silhouette of a kākā in a tree."
+        },
+        {
+            "src": "kaka-caw",
+            "description": "It wanted us to move away from the feeding standing we were standing near.",
+            "alt": "A kākā cawing from a tree."
+        },
+        {
+            "src": "biting",
+            "description": "There was a group of three on this roof and one kept chasing and biting the others.",
+            "alt": "Two kākā sitting on a roof while one bites at the other's foot."
+        },
+        {
+            "src": "takahe",
+            "description": "Big blue chicken (takahē).",
+            "alt": "Two takahē drinking from a pond while one stares at the camera."
+        },
+        {
+            "src": "seal-pup",
+            "description": "We visited a seal crèche and found this pup resting in the grass by the road.",
+            "alt": "A seal pup lying in tall grass."
+        },
+        {
+            "src": "elephant-seal",
+            "description": "This elephant seal was mostly calm but didn't like when the gull got too close.",
+            "alt": "An elephant seal on a beach biting at a fleeing seagull."
+        },
+        {
+            "src": "ducks",
+            "description": "Nice ducks. I like the black and white.",
+            "alt": "Two paradise shell ducks standing on a grassy hill facing opposite directions."
+        },
+        {
+            "src": "seal-bush",
+            "description": "It was very windy so all the seals were resting on land. Several climbed pretty far up this hill.",
+            "alt": "A seal sleeping under a bush with the ocean in the background."
+        },
+        {
+            "src": "garden-pink",
+            "description": "Some nice flowers in the Larnach Castle gardens.",
+            "alt": "A close shot of a group of pink and green flowers."
+        },
+        {
+            "src": "garden-white",
+            "description": "Also in the gardens. Not sure what this is but it looks cool.",
+            "alt": "A close up of a white plant with dew on it."
+        }
+    ]
+}
