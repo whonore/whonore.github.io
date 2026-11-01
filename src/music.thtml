@@ -48,11 +48,11 @@
         </p>
         <hr />
         <%%j ../assets/music/music.json.music %>
-          <section class="no-border">
-            <h2><%ji .name %></h2>
+          <details name="music">
+            <summary><%ji .name %></summary>
             <%%ji .songs %>
               <section class="music-song" id="<%ji .id %>">
-                <h3><a href="#<%ji .id %>"><%ji .title %></a></h3>
+                <h2><a href="#<%ji .id %>"><%ji .title %></a></h2>
                 <div>
                   <p>Credits (Recorded <%ji .month %> <%ji .year %>):</p>
                   <ul>
@@ -75,7 +75,7 @@
                 </p>
               </section>
             <%%e %>
-          </section>
+          </details>
           <%js <hr /> %>
         <%%e %>
       </main>
