@@ -285,6 +285,16 @@
                     "year": 2024,
                     "month": "November",
                     "audio": "crying-moon.m4a",
+                    "links": [
+                        {
+                            "name": "Spotify",
+                            "url": "https://open.spotify.com/track/5SHvjpxTeRoKa4y32vcaNz?si=dd68545fbbb642f0"
+                        },
+                        {
+                            "name": "Apple Music",
+                            "url": "https://music.apple.com/us/song/crying-for-the-moon-feat-jim-henderson/6810583347"
+                        }
+                    ],
                     "description": "The original demo is much older, but the sax, bass, and drums are all new, along with some guitar stuff here and there."
                 },
                 {
