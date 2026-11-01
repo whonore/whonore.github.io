@@ -30,7 +30,7 @@ PUBS := $(addprefix $(BUILD)/,$(wildcard assets/pubs/*.json))
 PUB_MEDIA := $(addprefix $(BUILD)/,$(wildcard assets/pubs/*.pdf) $(wildcard assets/pubs/*.mp4))
 
 MUSIC := $(addprefix $(BUILD)/,$(wildcard assets/music/*.json))
-MUSIC_MEDIA := $(addprefix $(BUILD)/,$(wildcard assets/music/*.m4a assets/music/*.jpg))
+MUSIC_MEDIA := $(addprefix $(BUILD)/,$(wildcard assets/music/*.m4a assets/music/*.jpg assets/music/icons/*.svg))
 
 PROJECTS := $(addprefix $(BUILD)/,$(wildcard assets/projects/*.json))
 PROJECT_THUMBS := $(addprefix $(BUILD)/,$(wildcard assets/projects/thumbs/*.jpg))
@@ -206,6 +206,12 @@ $(BUILD)/%.gif: %.cast
 		-strip -interlace Plane -layers optimize \
 		-auto-orient \
 		$@
+
+# SVG
+
+$(BUILD)/%.svg: %.svg
+	@mkdir -p $(@D)
+	svgcleaner $(SVGCLEAN_FLAGS) $< $@
 
 # PDF
 

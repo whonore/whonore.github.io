@@ -70,6 +70,17 @@
                   <source src="/assets/music/<%ji .audio %>" type="audio/x-m4a" />
                   Your browser does not support this audio file.
                 </audio>
+                <%%je .links %>
+                  <ul class="music-links">
+                <%%e %>
+                  <%%jo .links %>
+                    <li data-link-icon>
+                      <a href="<%ji .url %>"><%ji .name %></a>
+                    </li>
+                  <%%e %>
+                <%%je .links %>
+                  </ul>
+                <%%e %>
                 <p class="music-description">
                   <%ji .description %>
                 </p>

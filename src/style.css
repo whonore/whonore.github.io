@@ -181,6 +181,30 @@ ul li[data-icon]::before {
   content: attr(data-icon);
 }
 
+ul li[data-link-icon] {
+  display: flex;
+  align-items: center;
+  gap: 0.5ch;
+}
+
+ul li[data-link-icon]::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  aspect-ratio: 1 / 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ul li[data-link-icon]:has(a[href^="https://open.spotify.com"])::before {
+  background-image: url("/assets/music/icons/spotify.svg");
+}
+
+ul li[data-link-icon]:has(a[href^="https://music.apple.com"])::before {
+  background-image: url("/assets/music/icons/apple.svg");
+}
+
 hr {
   height: 0.5ch;
   width: 100%;
@@ -567,6 +591,12 @@ audio {
   background-color: var(--darkblue);
   margin: var(--music-player-margin) 0;
   border: var(--music-border-thickness) solid var(--darkgreen);
+}
+
+.music-links {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2ch;
 }
 
 /* Projects */
