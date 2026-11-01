@@ -57,7 +57,7 @@ HTML := $(GEN_HTML) $(COPY_HTML)
 
 CSS := $(addprefix $(BUILD)/,$(wildcard src/*.css))
 
-INSTALL_EXTS := html css jpg png gif ico mp4 m4a pdf webmanifest
+INSTALL_EXTS := html css jpg png gif ico svg mp4 m4a pdf webmanifest
 INSTALL_PAT := $(addprefix -o -name '*.,$(addsuffix ',$(INSTALL_EXTS)))
 IGNORE_INSTALL := assets/generated
 
