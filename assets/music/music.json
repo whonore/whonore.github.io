@@ -266,6 +266,34 @@
             "name": "Collaborations (Original)",
             "songs": [
                 {
+                    "id": "world_beneath_my_feet",
+                    "title": "World Beneath My Feet",
+                    "credits": [
+                        {
+                            "name": "Wolf Honoré",
+                            "credits": "writing, bass, guitar, keyboards, drums, mixing"
+                        },
+                        {
+                            "name": "Ronald Heisser",
+                            "credits": "writing, vocals"
+                        }
+                    ],
+                    "year": 2026,
+                    "month": "September",
+                    "audio": "world-beneath-my-feet.m4a",
+                    "links": [
+                        {
+                            "name": "Spotify",
+                            "url": "https://open.spotify.com/track/7pDYTjD4yBCZPcHTYT9yfi?si=d45334a55af44b65"
+                        },
+                        {
+                            "name": "Apple Music",
+                            "url": "https://music.apple.com/us/song/world-beneath-my-feet/6829574601"
+                        }
+                    ],
+                    "description": "This song started with the bassline. I was thinking along the lines of Good Times or Another One Bites the Dust but with a tone inspired by MonoNeon and Thundercat."
+                },
+                {
                     "id": "crying_for_the_moon",
                     "title": "Crying for the Moon",
                     "credits": [
